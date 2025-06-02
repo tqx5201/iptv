@@ -39,14 +39,14 @@ if [ $# -eq 0 ]; then
 else
   city_choice=$1
 fi
-city_choice=13
+#city_choice=13
 
 # 根据用户选择设置城市和相应的stream
 case $city_choice in
     1)
         city="Shanghai_103"
         stream="udp/239.45.1.4:5140"
-	channel_key="上海"
+        channel_key="上海"
         url_fofa=$(echo  '"udpxy" && country="CN" && region="Shanghai" && org="China Telecom Group" && protocol="http"' | base64 |tr -d '\n')
         url_fofa="https://fofa.info/result?qbase64="$url_fofa
         ;;
@@ -230,7 +230,7 @@ cat "result/result_fofa_${city}.txt"
 ip1=$(awk 'NR==1{print $2}' result/result_fofa_${city}.txt)
 ip2=$(awk 'NR==2{print $2}' result/result_fofa_${city}.txt)
 ip3=$(awk 'NR==3{print $2}' result/result_fofa_${city}.txt)
-rm -f "speedtest_${city}_$time.log"
+###############rm -f "speedtest_${city}_$time.log"
 
 # 用 3 个最快 ip 生成对应城市的 txt 文件
 program="template/template_${city}.txt"
@@ -242,8 +242,7 @@ cat tmp1.txt tmp2.txt tmp3.txt > "txt/fofa_${city}.txt"
 
 rm -rf tmp1.txt tmp2.txt tmp3.txt
 
-
-#--------------------合并所有城市的txt文件为:   zubo_fofa.txt-----------------------------------------
+echo "===============-合并所有城市的txt文件为:zubo_fofa.txt================="
 output_file="zubo_fofa.txt"
 for file in txt/fofa_*.txt;do
      filename=$(basename "$file")
