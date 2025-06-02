@@ -167,7 +167,11 @@ esac
 # 使用城市名作为默认文件名，格式为 CityName.ip
 ipfile="ip/${city}.ip"
 only_good_ip="ip/${city}.onlygood.ip"
-rm -f $only_good_ip
+if [-e $only_good_ip];then
+    rm -f $only_good_ip
+else
+    echo "file does not exist"
+ fi
 # 搜索最新 IP
 echo "===============从 fofa 检索 ip+端口================="
 curl -o test.html "$url_fofa"
