@@ -237,10 +237,16 @@ rm -f "speedtest_${city}_$time.log"
 
 # 用 3 个最快 ip 生成对应城市的 txt 文件
 program="template/template_${city}.txt"
-
-sed "s/ipipip/$ip1/g" "$program" > tmp1.txt
-sed "s/ipipip/$ip2/g" "$program" > tmp2.txt
-sed "s/ipipip/$ip3/g" "$program" > tmp3.txt
+#判断ip不为空
+if [ -n "$ip1" ]; then
+  sed "s/ipipip/$ip1/g" "$program" > tmp1.txt
+fi
+if [ -n "$ip2" ]; then
+  sed "s/ipipip/$ip2/g" "$program" > tmp2.txt
+fi
+if [ -n "$ip3" ]; then
+  sed "s/ipipip/$ip3/g" "$program" > tmp3.txt
+fi
 cat tmp1.txt tmp2.txt tmp3.txt > "txt/fofa_${city}.txt"
 
 rm -rf tmp1.txt tmp2.txt tmp3.txt
