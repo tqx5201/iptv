@@ -25,6 +25,11 @@ jobs:
         chmod +x speed.sh
         #bash ./multi_test.sh
         bash ./fofa.sh
+    - name: cache file
+      uses: actions/upload-artifact@v3.1.0
+      with:
+          name: cache
+          path: $GITHUB_WORKSPACE/speedtest
     - name: Update Results
       run: |
         cd $GITHUB_WORKSPACE/speedtest
