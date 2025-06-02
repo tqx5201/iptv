@@ -164,7 +164,7 @@ case $city_choice in
 esac
 
 echo "===============删除TXT文件夹下所有文件================="
-rm -rf txt/*
+#rm -rf txt/*
 
 # 使用城市名作为默认文件名，格式为 CityName.ip
 ipfile="ip/${city}.ip"
@@ -230,7 +230,7 @@ cat "result/result_fofa_${city}.txt"
 ip1=$(awk 'NR==1{print $2}' result/result_fofa_${city}.txt)
 ip2=$(awk 'NR==2{print $2}' result/result_fofa_${city}.txt)
 ip3=$(awk 'NR==3{print $2}' result/result_fofa_${city}.txt)
-###############rm -f "speedtest_${city}_$time.log"
+rm -f "speedtest_${city}_$time.log"
 
 # 用 3 个最快 ip 生成对应城市的 txt 文件
 program="template/template_${city}.txt"
