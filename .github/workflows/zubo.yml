@@ -1,8 +1,8 @@
-name: Daily Job
+name: 获取组播放IP
 
 on:
-  schedule:
-    - cron: "0 20 * * *"
+  #schedule:
+    #- cron: "0 20 * * *"
   workflow_dispatch:
 
 jobs:
