@@ -163,13 +163,16 @@ case $city_choice in
         ;;
 esac
 
-echo "===============删除TXT文件夹下所有文件================="
+echo "===============删除存在的文件================="
 #rm -rf txt/*
 
 # 使用城市名作为默认文件名，格式为 CityName.ip
 ipfile="ip/${city}.ip"
 only_good_ip="ip/${city}.onlygood.ip"
 rm -f $only_good_ip
+rm -f $ipfile
+rm -f "ip/${city}.port"
+
 
 # 搜索最新 IP
 echo "===============从 fofa 检索 ${city}的ip+端口================="
@@ -223,7 +226,7 @@ for temp_file in tmpip/ip_*.txt; do
      echo "第 $line_i/$lines 个：$ip $a"
      echo "$ip $a" >> "speedtest_${city}_$time.log"
 done
-rm -rf tmpip/*
+##########rm -rf tmpip/*
 
 awk '/M|k/{print $2"  "$1}' "speedtest_${city}_$time.log" | sort -n -r >"result/result_fofa_${city}.txt"
 cat "result/result_fofa_${city}.txt"
