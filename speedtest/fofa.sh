@@ -247,7 +247,13 @@ fi
 if [ -n "$ip3" ]; then
   sed "s/ipipip/$ip3/g" "$program" > tmp3.txt
 fi
-cat tmp1.txt tmp2.txt tmp3.txt > "txt/fofa_${city}.txt"
+#cat tmp1.txt tmp2.txt tmp3.txt > "txt/fofa_${city}.txt"
+# 合并临时文件到最终文件
+{
+  [ -f "tmp1.txt" ] && cat tmp1.txt
+  [ -f "tmp2.txt" ] && cat tmp2.txt
+  [ -f "tmp3.txt" ] && cat tmp3.txt
+} > "txt/fofa_${city}.txt"
 
 rm -rf tmp1.txt tmp2.txt tmp3.txt
 
