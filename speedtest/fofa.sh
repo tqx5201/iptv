@@ -163,7 +163,8 @@ case $city_choice in
         ;;
 esac
 
-
+echo "===============删除TXT文件夹下所有文件================="
+rm -rf txt/*
 
 # 使用城市名作为默认文件名，格式为 CityName.ip
 ipfile="ip/${city}.ip"
