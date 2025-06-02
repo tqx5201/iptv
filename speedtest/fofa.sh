@@ -39,6 +39,7 @@ if [ $# -eq 0 ]; then
 else
   city_choice=$1
 fi
+city_choice=13
 
 # 根据用户选择设置城市和相应的stream
 case $city_choice in
@@ -170,7 +171,7 @@ only_good_ip="ip/${city}.onlygood.ip"
 rm -f $only_good_ip
 
 # 搜索最新 IP
-echo "===============从 fofa 检索 ip+端口================="
+echo "===============从 fofa 检索 ${city}的ip+端口================="
 curl -o test.html "$url_fofa"
 #echo $url_fofa
 echo "$ipfile"
