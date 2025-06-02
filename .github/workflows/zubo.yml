@@ -26,7 +26,7 @@ jobs:
         #bash ./multi_test.sh
         bash ./fofa.sh
     - name: cache file
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
           name: cache
           path: $GITHUB_WORKSPACE/speedtest
