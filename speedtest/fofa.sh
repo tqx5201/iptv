@@ -244,37 +244,12 @@ rm -rf tmp1.txt tmp2.txt tmp3.txt
 
 
 #--------------------合并所有城市的txt文件为:   zubo_fofa.txt-----------------------------------------
-
-echo "上海电信,#genre#" >zubo_fofa.txt
-cat txt/Shanghai_103.txt >>zubo_fofa.txt
-echo "江苏,#genre#" >>zubo_fofa.txt
-cat txt/Jiangsu.txt >>zubo_fofa.txt
-#echo "北京电信,#genre#" >>zubo_fofa.txt
-#cat txt/Beijing_dianxin_186.txt >>zubo_fofa.txt
-echo "北京联通,#genre#" >>zubo_fofa.txt
-cat txt/Beijing_liantong_145.txt >>zubo_fofa.txt
-echo "天津联通,#genre#" >>zubo_fofa.txt
-cat txt/Tianjin_160.txt >>zubo_fofa.txt
-echo "河南电信,#genre#" >>zubo_fofa.txt
-cat txt/Henan_327.txt >>zubo_fofa.txt
-echo "山西电信,#genre#" >>zubo_fofa.txt
-cat txt/Shanxi_117.txt >>zubo_fofa.txt
-echo "广东电信,#genre#" >>zubo_fofa.txt
-cat txt/Guangdong_332.txt >>zubo_fofa.txt
-echo "四川电信,#genre#" >>zubo_fofa.txt
-cat txt/Sichuan_333.txt >>zubo_fofa.txt
-echo "浙江电信,#genre#" >>zubo_fofa.txt
-cat txt/Zhejiang_120.txt >>zubo_fofa.txt
-echo "湖北电信,#genre#" >>zubo_fofa.txt
-cat txt/Hubei_90.txt >>zubo_fofa.txt
-echo "福建电信,#genre#" >>zubo_fofa.txt
-cat txt/Fujian_114.txt >>zubo_fofa.txt
-echo "湖南电信,#genre#" >>zubo_fofa.txt
-cat txt/Hunan_282.txt >>zubo_fofa.txt
-echo "甘肃电信,#genre#" >>zubo_fofa.txt
-cat txt/Gansu_105.txt >>zubo_fofa.txt
-echo "河北联通,#genre#" >>zubo_fofa.txt
-cat txt/Hebei_313.txt >>zubo_fofa.txt
-
+output_file="zubo_fofa.txt"
+for file in txt/fofa_*.txt;do
+     filename=$(basename "$file")
+     echo "$filename,#genre" >> "$output_file"
+     cat "$file" >> "$output_file"
+     echo "" >> "$output_file"
+done
 
 # for a in result/*.txt; do echo "";echo "========================= $(basename "$a") ==================================="; cat $a; done
