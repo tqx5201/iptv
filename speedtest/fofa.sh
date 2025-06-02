@@ -172,7 +172,7 @@ only_good_ip="ip/${city}.onlygood.ip"
 rm -f $only_good_ip
 rm -f $ipfile
 rm -f "ip/${city}.port"
-
+rm -f "result/result_fofa_${city}.txt"
 
 # 搜索最新 IP
 echo "===============从 fofa 检索 ${city}的ip+端口================="
