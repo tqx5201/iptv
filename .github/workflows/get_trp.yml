@@ -1,0 +1,32 @@
+name: 获取组播数据从iptv_api
+
+on:
+  #schedule:
+    #- cron: "0 20 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+      
+    - name: Run Script
+      run: |
+        chmod +x get_rtp.sh
+        bash ./get_rtp.sh
+    - name: cache file
+      uses: actions/upload-artifact@v4
+      with:
+          name: cache_rtp
+          path: rtp/
+          
+    - name: Update Results
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Update results"
+        git push -f
