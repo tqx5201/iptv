@@ -1,9 +1,12 @@
 #!/bin/bash
 #在线测试https://www.jyshare.com/compile/18/
 
+# 创建目录
+mkdir -p ip
+
 
 # 定义函数
-get_ip_fofa() {
+get_ip_fofa0() {
     url_fofa=$1
     ipfile=$2
     only_good_ip=$3
@@ -13,9 +16,14 @@ get_ip_fofa() {
 
 
 function get_ip_fofa(){
+    url_fofa=$1
+    province=$2
+    provider=$3
+    ipfile="ip/${province}_${provider}.ip"
+    only_good_ip="ip/${province}_${provider}.onlygood.ip"
     # 搜索最新 IP
-    echo "===============从 fofa 检索 ${city}的ip+端口================="
-    curl -o test.html "$1"
+    echo "===============从 fofa 检索 ${province}_${provider} 的ip+端口================="
+    curl -o test.html "$url_fofa"
     #echo $url_fofa
     echo "$ipfile"
     grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' test.html | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+' > "$ipfile"
@@ -71,8 +79,7 @@ for province in "${provinces[@]}"; do
         full_url="${base_url}${url_fofa}"
         echo "${full_url}"
 
-        ipfile="ip/${province}_${provider}.ip"
-        only_good_ip="ip/${province}_${provider}.onlygood.ip"
+
         get_ip_fofa "${full_url}" "${ipfile}" "${only_good_ip}"
     done
 done
