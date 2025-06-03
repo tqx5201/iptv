@@ -14,7 +14,7 @@ provinces=(
 providers=("电信" "移动" "联通")
 
 # 基础 URL
-base_url="https://raw.githubusercontent.com/tqx5201/iptv-api/refs/heads/master/config/rtp/"
+base_url="https://raw.bgithub.xyz/tqx5201/iptv-api/refs/heads/master/config/rtp/"
 
 # 创建 rtp 目录（如果不存在）
 mkdir -p rtp
