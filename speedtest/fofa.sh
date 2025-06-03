@@ -39,7 +39,7 @@ if [ $# -eq 0 ]; then
 else
   city_choice=$1
 fi
-#city_choice=13
+city_choice=3
 
 # 根据用户选择设置城市和相应的stream
 case $city_choice in
