@@ -16,7 +16,7 @@ function get_ip_fofa(){
     # 搜索最新 IP
     echo "===============从 fofa 检索【 ${province}_${provider} 】的ip+端口================="
     # 使用 curl 获取内容并保存到变量中
-    response=$(curl -s "$url_fofa")
+    response=$(curl -L -s "$url_fofa")
     #echo "$response"
     # 使用正则表达式提取IP和端口
     ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' <<< "$response" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
@@ -60,7 +60,7 @@ provinces0=(
 providers0=("电信" "移动" "联通")
 
 # 定义省份名称数组
-provinces=("Sichuan")
+provinces=("四川")
 
 # 定义运营商类型数组
 providers=("电信" "移动" "联通")
