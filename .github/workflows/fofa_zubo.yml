@@ -3,6 +3,9 @@ name: 从fofa获取组播IP
 on:
   #schedule:
     #- cron: "0 20 * * *"
+  push:
+    branches:
+      - main # 只在master上push触发部署
   workflow_dispatch:
 
 jobs:
