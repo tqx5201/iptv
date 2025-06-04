@@ -2,7 +2,8 @@
 #在线测试https://www.jyshare.com/compile/18/
 
 # 创建目录
-#mkdir -p ip
+rm -rf ip/*
+mkdir -p ip
 
 
 function get_ip_fofa(){
@@ -13,7 +14,7 @@ function get_ip_fofa(){
     only_good_ip="ip/${province}_${provider}.onlygood.ip"
 
     # 搜索最新 IP
-    echo "===============从 fofa 检索 ${province}_${provider} 的ip+端口================="
+    echo "===============从 fofa 检索【 ${province}_${provider} 】的ip+端口================="
     # 使用 curl 获取内容并保存到变量中
     response=$(curl -s "$url_fofa")
     #echo "$response"
@@ -37,8 +38,10 @@ function get_ip_fofa(){
 
     # 输出成功连接的 IP 和端口
     echo "===============成功连接的 IP 和端口================="
-    echo -e "$good_ips"
+    echo -e "$good_ips">ipfile
     echo "===============检索完成================="
+    echo ""
+    echo ""
 }
 
 
@@ -56,7 +59,7 @@ provinces0=(
 providers0=("电信" "移动" "联通")
 
 # 定义省份名称数组
-provinces=("四川")
+provinces=("Sichuan")
 
 # 定义运营商类型数组
 providers=("电信" "移动" "联通")
