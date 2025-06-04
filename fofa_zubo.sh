@@ -56,7 +56,7 @@ provinces0=(
 providers0=("电信" "移动" "联通")
 
 # 定义省份名称数组
-provinces=("Sichuan")
+provinces=("四川")
 
 # 定义运营商类型数组
 providers=("电信" "移动" "联通")
