@@ -39,7 +39,7 @@ function get_ip_fofa(){
     # 输出成功连接的 IP 和端口
     echo "===============成功连接的 IP 和端口================="
     echo -e "$good_ips"
-    echo -e "$good_ips">"ipfile"
+    echo -e "$good_ips" > "$ipfile"
     echo "===============检索完成================="
     echo ""
     echo ""
