@@ -33,3 +33,12 @@ jobs:
       with:
           name: cache
           path: speedtest/
+          
+    - name: 提交更改
+      run: |
+        #cd $GITHUB_WORKSPACE/speedtest
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "更新组播IP"
+        git push -f
