@@ -60,13 +60,45 @@ provinces0=(
 providers0=("电信" "移动" "联通")
 
 # 定义省份名称数组
-provinces=("四川")
+provinces_cn=("四川" "北京" )
+provinces_en=("Sichuan" "Bejing" )
+
 
 # 定义运营商类型数组
 providers=("电信" "移动" "联通")
 
 # 基础 URL
 base_url="https://fofa.info/result?qbase64="
+
+# 获取数组长度
+len=${#provinces_cn[@]}
+
+# 遍历数组
+for ((i=0; i<len; i++)); do
+    province_cn=${provinces_cn[i]}
+    province_en=${provinces_en[i]}
+    for provider in "${providers[@]}"; do
+        # 拼接完整的 URL
+        asn=""
+        if [ "$provider" = "电信" ]; then
+            asn='asn="4134"'
+        elif [ "$provider" = "移动" ]; then
+            asn='asn="9808"'
+        else
+            asn='(asn="4837" || asn="4808")'
+        fi
+        query='"udpxy" && country="CN" && region="'$province_en'" && '$asn' && protocol="http"'
+        url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
+        full_url="${base_url}${url_fofa}"
+        echo "${full_url}"
+        
+        # 假设 get_ip_fofa 是一个函数，用于处理 URL 并保存 IP 到文件
+        # 你需要定义这个函数或确保它已经定义
+        get_ip_fofa "${full_url}" "${province_cn}" "${provider}"
+    done
+done
+
+
 
 # 遍历省份数组和运营商类型数组，生成 URL 并下载文件
 for province in "${provinces[@]}"; do
