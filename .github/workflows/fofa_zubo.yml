@@ -1,0 +1,32 @@
+name: 从fofa获取组播IP
+
+on:
+  #schedule:
+    #- cron: "0 20 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 代码检出
+      uses: actions/checkout@v3
+      
+    #- name: 安装插件
+      #run: |
+        #sudo apt-get update
+        #sudo apt-get install -y yt-dlp sed nmap
+      
+    - name: 运行脚本
+      #working-directory: iptv/speedtest
+      run: |
+        #cd $GITHUB_WORKSPACE/speedtest
+        #chmod +x speed.sh
+        bash ./fofa_zubo.sh
+        
+    - name: 缓存运行结果
+      uses: actions/upload-artifact@v4
+      with:
+          name: cache
+          path: speedtest/
