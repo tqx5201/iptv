@@ -97,29 +97,3 @@ for ((i=0; i<len; i++)); do
         get_ip_fofa "${full_url}" "${province_cn}" "${provider}"
     done
 done
-
-
-
-# 遍历省份数组和运营商类型数组，生成 URL 并下载文件
-for province in "${provinces[@]}"; do
-    for provider in "${providers[@]}"; do
-        # 拼接完整的 URL
-        asn=""
-        if [ "$provider" = "电信" ]; then
-            asn='asn="4134"'
-        elif [ "$provider" = "移动" ]; then
-            asn='asn="9808"'
-        else
-            asn='(asn="4837" || asn="4808")'
-        fi
-        query='"udpxy" && country="CN" && region="'$province'" && '$asn' && protocol="http"'
-        url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
-        full_url="${base_url}${url_fofa}"
-        echo "${full_url}"
-        
-        # 假设 get_ip_fofa 是一个函数，用于处理 URL 并保存 IP 到文件
-        # 你需要定义这个函数或确保它已经定义
-        get_ip_fofa "${full_url}" "${province}" "${provider}"
-    done
-done
-
