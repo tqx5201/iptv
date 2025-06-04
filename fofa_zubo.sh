@@ -2,17 +2,7 @@
 #在线测试https://www.jyshare.com/compile/18/
 
 # 创建目录
-mkdir -p ip
-
-
-# 定义函数
-get_ip_fofa0() {
-    url_fofa=$1
-    ipfile=$2
-    only_good_ip=$3
-    echo "$url_fofa,$ipfile,$only_good_ip"
-    echo
-}
+#mkdir -p ip
 
 
 function get_ip_fofa(){
@@ -21,33 +11,37 @@ function get_ip_fofa(){
     provider=$3
     ipfile="ip/${province}_${provider}.ip"
     only_good_ip="ip/${province}_${provider}.onlygood.ip"
+
     # 搜索最新 IP
     echo "===============从 fofa 检索 ${province}_${provider} 的ip+端口================="
-    curl -o test.html "$url_fofa"
-    #echo $url_fofa
-    echo "$ipfile"
-    grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' test.html | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+' > "$ipfile"
-    rm -f test.html
-    # 遍历文件 A 中的每个 IP 地址
-    while IFS= read -r ip; do
-        # 尝试连接 IP 地址和端口号，并将输出保存到变量中
-        tmp_ip=$(echo -n "$ip" | sed 's/:/ /')
-        echo "nc -w 1 -v -z $tmp_ip 2>&1"
-        output=$(nc -w 1 -v -z $tmp_ip 2>&1)
-        echo $output    
-        # 如果连接成功，且输出包含 "succeeded"，则将结果保存到输出文件中
-        if [[ $output == *"succeeded"* ]]; then
-            # 使用 awk 提取 IP 地址和端口号对应的字符串，并保存到输出文件中
-            echo "$output" | grep "succeeded" | awk -v ip="$ip" '{print ip}' >> "$only_good_ip"
-        fi
-    done < "$ipfile"
+    # 使用 curl 获取内容并保存到变量中
+    response=$(curl -s "$url_fofa")
+    # 使用正则表达式提取IP和端口
+    ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' <<< "$response" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
 
+    # 初始化一个变量来存储成功连接的 IP 和端口
+    good_ips=""
+
+    for tmpip in $ips; do
+        echo "nc -w 1 -v -z $tmpip 2>&1"
+        output=$(nc -w 1 -v -z $tmpip 2>&1)
+        echo "$output"
+        # 如果连接成功，且输出包含 "succeeded"，则将结果添加到变量中
+        if [[ $output == *"succeeded"* ]]; then
+            # 将成功的 IP 和端口添加到变量中，每个条目用换行符分隔
+            good_ips+="$tmpip"$'\n'
+        fi
+    done
+
+    # 输出成功连接的 IP 和端口
+    echo "===============成功连接的 IP 和端口================="
+    echo -e "$good_ips"
     echo "===============检索完成================="
 }
 
 
 # 定义省份名称数组
-provinces=(
+provinces0=(
     "北京" "天津" "上海" "重庆"
     "河北" "山西" "辽宁" "吉林" "黑龙江"
     "江苏" "浙江" "安徽" "福建" "江西" "山东"
@@ -55,6 +49,12 @@ provinces=(
     "四川" "贵州" "云南" "西藏" "陕西" "甘肃"
     "青海" "台湾" "内蒙古" "宁夏" "新疆"
 )
+
+# 定义运营商类型数组
+providers0=("电信" "移动" "联通")
+
+# 定义省份名称数组
+provinces=("四川")
 
 # 定义运营商类型数组
 providers=("电信" "移动" "联通")
@@ -68,19 +68,20 @@ for province in "${provinces[@]}"; do
         # 拼接完整的 URL
         asn=""
         if [ "$provider" = "电信" ]; then
-            asn="4812"
+            asn='asn="4134"'
         elif [ "$provider" = "移动" ]; then
-            asn="9808"
+            asn='asn="9808"'
         else
-            asn="4808"
+            asn='(asn="4837" || asn="4808")'
         fi
-        query='"udpxy" && country="CN" && region="'$province'" && asn="'$asn'" && protocol="http"'
+        query='"udpxy" && country="CN" && region="'$province'" && '$asn' && protocol="http"'
         url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
         full_url="${base_url}${url_fofa}"
         echo "${full_url}"
-
-
-        get_ip_fofa "${full_url}" "${ipfile}" "${only_good_ip}"
+        
+        # 假设 get_ip_fofa 是一个函数，用于处理 URL 并保存 IP 到文件
+        # 你需要定义这个函数或确保它已经定义
+        get_ip_fofa "${full_url}" "${province}" "${provider}"
     done
 done
 
