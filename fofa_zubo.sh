@@ -16,15 +16,15 @@ function get_ip_fofa(){
     echo "===============从 fofa 检索 ${province}_${provider} 的ip+端口================="
     # 使用 curl 获取内容并保存到变量中
     response=$(curl -s "$url_fofa")
-    echo "$response"
-    
+    #echo "$response"
     # 使用正则表达式提取IP和端口
     ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' <<< "$response" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
 
     # 初始化一个变量来存储成功连接的 IP 和端口
     good_ips=""
 
-    for tmpip in $ips; do
+    for tmp_ip in $ips; do
+        tmpip=$(echo -n "$tmp_ip" | sed 's/:/ /')
         echo "nc -w 1 -v -z $tmpip 2>&1"
         output=$(nc -w 1 -v -z $tmpip 2>&1)
         echo "$output"
@@ -56,7 +56,7 @@ provinces0=(
 providers0=("电信" "移动" "联通")
 
 # 定义省份名称数组
-provinces=("四川")
+provinces=("Sichuan")
 
 # 定义运营商类型数组
 providers=("电信" "移动" "联通")
