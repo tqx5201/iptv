@@ -12,8 +12,8 @@ mkdir -p txt
 function make_zubo(){
     for tmp_file in ip/*_speedtest.txt;do
         filename=$(basename "$tmp_file")
-        province=$(echo "$filename" | cut -d',' -f1)
-        provider=$(echo "$filename" | cut -d',' -f2)
+        province=$(echo "$filename" | cut -d'_' -f1)
+        provider=$(echo "$filename" | cut -d'_' -f2)
         awk '/M|k/{print $2"  "$1}' "ip/${province}_${provider}_speedtest.txt" | sort -n -r > "ip/${province}_${provider}_speedtest_px.txt"
         cat "ip/${province}_${provider}_speedtest_px.txt"
         ip1=$(awk 'NR==1{print $2}' ip/${province}_${provider}_speedtest_px.txt)
