@@ -2,8 +2,59 @@
 #在线测试https://www.jyshare.com/compile/18/
 
 # 创建目录
-rm -rf ip/*
-mkdir -p ip
+#rm -rf ip/*
+#mkdir -p ip
+
+rm -rf txt/*
+mkdir -p txt
+
+
+function make_zubo(){
+    for tmp_file in ip/*_speedtest.txt;do
+        filename=$(basename "$tmp_file")
+        province=$(echo "$filename" | cut -d',' -f1)
+        provider=$(echo "$filename" | cut -d',' -f2)
+        awk '/M|k/{print $2"  "$1}' "ip/${province}_${provider}_speedtest.txt" | sort -n -r > "ip/${province}_${provider}_speedtest_px.txt"
+        cat "ip/${province}_${provider}_speedtest_px.txt"
+        ip1=$(awk 'NR==1{print $2}' ip/${province}_${provider}_speedtest_px.txt)
+        ip2=$(awk 'NR==2{print $2}' ip/${province}_${provider}_speedtest_px.txt)
+        ip3=$(awk 'NR==3{print $2}' ip/${province}_${provider}_speedtest_px.txt)
+
+        # 用 3 个最快 ip 生成对应城市的 txt 文件
+        template="rtp/${province}_${provider}.txt"
+        #判断ip不为空
+        if [ -n "$ip1" ]; then
+            sed "s/rtp:\/\//http:\/\/$ip1\/rtp\//g" "$template" > tmp1.txt
+        fi
+        if [ -n "$ip2" ]; then
+            sed "s/rtp:\/\//http:\/\/$ip2\/rtp\//g" "$template" > tmp2.txt
+        fi
+        if [ -n "$ip3" ]; then
+            sed "s/rtp:\/\//http:\/\/$ip3\/rtp\//g" "$template" > tmp3.txt
+        fi
+        #cat tmp1.txt tmp2.txt tmp3.txt > "txt/fofa_${province}_${provider}.txt"
+        # 合并临时文件到最终文件
+        {
+            [ -f "tmp1.txt" ] && cat tmp1.txt
+            [ -f "tmp2.txt" ] && cat tmp2.txt
+            [ -f "tmp3.txt" ] && cat tmp3.txt
+        } > "txt/fofa_${province}_${provider}.txt"
+
+        rm -rf tmp1.txt tmp2.txt tmp3.txt
+
+        echo "===============-合并所有城市的txt文件为:zubo_fofa.txt================="
+        output_file="zubo_fofa.txt"
+        for file in txt/fofa_*.txt;do
+            #filename=$(basename "$file")
+            filename=$(basename "$file" | sed 's/_/-/g' | sed 's/fofa_//g')
+            echo "$filename,#genre#" >> "$output_file"
+            cat "$file" >> "$output_file"
+            echo "" >> "$output_file"
+        done
+    done
+
+}
+
 
 
 function get_ip_fofa(){
@@ -69,77 +120,68 @@ function get_ip_fofa(){
     echo ""
 }
 
+function get_zubo_ip(){
+    # 定义省份名称数组
+    provinces_cn=(
+        "北京" "天津" "上海" "重庆"
+        "河北" "山西" "辽宁" "吉林" "黑龙江"
+        "江苏" "浙江" "安徽" "福建" "江西" "山东"
+        "河南" "湖北" "湖南" "广东" "广西" "海南"
+        "四川" "贵州" "云南" "西藏" "陕西" "甘肃"
+        "青海" "内蒙古" "宁夏" "新疆"
+        "香港" "澳门" "台湾" 
+    )
+    provinces_en=(
+        "Beijing" "Tianjin" "Shanghai" "Chongqing"
+        "Hebei" "Shanxi" "Liaoning" "Jilin" "Heilongjiang"
+        "Jiangsu" "Zhejiang" "Anhui" "Fujian" "Jiangxi" "Shandong"
+        "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi" "Hainan"
+        "Sichuan" "Guizhou" "Yunnan" "Xizang" "Shaanxi" "Gansu"
+        "Qinghai" "Neimenggu" "Ningxia" "Xinjiang"
+        "HK" "MO" "TW" 
+    )
 
-# 定义省份名称数组
-provinces_cn=(
-    "北京" "天津" "上海" "重庆"
-    "河北" "山西" "辽宁" "吉林" "黑龙江"
-    "江苏" "浙江" "安徽" "福建" "江西" "山东"
-    "河南" "湖北" "湖南" "广东" "广西" "海南"
-    "四川" "贵州" "云南" "西藏" "陕西" "甘肃"
-    "青海" "内蒙古" "宁夏" "新疆"
-    "香港" "澳门" "台湾" 
-)
-provinces_en=(
-    "Beijing" "Tianjin" "Shanghai" "Chongqing"
-    "Hebei" "Shanxi" "Liaoning" "Jilin" "Heilongjiang"
-    "Jiangsu" "Zhejiang" "Anhui" "Fujian" "Jiangxi" "Shandong"
-    "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi" "Hainan"
-    "Sichuan" "Guizhou" "Yunnan" "Xizang" "Shaanxi" "Gansu"
-    "Qinghai" "Neimenggu" "Ningxia" "Xinjiang"
-    "HK" "MO" "TW" 
-)
+    # 定义省份名称数组
+    provinces_cn=("四川" "北京")
+    provinces_en=("Sichuan" "Beijing")
 
+    # 定义运营商类型数组
+    providers=("电信" "移动" "联通")
 
-# 定义运营商类型数组
-providers0=("电信" "移动" "联通")
+    # 基础 URL
+    base_url="https://fofa.info/result?qbase64="
 
-# 定义省份名称数组
-provinces_cn=("四川" "北京" )
-provinces_en=("Sichuan" "Beijing")
+    # 获取数组长度
+    len=${#provinces_cn[@]}
 
+    # 遍历数组
+    for ((i=0; i<len; i++)); do
+        province_cn=${provinces_cn[i]}
+        province_en=${provinces_en[i]}
+        for provider in "${providers[@]}"; do
+            asn=""
+            # 根据运营商设置 ASN
+            if [ "$provider" = "电信" ]; then
+                asn='(asn="4134" || asn="56048" || asn="4813" || asn="4839" || asn="4840" || asn="4841")'
+            elif [ "$provider" = "移动" ]; then
+                asn='(asn="9808" || asn="45935" || asn="56049" || asn="56050" || asn="56051" || asn="56052")'
+            elif [ "$provider" = "联通" ]; then
+                asn='(asn="4837" || asn="4808" || asn="55491" || asn="56047" || asn="56046" || asn="56045" || asn="56044")'
+            else
+                asn='asn=""'  # 如果不是已知运营商，设置为空
+            fi
 
-# 定义运营商类型数组
-providers=("电信" "移动" "联通")
-
-# 基础 URL
-base_url="https://fofa.info/result?qbase64="
-
-# 获取数组长度
-len=${#provinces_cn[@]}
-
-# 遍历数组
-for ((i=0; i<len; i++)); do
-    province_cn=${provinces_cn[i]}
-    province_en=${provinces_en[i]}
-    for provider in "${providers[@]}"; do
-        # 拼接完整的 URL
-        asn=""
-        if [ "$provider" = "电信" ]; then
-            asn='asn="4134"'
-        elif [ "$provider" = "移动" ]; then
-            asn='asn="9808"'
-        else
-            asn='(asn="4837" || asn="4808")'
-        fi
-        # 根据运营商设置 ASN
-if [ "$provider" = "电信" ]; then
-    asn='(asn="4134" || asn="56048" || asn="4813" || asn="4839" || asn="4840" || asn="4841")'
-elif [ "$provider" = "移动" ]; then
-    asn='(asn="9808" || asn="45935" || asn="56049" || asn="56050" || asn="56051" || asn="56052")'
-elif [ "$provider" = "联通" ]; then
-    asn='(asn="4837" || asn="55491" || asn="56047" || asn="56046" || asn="56045" || asn="56044")'
-else
-    asn='asn=""'  # 如果不是已知运营商，设置为空
-fi
-
-        query='"udpxy" && country="CN" && region="'$province_en'" && '$asn' && protocol="http"'
-        url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
-        full_url="${base_url}${url_fofa}"
-        echo "${full_url}"
-        
-        # 假设 get_ip_fofa 是一个函数，用于处理 URL 并保存 IP 到文件
-        # 你需要定义这个函数或确保它已经定义
-        get_ip_fofa "${full_url}" "${province_cn}" "${provider}"
+            query='"udpxy" && country="CN" && region="'$province_en'" && '$asn' && protocol="http"'
+            url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
+            full_url="${base_url}${url_fofa}"
+            echo "${full_url}"
+            
+            # 假设 get_ip_fofa 是一个函数，用于处理 URL 并保存 IP 到文件
+            # 你需要定义这个函数或确保它已经定义
+            get_ip_fofa "${full_url}" "${province_cn}" "${provider}"
+        done
     done
-done
+}
+
+#get_zubo_ip
+make_zubo
