@@ -13,6 +13,17 @@ function get_ip_fofa(){
     ipfile="ip/${province}_${provider}.ip"
     only_good_ip="ip/${province}_${provider}.onlygood.ip"
 
+    # 假设文件名为 file.txt
+    file="rtp/${province}_${provider}.txt"
+    # 取出第一行内容
+    first_line=$(head -n 1 "$file")
+    # 使用逗号分割并提取第二部分（即rtp部分）
+    rtp_part=$(echo "$first_line" | cut -d ',' -f 2)
+    # 将 rtp:// 替换为 rtp/
+    stream=$(echo "$rtp_part" | sed 's/rtp:\/\//rtp\//')
+    # 输出结果
+    echo "$stream"
+
     # 搜索最新 IP
     echo "===============从 fofa 检索【 ${province}_${provider} 】的ip+端口================="
     # 使用 curl 获取内容并保存到变量中
@@ -33,6 +44,13 @@ function get_ip_fofa(){
         if [[ $output == *"succeeded"* ]]; then
             # 将成功的 IP 和端口添加到变量中，每个条目用换行符分隔
             good_ips+="$tmpip"$'\n'
+            
+            echo "************测速开始************"
+            a=$(./speedtest/speed.sh "$tmpip" "$stream")
+            #echo "第 $line_i/$lines 个：$ip $a"
+            echo "$tmpip $a" >> "only_good_ip"
+            echo "************测速结束************"
+            
         fi
     done
 
