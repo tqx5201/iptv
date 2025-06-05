@@ -46,9 +46,9 @@ function get_ip_fofa(){
             good_ips+="$tmpip"$'\n'
             
             echo "************测速开始************"
-            a=$(./speedtest/speed.sh "$tmpip" "$stream")
+            a=$(./speedtest/speed.sh "$tmp_ip" "$stream")
             #echo "第 $line_i/$lines 个：$ip $a"
-            echo "$tmpip $a" >> "only_good_ip"
+            echo "$tmp_ip $a" >> "only_good_ip"
             echo "************测速结束************"
             
         fi
