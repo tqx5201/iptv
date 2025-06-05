@@ -11,7 +11,7 @@ function get_ip_fofa(){
     province=$2
     provider=$3
     ipfile="ip/${province}_${provider}.txt"
-    only_good_ip="ip/${province}_${provider}_speedtest.txt"
+    ip_speedtest="ip/${province}_${provider}_speedtest.txt"
 
     # 假设文件名为 file.txt
     file="rtp/${province}_${provider}.txt"
@@ -46,14 +46,14 @@ function get_ip_fofa(){
             good_ips+="$tmpip"$'\n'
             
             echo "************测速开始************"
-            echo "$tmp_ip $stream"
+            echo "    http://$tmp_ip/$stream"
             if [[ $stream =~ ^rtp ]]; then
                 a=$(./speedtest/speed.sh "$tmp_ip" "$stream")
                 #echo "第 $line_i/$lines 个：$ip $a"
-                echo "    http://$tmp_ip/$a"
-                echo "$tmp_ip $a" >> "$only_good_ip"
+                echo "    ip:$tmp_ip,连接速度:$a"
+                echo "$tmp_ip $a" >> "$ip_speedtest"
             else
-                echo "错误的rtp地址"
+                echo "    错误的rtp地址"
             fi
             echo "************测速结束************"
             
