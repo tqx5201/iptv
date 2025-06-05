@@ -8,7 +8,7 @@ fi
 
 # IPTV 地址
 URL="http://$1/$2"
-echo "$URL"
+#echo "$URL"
 # 输出文件名
 OUTPUT_FILE="temp_video.mp4" 
 
