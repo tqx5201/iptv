@@ -53,8 +53,19 @@ provinces0=(
     "江苏" "浙江" "安徽" "福建" "江西" "山东"
     "河南" "湖北" "湖南" "广东" "广西" "海南"
     "四川" "贵州" "云南" "西藏" "陕西" "甘肃"
-    "青海" "台湾" "内蒙古" "宁夏" "新疆"
+    "青海" "内蒙古" "宁夏" "新疆"
+    "香港" "澳门" "台湾" 
 )
+provinces_en=(
+    "Beijing" "Tianjin" "Shanghai" "Chongqing"
+    "Hebei" "Shanxi" "Liaoning" "Jilin" "Heilongjiang"
+    "Jiangsu" "Zhejiang" "Anhui" "Fujian" "Jiangxi" "Shandong"
+    "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi" "Hainan"
+    "Sichuan" "Guizhou" "Yunnan" "Xizang" "Shaanxi" "Gansu"
+    "Qinghai" "Neimenggu" "Ningxia" "Xinjiang"
+    "Hongkong" "Macor" "Taiwan" 
+)
+
 
 # 定义运营商类型数组
 providers0=("电信" "移动" "联通")
