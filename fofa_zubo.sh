@@ -47,7 +47,7 @@ function get_ip_fofa(){
 
 
 # 定义省份名称数组
-provinces0=(
+provinces_cn=(
     "北京" "天津" "上海" "重庆"
     "河北" "山西" "辽宁" "吉林" "黑龙江"
     "江苏" "浙江" "安徽" "福建" "江西" "山东"
@@ -63,7 +63,7 @@ provinces_en=(
     "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi" "Hainan"
     "Sichuan" "Guizhou" "Yunnan" "Xizang" "Shaanxi" "Gansu"
     "Qinghai" "Neimenggu" "Ningxia" "Xinjiang"
-    "Hongkong" "Macor" "Taiwan" 
+    "HK" "MO" "TW" 
 )
 
 
@@ -72,7 +72,7 @@ providers0=("电信" "移动" "联通")
 
 # 定义省份名称数组
 provinces_cn=("四川" "北京" )
-provinces_en=("Sichuan" "Bejing" )
+provinces_en=("Sichuan" "Beijing")
 
 
 # 定义运营商类型数组
