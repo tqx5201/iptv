@@ -50,7 +50,7 @@ function get_ip_fofa(){
             if [[ $stream =~ ^rtp ]]; then
                 a=$(./speedtest/speed.sh "$tmp_ip" "$stream")
                 #echo "第 $line_i/$lines 个：$ip $a"
-                echo "$tmp_ip $a"
+                echo "    http://$tmp_ip/$a"
                 echo "$tmp_ip $a" >> "$only_good_ip"
             else
                 echo "错误的rtp地址"
