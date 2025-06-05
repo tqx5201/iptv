@@ -42,13 +42,13 @@ function make_zubo(){
 
         rm -rf tmp1.txt tmp2.txt tmp3.txt
 
-        
+
         rm -rf zubo_fofa.txt
         echo "===============合并所有城市的txt文件为:zubo_fofa.txt================="
         output_file="zubo_fofa.txt"
         for file in txt/fofa_*.txt;do
             #filename=$(basename "$file")
-            filename=$(basename "$file" | sed 's/_/-/g' | sed 's/fofa_//g')
+            filename=$(basename "$file" | sed 's/_/-/g' | sed 's/fofa-//g')
             echo "$filename,#genre#" >> "$output_file"
             cat "$file" >> "$output_file"
             echo "" >> "$output_file"
