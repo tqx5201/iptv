@@ -28,7 +28,7 @@ jobs:
       #working-directory: iptv/speedtest
       run: |
         #cd $GITHUB_WORKSPACE/speedtest
-        #chmod +x speed.sh
+        chmod +x ./speedtest/speed.sh
         bash ./fofa_zubo.sh
         
     - name: 缓存运行结果
