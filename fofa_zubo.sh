@@ -10,8 +10,8 @@ function get_ip_fofa(){
     url_fofa=$1
     province=$2
     provider=$3
-    ipfile="ip/${province}_${provider}.ip"
-    only_good_ip="ip/${province}_${provider}.onlygood.ip"
+    ipfile="ip/${province}_${provider}.txt"
+    only_good_ip="ip/${province}_${provider}_speedtest.txt"
 
     # 假设文件名为 file.txt
     file="rtp/${province}_${provider}.txt"
