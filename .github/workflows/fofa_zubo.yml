@@ -21,8 +21,8 @@ jobs:
         #sudo apt-get update
         #sudo apt-get install -y yt-dlp sed nmap
    
-    #- name: Install FFmpeg
-      #run: sudo apt-get update && sudo apt-get install -y ffmpeg
+    - name: Install FFmpeg
+      run: sudo apt-get update && sudo apt-get install -y ffmpeg
       
     - name: 运行脚本
       #working-directory: iptv/speedtest
