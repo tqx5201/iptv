@@ -35,7 +35,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
           name: cache
-          path: speedtest/
+          path: /
           
     - name: 提交更改
       run: |
