@@ -2,8 +2,8 @@
 #在线测试https://www.jyshare.com/compile/18/
 
 # 创建目录
-#rm -rf ip/*
-#mkdir -p ip
+rm -rf ip/*
+mkdir -p ip
 
 rm -rf txt/*
 mkdir -p txt
@@ -144,8 +144,8 @@ function get_zubo_ip(){
     )
 
     # 定义省份名称数组
-    provinces_cn=("四川" "北京")
-    provinces_en=("Sichuan" "Beijing")
+    provinces_cn=("四川" "北京" "上海" "湖南")
+    provinces_en=("Sichuan" "Beijing" "Shanghai" "Hunan")
 
     # 定义运营商类型数组
     providers=("电信" "移动" "联通")
@@ -185,5 +185,5 @@ function get_zubo_ip(){
     done
 }
 
-#get_zubo_ip
+get_zubo_ip
 make_zubo
