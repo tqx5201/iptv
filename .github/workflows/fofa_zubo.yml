@@ -16,12 +16,12 @@ jobs:
     - name: 代码检出
       uses: actions/checkout@v3
       
-    - name: 安装插件
-      run: |
-        sudo apt-get update && sudo apt-get install -y yt-dlp sed nmap
+    #- name: 安装插件
+      #run: |
+        #sudo apt-get update && sudo apt-get install -y yt-dlp sed nmap
    
-    #- name: Install FFmpeg
-      #run: sudo apt-get update && sudo apt-get install -y ffmpeg
+    - name: Install FFmpeg
+      run: sudo apt-get update && sudo apt-get install -y ffmpeg sed
       
     - name: 运行脚本
       #working-directory: iptv/speedtest
