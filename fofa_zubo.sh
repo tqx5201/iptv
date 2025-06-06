@@ -10,15 +10,15 @@ mkdir -p txt
 
 
 function make_zubo(){
-    for tmp_file in ip/*_speedtest.txt;do
+    for tmp_file in ip/*_测速.txt;do
         filename=$(basename "$tmp_file")
         province=$(echo "$filename" | cut -d'_' -f1)
         provider=$(echo "$filename" | cut -d'_' -f2)
-        awk '/M|k/{print $2"  "$1}' "ip/${province}_${provider}_speedtest.txt" | sort -n -r > "ip/${province}_${provider}_speedtest_px.txt"
-        cat "ip/${province}_${provider}_speedtest_px.txt"
-        ip1=$(awk 'NR==1{print $2}' ip/${province}_${provider}_speedtest_px.txt)
-        ip2=$(awk 'NR==2{print $2}' ip/${province}_${provider}_speedtest_px.txt)
-        ip3=$(awk 'NR==3{print $2}' ip/${province}_${provider}_speedtest_px.txt)
+        awk '/M|k/{print $2"  "$1}' "ip/${province}_${provider}_测速.txt" | sort -n -r > "ip/${province}_${provider}_排序.txt"
+        cat "ip/${province}_${provider}_排序.txt"
+        ip1=$(awk 'NR==1{print $2}' ip/${province}_${provider}_排序.txt)
+        ip2=$(awk 'NR==2{print $2}' ip/${province}_${provider}_排序.txt)
+        ip3=$(awk 'NR==3{print $2}' ip/${province}_${provider}_排序.txt)
 
         # 用 3 个最快 ip 生成对应城市的 txt 文件
         template="rtp/${province}_${provider}.txt"
@@ -64,7 +64,7 @@ function get_ip_fofa(){
     province=$2
     provider=$3
     ipfile="ip/${province}_${provider}.txt"
-    ip_speedtest="ip/${province}_${provider}_speedtest.txt"
+    ip_speedtest="ip/${province}_${provider}_测速.txt"
 
     # 假设文件名为 file.txt
     file="rtp/${province}_${provider}.txt"
