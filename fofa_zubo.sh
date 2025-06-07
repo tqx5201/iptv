@@ -103,6 +103,7 @@ function get_ip_fofa(){
     province=$2
     provider=$3
     ipfile="ip/${province}_${provider}.txt"
+    html="ip/${province}_${provider}.html"
     ip_speedtest="ip/${province}_${provider}_测速.txt"
 
     # 假设文件名为 file.txt
@@ -119,14 +120,14 @@ function get_ip_fofa(){
     # 搜索最新 IP
     echo "===============从 fofa 检索【 ${province}_${provider} 】的ip+端口================="
     # 使用 curl 获取内容并保存到变量中
-    response=$(curl -L -s "$url_fofa")
-    echo "$response"
+    #response=$(curl -L -s "$url_fofa")
+    #echo "$response"
     # 使用正则表达式提取IP和端口
-    ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' <<< "$response" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
+    #ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' <<< "$response" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
 
-
-curl -o "html" "$url_fofa"
-ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' "html" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+' > "$ipfile")
+    curl -o "html" "$url_fofa"
+    ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' "html" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
+    
     # 初始化一个变量来存储成功连接的 IP 和端口
     good_ips=""
 
@@ -183,8 +184,8 @@ function get_zubo_ip(){
     )
 
     # 定义省份名称数组
-    provinces_cn=("湖南")
-    provinces_en=("Hunan")
+    #provinces_cn=("湖南")
+    #provinces_en=("Hunan")
 
     # 定义运营商类型数组
     providers=("电信" "移动" "联通")
