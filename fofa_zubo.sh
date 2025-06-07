@@ -9,6 +9,47 @@ rm -rf txt/*
 mkdir -p txt
 
 
+function speed_test(){
+    # IPTV 地址
+    URL="$1"
+    #echo "$URL"
+    # 输出文件名
+    OUTPUT_FILE="temp_video.mp4" 
+
+    # 开始时间
+    START_TIME=$(date +%s)
+
+    # 使用 ffmpeg 下载视频并保存 10 秒  10秒超时
+    ffmpeg -timeout 10000000 -i "$URL" -t 10 -c copy "$OUTPUT_FILE" -y 2>/dev/null
+
+    # 检查 ffmpeg 的退出状态
+    if [ $? -ne 0 ]; then
+        #echo "下载失败，速度为 0 Mb/s"
+        echo "0"
+        exit 0
+    fi
+
+    # 结束时间
+    END_TIME=$(date +%s)
+
+    # 计算下载时长
+    DURATION=$((END_TIME - START_TIME))
+
+    # 获取文件大小（以字节为单位）
+    FILE_SIZE=$(stat -c%s "$OUTPUT_FILE")
+    # 计算下载速度（字节/秒）
+    DOWNLOAD_SPEED=$(echo "scale=2; $FILE_SIZE / $DURATION" | bc)
+    # 将下载速度转换为 Mb/s
+    DOWNLOAD_SPEED_MBPS=$(echo "scale=2; $DOWNLOAD_SPEED * 8 / 1000000" | bc)
+    # 判断 DOWNLOAD_SPEED_MBPS 是否小于 1M，速度太慢的节点不要也罢
+    if (( $(echo "$DOWNLOAD_SPEED_MBPS < 1" | bc -l) )); then
+        DOWNLOAD_SPEED_MBPS=0
+    fi
+
+    # 输出结果
+    echo "$DOWNLOAD_SPEED_MBPS Mb/s"
+}
+
 function make_zubo(){
     for tmp_file in ip/*_测速.txt;do
         filename=$(basename "$tmp_file")
@@ -57,8 +98,6 @@ function make_zubo(){
 
 }
 
-
-
 function get_ip_fofa(){
     url_fofa=$1
     province=$2
@@ -90,33 +129,30 @@ function get_ip_fofa(){
 
     for tmp_ip in $ips; do
         tmpip=$(echo -n "$tmp_ip" | sed 's/:/ /')
-        echo "nc -w 1 -v -z $tmpip 2>&1"
+        echo "  是否可连接：nc -w 1 -v -z $tmpip 2>&1"
         output=$(nc -w 1 -v -z $tmpip 2>&1)
-        echo "$output"
+        echo "  $output"
         # 如果连接成功，且输出包含 "succeeded"，则将结果添加到变量中
         if [[ $output == *"succeeded"* ]]; then
             # 将成功的 IP 和端口添加到变量中，每个条目用换行符分隔
-            good_ips+="$tmpip"$'\n'
+                echo -e "$good_ips"
+                echo -e "$good_ips" >> "$ipfile"
             
-            echo "************测速开始************"
+            echo "  ************测速开始************"
             echo "    http://$tmp_ip/$stream"
             if [[ $stream =~ ^rtp ]]; then
-                a=$(./speedtest/speed.sh "$tmp_ip" "$stream")
+                #a=$(./speedtest/speed.sh "$tmp_ip" "$stream")
+                a=$(speed_test "http://$tmp_ip/$stream")
                 #echo "第 $line_i/$lines 个：$ip $a"
                 echo "    ip:$tmp_ip,连接速度:$a"
                 echo "$tmp_ip $a" >> "$ip_speedtest"
             else
                 echo "    错误的rtp地址"
             fi
-            echo "************测速结束************"
+            echo "  ************测速结束************"
             
         fi
     done
-
-    # 输出成功连接的 IP 和端口
-    echo "===============成功连接的 IP 和端口================="
-    echo -e "$good_ips"
-    echo -e "$good_ips" > "$ipfile"
     echo "===============检索完成================="
     echo ""
     echo ""
@@ -162,16 +198,16 @@ function get_zubo_ip(){
         province_en=${provinces_en[i]}
         for provider in "${providers[@]}"; do
             asn=""
-        # 根据运营商名称设置 ASN 条件
-if [ "$provider" = "电信" ]; then
-    asn='(asn="4134" || asn="4847" || asn="4809" || asn="4812" || asn="4842" || asn="138011" || asn="140330")'
-elif [ "$provider" = "移动" ]; then
-    asn='(asn="9808" || asn="56048" || asn="56049" || asn="56050" || asn="56051" || asn="56052")'
-elif [ "$provider" = "联通" ]; then
-    asn='(asn="4837" || asn="4808" || asn="55491" || asn="56047" || asn="56046" || asn="56045" || asn="56044")'
-else
-    asn='asn=""'  # 如果不是已知运营商，设置为空
-fi
+            # 根据运营商名称设置 ASN 条件
+            if [ "$provider" = "电信" ]; then
+                asn='(asn="4134" || asn="4847" || asn="4809" || asn="4812" || asn="4842" || asn="138011" || asn="140330")'
+            elif [ "$provider" = "移动" ]; then
+                asn='(asn="9808" || asn="56048" || asn="56049" || asn="56050" || asn="56051" || asn="56052")'
+            elif [ "$provider" = "联通" ]; then
+                asn='(asn="17621" || asn="4837" || asn="4808" || asn="55491" || asn="56047" || asn="56046" || asn="56045" || asn="56044")'
+            else
+                asn='asn=""'  # 如果不是已知运营商，设置为空
+            fi
 
             query='"udpxy" && country="CN" && region="'$province_en'" && '$asn' && protocol="http"'
             url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
@@ -180,7 +216,19 @@ fi
             
             # 假设 get_ip_fofa 是一个函数，用于处理 URL 并保存 IP 到文件
             # 你需要定义这个函数或确保它已经定义
+
+            # 开始时间
+            START_TIME=$(date +%s)
+            #获取IP地址
             get_ip_fofa "${full_url}" "${province_cn}" "${provider}"
+            # 结束时间
+            END_TIME=$(date +%s)
+            # 计算下载时长
+            DURATION=$((END_TIME - START_TIME))
+            # 如果时长小于10秒，则暂停
+            if [ $DURATION -lt 10 ]; then
+                sleep $((10 - DURATION))
+            fi
         done
     done
 }
