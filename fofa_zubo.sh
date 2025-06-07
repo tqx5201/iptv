@@ -162,16 +162,16 @@ function get_zubo_ip(){
         province_en=${provinces_en[i]}
         for provider in "${providers[@]}"; do
             asn=""
-            # 根据运营商设置 ASN
-            if [ "$provider" = "电信" ]; then
-                asn='(asn="4134" || asn="56048" || asn="4813" || asn="4839" || asn="4840" || asn="4841")'
-            elif [ "$provider" = "移动" ]; then
-                asn='(asn="9808" || asn="45935" || asn="56049" || asn="56050" || asn="56051" || asn="56052")'
-            elif [ "$provider" = "联通" ]; then
-                asn='(asn="4837" || asn="4808" || asn="55491" || asn="56047" || asn="56046" || asn="56045" || asn="56044")'
-            else
-                asn='asn=""'  # 如果不是已知运营商，设置为空
-            fi
+        # 根据运营商名称设置 ASN 条件
+if [ "$provider" = "电信" ]; then
+    asn='(asn="4134" || asn="4809" || asn="4812" || asn="4842" || asn="138011" || asn="140330")'
+elif [ "$provider" = "移动" ]; then
+    asn='(asn="9808" || asn="56048" || asn="56049" || asn="56050" || asn="56051" || asn="56052")'
+elif [ "$provider" = "联通" ]; then
+    asn='(asn="4837" || asn="4808" || asn="55491" || asn="56047" || asn="56046" || asn="56045" || asn="56044")'
+else
+    asn='asn=""'  # 如果不是已知运营商，设置为空
+fi
 
             query='"udpxy" && country="CN" && region="'$province_en'" && '$asn' && protocol="http"'
             url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
