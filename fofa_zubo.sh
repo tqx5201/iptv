@@ -144,8 +144,8 @@ function get_zubo_ip(){
     )
 
     # 定义省份名称数组
-    provinces_cn=("四川" "北京" "上海" "湖南")
-    provinces_en=("Sichuan" "Beijing" "Shanghai" "Hunan")
+    provinces_cn=("北京" "上海" "湖南")
+    provinces_en=("Beijing" "Shanghai" "Hunan")
 
     # 定义运营商类型数组
     providers=("电信" "移动" "联通")
@@ -164,7 +164,7 @@ function get_zubo_ip(){
             asn=""
         # 根据运营商名称设置 ASN 条件
 if [ "$provider" = "电信" ]; then
-    asn='(asn="4134" || asn="4809" || asn="4812" || asn="4842" || asn="138011" || asn="140330")'
+    asn='(asn="4134" || asn="4847" || asn="4809" || asn="4812" || asn="4842" || asn="138011" || asn="140330")'
 elif [ "$provider" = "移动" ]; then
     asn='(asn="9808" || asn="56048" || asn="56049" || asn="56050" || asn="56051" || asn="56052")'
 elif [ "$provider" = "联通" ]; then
