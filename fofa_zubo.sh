@@ -120,7 +120,7 @@ function get_ip_fofa(){
     echo "===============从 fofa 检索【 ${province}_${provider} 】的ip+端口================="
     # 使用 curl 获取内容并保存到变量中
     response=$(curl -L -s "$url_fofa")
-    #echo "$response"
+    echo "$response"
     # 使用正则表达式提取IP和端口
     ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' <<< "$response" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
 
