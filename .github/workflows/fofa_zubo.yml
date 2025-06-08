@@ -13,6 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: 获取IP
+      id: ip
+      uses: haythem/public-ip@v1.3
+    
+    - name: 显示IP
+      run: |
+        echo "IPv4: ${{ steps.ip.outputs.ipv4 }}"
+        echo "IPv6: ${{ steps.ip.outputs.ipv6 }}"
+
     - name: 代码检出
       uses: actions/checkout@v3
       
