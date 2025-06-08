@@ -217,9 +217,10 @@ function get_zubo_ip(){
             if [ "$provider" = "电信" ]; then
                 asn='(asn="4134" || asn="4847" || asn="4809" || asn="4812" || asn="4842" || asn="138011" || asn="140330")'
             elif [ "$provider" = "移动" ]; then
-                asn='(asn="9808" || asn="56048" || asn="56049" || asn="56050" || asn="56051" || asn="56052")'
+                asn='(asn="9808" || asn="56044" || asn="56045" || asn="56046" || asn="56047"
+ || asn="56048" || asn="56049" || asn="56050" || asn="56051" || asn="56052")'
             elif [ "$provider" = "联通" ]; then
-                asn='(asn="17621" || asn="4837" || asn="4808" || asn="55491" || asn="56047" || asn="56046" || asn="56045" || asn="56044")'
+                asn='(asn="17621" || asn="4837" || asn="4808" || asn="55491")'
             else
                 asn='asn=""'  # 如果不是已知运营商，设置为空
             fi
