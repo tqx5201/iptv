@@ -1,4 +1,8 @@
 #!/bin/bash
+#设置时区
+export TZ=Asia/Shanghai
+
+
 #在线测试https://www.jyshare.com/compile/18/
 
 # 创建目录
@@ -125,8 +129,8 @@ function get_ip_fofa(){
     # 使用正则表达式提取IP和端口
     #ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' <<< "$response" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
 
-    curl -o "html" "$url_fofa"
-    ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' "html" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
+    curl -o "$html" "$url_fofa"
+    ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' "$html" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
     
     # 初始化一个变量来存储成功连接的 IP 和端口
     good_ips=""
@@ -197,7 +201,14 @@ function get_zubo_ip(){
     len=${#provinces_cn[@]}
 
     # 遍历数组
-    for ((i=0; i<len; i++)); do
+    #for ((i=0; i<len; i++)); do
+
+        # 获取当前的小时数（24小时制）
+        current_hour=$(date +"%H")
+
+        # 去掉前导零
+        i=${current_hour#0}
+
         province_cn=${provinces_cn[i]}
         province_en=${provinces_en[i]}
         for provider in "${providers[@]}"; do
@@ -234,7 +245,7 @@ function get_zubo_ip(){
                 sleep $((10 - DURATION))
             fi
         done
-    done
+    #done
 }
 
 get_zubo_ip
