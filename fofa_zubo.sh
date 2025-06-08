@@ -93,7 +93,7 @@ function make_zubo(){
         output_file="zubo_fofa.txt"
         for file in txt/fofa_*.txt;do
             #filename=$(basename "$file")
-            filename=$(basename "$file" | sed 's/_/-/g' | sed 's/fofa-//g')
+            filename=$(basename "$file" | sed 's/_/-/g' | sed 's/fofa-//g' | sed 's/.txt//g')
             echo "$filename,#genre#" >> "$output_file"
             cat "$file" >> "$output_file"
             echo "" >> "$output_file"
