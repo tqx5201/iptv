@@ -194,7 +194,7 @@ function get_zubo_ip(){
         "Jiangsu" "Zhejiang" "Anhui" "Fujian" "Jiangxi" "Shandong"
         "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi" "Hainan"
         "Sichuan" "Guizhou" "Yunnan" "Xizang" "Shaanxi" "Gansu"
-        "Qinghai" "Neimenggu" "Ningxia Huizu" "Xinjiang Uygur"
+        "Qinghai" "Nei Mongol" "Ningxia Huizu" "Xinjiang Uygur"
         "HK" "MO" "TW" 
     )
 
