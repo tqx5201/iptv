@@ -60,6 +60,11 @@ function make_zubo(){
         province=$(echo "$filename" | cut -d'_' -f1)
         provider=$(echo "$filename" | cut -d'_' -f2)
         awk '/M|k/{print $2"  "$1}' "ip/${province}_${provider}_测速.txt" | sort -n -r > "ip/${province}_${provider}_排序.txt"
+        if [ ! -s "ip/${province}_${provider}_排序.txt" ]; then
+            echo "排序文件 $sorted_file 为空，可能没有符合条件的行"
+            continue
+        fi
+
         cat "ip/${province}_${provider}_排序.txt"
         ip1=$(awk 'NR==1{print $2}' ip/${province}_${provider}_排序.txt)
         ip2=$(awk 'NR==2{print $2}' ip/${province}_${provider}_排序.txt)
@@ -86,18 +91,17 @@ function make_zubo(){
         } > "txt/fofa_${province}_${provider}.txt"
 
         rm -rf tmp1.txt tmp2.txt tmp3.txt
+    done
 
-
-        rm -rf zubo_fofa.txt
-        echo "===============合并所有城市的txt文件为:zubo_fofa.txt================="
-        output_file="zubo_fofa.txt"
-        for file in txt/fofa_*.txt;do
-            #filename=$(basename "$file")
-            filename=$(basename "$file" | sed 's/_/-/g' | sed 's/fofa-//g' | sed 's/.txt//g')
-            echo "$filename,#genre#" >> "$output_file"
-            cat "$file" >> "$output_file"
-            echo "" >> "$output_file"
-        done
+    rm -rf zubo_fofa.txt
+    echo "===============合并所有城市的txt文件为:zubo_fofa.txt================="
+    output_file="zubo_fofa.txt"
+    for file in txt/fofa_*.txt;do
+        #filename=$(basename "$file")
+        filename=$(basename "$file" | sed 's/_/-/g' | sed 's/fofa-//g' | sed 's/.txt//g')
+        echo "$filename,#genre#" >> "$output_file"
+        cat "$file" >> "$output_file"
+        echo "" >> "$output_file"
     done
 
 }
