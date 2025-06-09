@@ -97,6 +97,10 @@ function make_zubo(){
     echo "===============合并所有城市的txt文件为:zubo_fofa.txt================="
     output_file="zubo_fofa.txt"
     for file in txt/fofa_*.txt;do
+        if [ ! -s "${file}" ]; then
+            echo "排序文件为空，可能没有符合条件的行"
+            continue
+        fi
         #filename=$(basename "$file")
         filename=$(basename "$file" | sed 's/_/-/g' | sed 's/fofa-//g' | sed 's/.txt//g')
         echo "$filename,#genre#" >> "$output_file"
@@ -255,5 +259,5 @@ function get_zubo_ip(){
     #done
 }
 
-get_zubo_ip
+#get_zubo_ip
 make_zubo
