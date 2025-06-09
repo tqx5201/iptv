@@ -235,7 +235,7 @@ function get_zubo_ip(){
             asn=""
             # 根据运营商名称设置 ASN 条件
             if [ "$provider" = "电信" ]; then
-                asn='(asn="4134" || asn="4847" || asn="4809" || asn="4812" || asn="4842" || asn="138011" || asn="140330")'
+                asn='(asn="4134" || asn="4847" || asn="4809" || asn="4812" || asn="4842" || asn="138011" || asn="140330" || asn="140061")'
             elif [ "$provider" = "移动" ]; then
                 asn='(asn="9808" || asn="56044" || asn="56045" || asn="56046" || asn="56047"
  || asn="56048" || asn="56049" || asn="56050" || asn="56051" || asn="56052")'
