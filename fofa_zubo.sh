@@ -216,9 +216,18 @@ function get_zubo_ip(){
 
         # 获取当前的小时数（24小时制）
         current_hour=$(date +"%H")
-
         # 去掉前导零
-        i=${current_hour#0}
+        current_hour=${current_hour#0}
+        current_day=$(date +"%d")
+        # 根据日期的奇偶性决定起始索引
+        if (( current_day % 2 == 1 )); then  # 奇数天
+            start_index=0
+        else  # 偶数天
+            start_index=24
+        fi
+
+        # 计算当前取出的数据索引
+        i=$(( (start_index + current_hour) % len ))
 
         province_cn=${provinces_cn[i]}
         province_en=${provinces_en[i]}
