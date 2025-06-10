@@ -274,7 +274,7 @@ function get_zubo_ip(){
     
         # 计算当前取出的数据索引
         i=$(( (start_index + current_hour) % len ))
-
+        echo "正在获取第$i个"
         province_cn=${provinces_cn[i]}
         province_en=${provinces_en[i]}
         for provider in "${providers[@]}"; do
