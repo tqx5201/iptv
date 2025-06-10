@@ -179,32 +179,9 @@ function get_ip_fofa(){
 
 function get_zubo_ip_day_hour(){
     # 定义省份名称数组
-    provinces_cn=(
-        "北京" "天津" "上海" "重庆"
-        "河北" "山西" "辽宁" "吉林" "黑龙江"
-        "江苏" "浙江" "安徽" "福建" "江西" "山东"
-        "河南" "湖北" "湖南" "广东" "广西" "海南"
-        "四川" "贵州" "云南" "西藏" "陕西" "甘肃"
-        "青海" "内蒙古" "宁夏" "新疆"
-    )
-        #"香港" "澳门" "台湾" )
-    provinces_en=(
-        "Beijing" "Tianjin" "Shanghai" "Chongqing"
-        "Hebei" "Shanxi" "Liaoning" "Jilin" "Heilongjiang"
-        "Jiangsu" "Zhejiang" "Anhui" "Fujian" "Jiangxi" "Shandong"
-        "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi Zhuangzu" "Hainan"
-        "Sichuan" "Guizhou" "Yunnan" "Xizang" "Shaanxi" "Gansu"
-        "Qinghai" "Nei Mongol" "Ningxia Huizu" "Xinjiang Uygur"
-    )    
-        #"HK" "MO" "TW" )
-
-    # 定义省份名称数组
-    #provinces_cn=("湖南")
-    #provinces_en=("Hunan")
-
-    # 定义运营商类型数组
-    #providers=("电信" "移动" "联通")
-    providers=("电信")
+    provinces_cn=$1
+    provinces_en=$2
+    providers=$3
     # 基础 URL
     base_url="https://fofa.info/result?qbase64="
 
@@ -272,32 +249,9 @@ function get_zubo_ip_day_hour(){
 
 function get_zubo_ip(){
     # 定义省份名称数组
-    provinces_cn=(
-        "北京" "天津" "上海" "重庆"
-        "河北" "山西" "辽宁" "吉林" "黑龙江"
-        "江苏" "浙江" "安徽" "福建" "江西" "山东"
-        "河南" "湖北" "湖南" "广东" "广西" "海南"
-        "四川" "贵州" "云南" "西藏" "陕西" "甘肃"
-        "青海" "内蒙古" "宁夏" "新疆"
-    )
-        #"香港" "澳门" "台湾" )
-    provinces_en=(
-        "Beijing" "Tianjin" "Shanghai" "Chongqing"
-        "Hebei" "Shanxi" "Liaoning" "Jilin" "Heilongjiang"
-        "Jiangsu" "Zhejiang" "Anhui" "Fujian" "Jiangxi" "Shandong"
-        "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi Zhuangzu" "Hainan"
-        "Sichuan" "Guizhou" "Yunnan" "Xizang" "Shaanxi" "Gansu"
-        "Qinghai" "Nei Mongol" "Ningxia Huizu" "Xinjiang Uygur"
-    )    
-        #"HK" "MO" "TW" )
-
-    # 定义省份名称数组
-    #provinces_cn=("湖南")
-    #provinces_en=("Hunan")
-
-    # 定义运营商类型数组
-    #providers=("电信" "移动" "联通")
-    providers=("电信")
+    provinces_cn=$1
+    provinces_en=$2
+    providers=$3
     # 基础 URL
     base_url="https://fofa.info/result?qbase64="
 
@@ -350,5 +304,34 @@ function get_zubo_ip(){
         done
     done
 }
-get_zubo_ip
+
+
+# 定义省份名称数组
+    provinces_cn=(
+        "北京" "天津" "上海" "重庆"
+        "河北" "山西" "辽宁" "吉林" "黑龙江"
+        "江苏" "浙江" "安徽" "福建" "江西" "山东"
+        "河南" "湖北" "湖南" "广东" "广西" "海南"
+        "四川" "贵州" "云南" "西藏" "陕西" "甘肃"
+        "青海" "内蒙古" "宁夏" "新疆"
+    )
+        #"香港" "澳门" "台湾" )
+    provinces_en=(
+        "Beijing" "Tianjin" "Shanghai" "Chongqing"
+        "Hebei" "Shanxi" "Liaoning" "Jilin" "Heilongjiang"
+        "Jiangsu" "Zhejiang" "Anhui" "Fujian" "Jiangxi" "Shandong"
+        "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi Zhuangzu" "Hainan"
+        "Sichuan" "Guizhou" "Yunnan" "Xizang" "Shaanxi" "Gansu"
+        "Qinghai" "Nei Mongol" "Ningxia Huizu" "Xinjiang Uygur"
+    )    
+        #"HK" "MO" "TW" )
+
+    # 定义省份名称数组
+    #provinces_cn=("湖南")
+    #provinces_en=("Hunan")
+
+    # 定义运营商类型数组
+    #providers=("电信" "移动" "联通")
+    providers=("电信")
+get_zubo_ip $provinces_cn $provinces_en $providers
 make_zubo
