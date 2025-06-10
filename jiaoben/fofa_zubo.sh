@@ -259,7 +259,7 @@ function get_zubo_ip(){
     len=${#provinces_cn[@]}
 
     # 遍历数组
-    for ((start_index=0; start_index<4; start_indec++)); do
+    for ((start_index=0; start_index<4; start_index++)); do
         # 获取当前的小时数（24小时制）
         current_hour=$(date +"%H")
         # 去掉前导零
