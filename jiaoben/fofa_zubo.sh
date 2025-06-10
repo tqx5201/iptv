@@ -264,16 +264,15 @@ function get_zubo_ip(){
 
     # 获取数组长度
     len=${#provinces_cn[@]}
-
+    # 获取当前的小时数（24小时制）
+    current_hour=$(date +"%H")
+    # 去掉前导零
+    current_hour=${current_hour#0}
+    
     # 遍历数组
     for ((start_index=0; start_index<4; start_index++)); do
-        # 获取当前的小时数（24小时制）
-        current_hour=$(date +"%H")
-        # 去掉前导零
-        current_hour=${current_hour#0}
-    
         # 计算当前取出的数据索引
-        i=$(( (start_index + current_hour) % len ))
+        i=$(( (start_index + current_hour * 4) % len ))
         echo "正在获取第$i个"
         province_cn=${provinces_cn[i]}
         province_en=${provinces_en[i]}
