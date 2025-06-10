@@ -6,10 +6,10 @@ export TZ=Asia/Shanghai
 #在线测试https://www.jyshare.com/compile/18/
 
 # 创建目录
-rm -rf ip/*
+#rm -rf ip/*
 #mkdir -p ip
 
-rm -rf txt/*
+#rm -rf txt/*
 #mkdir -p txt
 
 
