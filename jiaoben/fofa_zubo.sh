@@ -203,8 +203,8 @@ function get_zubo_ip(){
     #provinces_en=("Hunan")
 
     # 定义运营商类型数组
-    providers=("电信" "移动" "联通")
-
+    #providers=("电信" "移动" "联通")
+    providers=("电信")
     # 基础 URL
     base_url="https://fofa.info/result?qbase64="
 
