@@ -6,10 +6,10 @@ export TZ=Asia/Shanghai
 #在线测试https://www.jyshare.com/compile/18/
 
 # 创建目录
-#rm -rf ip/*
+rm -rf ip/*
 #mkdir -p ip
 
-#rm -rf txt/*
+rm -rf txt/*
 #mkdir -p txt
 
 
@@ -177,7 +177,7 @@ function get_ip_fofa(){
     echo ""
 }
 
-function get_zubo_ip(){
+function get_zubo_ip_day_hour(){
     # 定义省份名称数组
     provinces_cn=(
         "北京" "天津" "上海" "重庆"
@@ -269,5 +269,86 @@ function get_zubo_ip(){
     #done
 }
 
+
+function get_zubo_ip(){
+    # 定义省份名称数组
+    provinces_cn=(
+        "北京" "天津" "上海" "重庆"
+        "河北" "山西" "辽宁" "吉林" "黑龙江"
+        "江苏" "浙江" "安徽" "福建" "江西" "山东"
+        "河南" "湖北" "湖南" "广东" "广西" "海南"
+        "四川" "贵州" "云南" "西藏" "陕西" "甘肃"
+        "青海" "内蒙古" "宁夏" "新疆"
+    )
+        #"香港" "澳门" "台湾" )
+    provinces_en=(
+        "Beijing" "Tianjin" "Shanghai" "Chongqing"
+        "Hebei" "Shanxi" "Liaoning" "Jilin" "Heilongjiang"
+        "Jiangsu" "Zhejiang" "Anhui" "Fujian" "Jiangxi" "Shandong"
+        "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi" "Hainan"
+        "Sichuan" "Guizhou" "Yunnan" "Xizang" "Shaanxi" "Gansu"
+        "Qinghai" "Nei Mongol" "Ningxia Huizu" "Xinjiang Uygur"
+    )    
+        #"HK" "MO" "TW" )
+
+    # 定义省份名称数组
+    #provinces_cn=("湖南")
+    #provinces_en=("Hunan")
+
+    # 定义运营商类型数组
+    #providers=("电信" "移动" "联通")
+    providers=("电信")
+    # 基础 URL
+    base_url="https://fofa.info/result?qbase64="
+
+    # 获取数组长度
+    len=${#provinces_cn[@]}
+
+    # 遍历数组
+    for ((start_index=0; start_index<4; start_indec++)); do
+        # 获取当前的小时数（24小时制）
+        current_hour=$(date +"%H")
+        # 去掉前导零
+        current_hour=${current_hour#0}
+    
+        # 计算当前取出的数据索引
+        i=$(( (start_index + current_hour) % len ))
+
+        province_cn=${provinces_cn[i]}
+        province_en=${provinces_en[i]}
+        for provider in "${providers[@]}"; do
+            asn=""
+            # 根据运营商名称设置 ASN 条件
+            if [ "$provider" = "电信" ]; then
+                asn='(asn="4134" || asn="4847" || asn="4809" || asn="4812" || asn="4842" || asn="138011" || asn="140330" || asn="140061")'
+            elif [ "$provider" = "移动" ]; then
+                asn='(asn="9808" || asn="56044" || asn="56045" || asn="56046" || asn="56047"
+ || asn="56048" || asn="56049" || asn="56050" || asn="56051" || asn="56052")'
+            elif [ "$provider" = "联通" ]; then
+                asn='(asn="17621" || asn="4837" || asn="4808" || asn="55491")'
+            else
+                asn='asn=""'  # 如果不是已知运营商，设置为空
+            fi
+
+            query='"udpxy" && country="CN" && region="'$province_en'" && '$asn' && protocol="http"'
+            url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
+            full_url="${base_url}${url_fofa}"
+            echo "${full_url}"
+
+            # 开始时间
+            START_TIME=$(date +%s)
+            #获取IP地址
+            get_ip_fofa "${full_url}" "${province_cn}" "${provider}"
+            # 结束时间
+            END_TIME=$(date +%s)
+            # 计算下载时长
+            DURATION=$((END_TIME - START_TIME))
+            # 如果时长小于30秒，则暂停
+            if [ $DURATION -lt 30 ]; then
+                sleep $((30 - DURATION))
+            fi
+        done
+    done
+}
 get_zubo_ip
 make_zubo
