@@ -186,8 +186,8 @@ function get_zubo_ip(){
         "河南" "湖北" "湖南" "广东" "广西" "海南"
         "四川" "贵州" "云南" "西藏" "陕西" "甘肃"
         "青海" "内蒙古" "宁夏" "新疆"
-        "香港" "澳门" "台湾" 
     )
+        #"香港" "澳门" "台湾" )
     provinces_en=(
         "Beijing" "Tianjin" "Shanghai" "Chongqing"
         "Hebei" "Shanxi" "Liaoning" "Jilin" "Heilongjiang"
@@ -195,8 +195,8 @@ function get_zubo_ip(){
         "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi" "Hainan"
         "Sichuan" "Guizhou" "Yunnan" "Xizang" "Shaanxi" "Gansu"
         "Qinghai" "Nei Mongol" "Ningxia Huizu" "Xinjiang Uygur"
-        "HK" "MO" "TW" 
-    )
+    )    
+        #"HK" "MO" "TW" )
 
     # 定义省份名称数组
     #provinces_cn=("湖南")
