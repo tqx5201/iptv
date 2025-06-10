@@ -192,7 +192,7 @@ function get_zubo_ip_day_hour(){
         "Beijing" "Tianjin" "Shanghai" "Chongqing"
         "Hebei" "Shanxi" "Liaoning" "Jilin" "Heilongjiang"
         "Jiangsu" "Zhejiang" "Anhui" "Fujian" "Jiangxi" "Shandong"
-        "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi" "Hainan"
+        "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi Zhuangzu" "Hainan"
         "Sichuan" "Guizhou" "Yunnan" "Xizang" "Shaanxi" "Gansu"
         "Qinghai" "Nei Mongol" "Ningxia Huizu" "Xinjiang Uygur"
     )    
@@ -285,7 +285,7 @@ function get_zubo_ip(){
         "Beijing" "Tianjin" "Shanghai" "Chongqing"
         "Hebei" "Shanxi" "Liaoning" "Jilin" "Heilongjiang"
         "Jiangsu" "Zhejiang" "Anhui" "Fujian" "Jiangxi" "Shandong"
-        "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi" "Hainan"
+        "Henan" "Hubei" "Hunan" "Guangdong" "Guangxi Zhuangzu" "Hainan"
         "Sichuan" "Guizhou" "Yunnan" "Xizang" "Shaanxi" "Gansu"
         "Qinghai" "Nei Mongol" "Ningxia Huizu" "Xinjiang Uygur"
     )    
