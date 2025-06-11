@@ -51,9 +51,7 @@ jobs:
                 echo "$filename,#genre#" >> "$output_file"
                 #cat "$file" >> "$output_file"
                 #删除包含#的行
-                #grep -v "#" "$file" >> "$output_file"
-                sed 's/#.*/\n/g' "$file" >> "$output_file"
-                #sed 's/#.*//' "$file" >> "$output_file"
+                sed 's/#.*//' "$file" >> "$output_file"
 
                 echo "" >> "$output_file"
             done
