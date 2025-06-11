@@ -51,7 +51,7 @@ jobs:
                 echo "$filename,#genre#" >> "$output_file"
                 #cat "$file" >> "$output_file"
                 #删除包含#的行
-                 sed '/#/c\\n' "$file" >> "$output_file"
+                sed '/#/c\\n' "$file" >> "$output_file"
 
                 echo "" >> "$output_file"
             done
