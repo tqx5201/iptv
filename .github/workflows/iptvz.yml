@@ -2,7 +2,7 @@ name: 复制iptvz并合并
 
 on:
   schedule:
-    - cron: '0 1,8 * * *'
+    - cron: '0 */8 * * *'
   #push:
     #branches:
       #- main  # 触发工作流的分支
