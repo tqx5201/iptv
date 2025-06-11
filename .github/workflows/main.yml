@@ -1,0 +1,38 @@
+name: Copy Folder from Another Repository
+
+on:
+  push:
+    branches:
+      - main  # 触发工作流的分支
+  workflow_dispatch:  # 也可以手动触发
+
+jobs:
+  copy-folder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout your repository
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+        
+        #q1017673817/iptvz/
+      - name: Clone the source repository
+        run: |
+          git clone --depth 1 https://github.com/q1017673817/iptvz.git source-repo
+          # 替换OWNER和REPOSITORY为源仓库的拥有者和仓库名称
+
+      - name: Copy the desired folder
+        run: |
+          cp -r source-repo/txt ./txt2
+          # 替换PATH/TO/FOLDER为源仓库中的目标文件夹路径
+          # 替换YOUR/DESTINATION为你仓库中要复制到的目标路径
+
+      - name: Commit and push the changes
+        run: |
+          git add .
+          git commit -m "Copy folder from another repository" || true
+          git push origin main
