@@ -27,7 +27,7 @@ jobs:
 
       - name: Copy the desired folder
         run: |
-          cp -r source-repo/txt ./txt2
+          cp -r source-repo/txt ./txt/q1017673817/iptvz
           # 替换PATH/TO/FOLDER为源仓库中的目标文件夹路径
           # 替换YOUR/DESTINATION为你仓库中要复制到的目标路径
 
