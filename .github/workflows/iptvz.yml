@@ -11,21 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout your repository
+      - name: 代码检出
         uses: actions/checkout@v3
 
-      - name: Set up Git
+      - name: 设置Git
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
         
         #q1017673817/iptvz/
-      - name: Clone the source repository
+      - name: 复制源仓库
         run: |
           git clone --depth 1 https://github.com/q1017673817/iptvz.git source-repo
           # 替换OWNER和REPOSITORY为源仓库的拥有者和仓库名称
 
-      - name: Copy the desired folder
+      - name: 复制文件夹
         run: |
           mkdir -p txt/q1017673817/iptvz
           cp -r source-repo/txt ./txt/q1017673817/iptvz
@@ -50,12 +50,12 @@ jobs:
                 filename=$(basename "$file" | sed 's/_/-/g' | sed 's/fofa-//g' | sed 's/.txt//g')
                 echo "$filename,#genre#" >> "$output_file"
                 #cat "$file" >> "$output_file"
-                删除包含#的行
+                #删除包含#的行
                 grep -v "#" "$file" >> "$output_file"
                 echo "" >> "$output_file"
             done
     
-      - name: Commit and push the changes
+      - name: 提交更新
         run: |
           git add .
           git commit -m "Copy folder from another repository" || true
