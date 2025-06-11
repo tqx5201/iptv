@@ -32,6 +32,27 @@ jobs:
           # 替换PATH/TO/FOLDER为源仓库中的目标文件夹路径
           # 替换YOUR/DESTINATION为你仓库中要复制到的目标路径
 
+
+
+      - name: 合并到zubo_iptvz.txt
+        run: |
+            output_file="zubo_iptvz.txt"
+            rm -rf "$output_file"
+            echo "===============合并所有城市的txt文件为:zubo_fofa.txt================="
+            
+            for file in txt/q1017673817/iptvz/txt/*.txt;do
+                if [ ! -s "${file}" ]; then
+                    echo "$file文件为空，不添加"
+                    continue
+                fi
+                echo "添加$file"
+                #filename=$(basename "$file")
+                filename=$(basename "$file" | sed 's/_/-/g' | sed 's/fofa-//g' | sed 's/.txt//g')
+                echo "$filename,#genre#" >> "$output_file"
+                cat "$file" >> "$output_file"
+                echo "" >> "$output_file"
+            done
+    
       - name: Commit and push the changes
         run: |
           git add .
