@@ -74,13 +74,13 @@ function make_zubo(){
         template="rtp/${province}_${provider}.txt"
         #判断ip不为空
         if [ -n "$ip1" ]; then
-            sed "s/rtp:\/\//http:\/\/$ip1\/rtp\//g" "$template" > tmp1.txt
+            sed "s/rtp:\/\//http:\/\/$ip1\/udp\//g" "$template" > tmp1.txt
         fi
         if [ -n "$ip2" ]; then
-            sed "s/rtp:\/\//http:\/\/$ip2\/rtp\//g" "$template" > tmp2.txt
+            sed "s/rtp:\/\//http:\/\/$ip2\/udp\//g" "$template" > tmp2.txt
         fi
         if [ -n "$ip3" ]; then
-            sed "s/rtp:\/\//http:\/\/$ip3\/rtp\//g" "$template" > tmp3.txt
+            sed "s/rtp:\/\//http:\/\/$ip3\/udp\//g" "$template" > tmp3.txt
         fi
         #cat tmp1.txt tmp2.txt tmp3.txt > "txt/fofa_${province}_${provider}.txt"
         # 合并临时文件到最终文件
@@ -127,8 +127,8 @@ function get_ip_fofa(){
     first_line=$(head -n 1 "$file")
     # 使用逗号分割并提取第二部分（即rtp部分）
     rtp_part=$(echo "$first_line" | cut -d ',' -f 2)
-    # 将 rtp:// 替换为 rtp/
-    stream=$(echo "$rtp_part" | sed 's/rtp:\/\//rtp\//')
+    # 将 rtp:// 替换为 udp/
+    stream=$(echo "$rtp_part" | sed 's/rtp:\/\//udp\//')
     # 输出结果
     echo "$stream"
 
