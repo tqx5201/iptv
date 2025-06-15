@@ -149,7 +149,7 @@ function get_ip_fofa(){
     curl -o "$html" "$url_fofa"
     if grep -q '\[-3000\] IP访问异常，疑似为爬虫被暂时禁止访问，登录账号可用。' "$html"; then
         echo "检测到错误信息：IP访问异常，疑似为爬虫被暂时禁止访问。"
-        exit 1
+        #exit 1
     else
         echo "未检测到错误信息。"
     fi
