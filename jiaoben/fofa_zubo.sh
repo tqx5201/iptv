@@ -166,7 +166,7 @@ function get_ip_fofa(){
             
             echo "  ************测速开始************"
             echo "    http://$tmp_ip/$stream"
-            if [[ $stream =~ ^rtp ]]; then
+            if [[ $stream =~ ^udp ]]; then
                 #a=$(./speedtest/speed.sh "$tmp_ip" "$stream")
                 a=$(speed_test "http://$tmp_ip/$stream")
                 #echo "第 $line_i/$lines 个：$ip $a"
