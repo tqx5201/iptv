@@ -54,7 +54,7 @@ function speed_test(){
     echo "$DOWNLOAD_SPEED_MBPS Mb/s"
 }
 
-function make_zubo(){
+function make_zubo_txt(){
     for tmp_file in ip/*_测速.txt;do
         filename=$(basename "$tmp_file")
         province=$(echo "$filename" | cut -d'_' -f1)
@@ -92,11 +92,16 @@ function make_zubo(){
 
         rm -rf tmp1.txt tmp2.txt tmp3.txt
     done
+}
 
+
+function make_zubo_fofa(){
     rm -rf zubo_fofa.txt
     echo "===============合并所有城市的txt文件为:zubo_fofa.txt================="
     output_file="zubo_fofa.txt"
-    for file in txt/fofa_*.txt;do
+    provinces_cn=$1
+for province_cn in "${provinces_cn[@]}"; do
+    for file in txt/fofa_$province_cn_*.txt;do
         if [ ! -s "${file}" ]; then
             echo "$file文件为空，不添加"
             continue
@@ -108,7 +113,7 @@ function make_zubo(){
         cat "$file" >> "$output_file"
         echo "" >> "$output_file"
     done
-
+done
 }
 
 function get_ip_fofa(){
@@ -354,4 +359,5 @@ function get_zubo_ip(){
     #providers=("电信" "移动" "联通")
     providers=("电信")
 get_zubo_ip $provinces_cn $provinces_en $providers
-make_zubo
+make_zubo_txt
+make_zubo_fofa $provinces_cn
