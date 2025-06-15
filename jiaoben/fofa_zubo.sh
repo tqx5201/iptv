@@ -101,7 +101,7 @@ function make_zubo_fofa(){
     output_file="zubo_fofa.txt"
     provinces_cn=$1
 for province_cn in "${provinces_cn[@]}"; do
-    for file in txt/fofa_"{$province_cn}_*.txt;do
+    for file in txt/fofa_"{$province_cn}"_*.txt;do
         #file=txt/fofa_"${province_cn}"_电信.txt
         if [ ! -s "${file}" ]; then
             echo "$file文件为空，不添加"
