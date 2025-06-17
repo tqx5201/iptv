@@ -61,7 +61,7 @@ function make_zubo_txt(){
         provider=$(echo "$filename" | cut -d'_' -f2)
         awk '/M|k/{print $2"  "$1}' "ip/${province}_${provider}_测速.txt" | sort -n -r > "ip/${province}_${provider}_排序.txt"
         if [ ! -s "ip/${province}_${provider}_排序.txt" ]; then
-            echo "排序文件 $sorted_file 为空，可能没有符合条件的行"
+            echo "${province}_${provider}排序文件 $sorted_file 为空，可能没有符合条件的行"
             continue
         fi
 
