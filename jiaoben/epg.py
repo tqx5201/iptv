@@ -50,7 +50,39 @@ def extract_channels_from_url(url):
         print(f"请求失败: {e}")
         return []
 
+def format_programme(programme):
+    """
+    格式化 programme 元素。
 
+    :param programme: ElementTree.Element 对象，表示 programme 元素
+    """
+    # 确保 start 和 stop 属性是有效的日期时间格式
+    start = programme.get('start')
+    stop = programme.get('stop')
+    if start:
+        # 假设 start 是一个 ISO 8601 格式的日期时间字符串
+        # 这里可以根据需要进行进一步的验证或转换
+        programme.set('start', start)
+    if stop:
+        # 假设 stop 是一个 ISO 8601 格式的日期时间字符串
+        # 这里可以根据需要进行进一步的验证或转换
+        programme.set('stop', stop)
+
+    # 添加 title 子元素，如果它不存在
+    title = programme.find('title')
+    if title is None:
+        title = ET.SubElement(programme, 'title')
+        title.text = '未知标题'
+
+    # 更新 desc 子元素的文本内容
+    desc = programme.find('desc')
+    if desc is None:
+        desc = ET.SubElement(programme, 'desc')
+        desc.text = '无描述'
+    else:
+        desc.text = desc.text.strip()  # 去除多余的空白字符
+
+    return programme
 
 def merge_xmltv_files(input_urls,output_file, display_name_file, channel_url):
     # 收集我需要的名称
@@ -106,7 +138,7 @@ def merge_xmltv_files(input_urls,output_file, display_name_file, channel_url):
                 # 判断channel的display-name是否在channels中
                 if channel_display_name in channels:
                     programme_keys.add(programme_key)
-                    root.append(programme)
+                    root.append(format_programme(programme))
 
     # 写入到输出文件
     tree = ET.ElementTree(root)
