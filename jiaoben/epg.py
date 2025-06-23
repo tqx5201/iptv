@@ -9,14 +9,17 @@ def download_xmltv(url):
     :return: ElementTree对象
     """
     try:
-        response = requests.get(url)
+        response = requests.get(url,timeout=10)
         response.raise_for_status()  # 检查请求是否成功
         return ET.fromstring(response.content)
     except requests.RequestException as e:
         print(f"下载文件 {url} 时出错: {e}")
         return None
 
-def merge_xmltv_files(output_file, display_name_file, input_urls):
+def merge_xmltv_files(input_urls,output_file, display_name_file, channel_url):
+    # 收集我需要的名称
+    channels = extract_channels_from_url(channel_url)
+    print(channels)
     """
     合并多个XMLTV文件到一个文件中，并将唯一的display-name写入文本文件。
     
@@ -39,6 +42,7 @@ def merge_xmltv_files(output_file, display_name_file, input_urls):
 
     # 遍历所有输入文件
     for url in input_urls:
+        print(f"正在获取{url}的数据")
         temp_tree = download_xmltv(url)
         if temp_tree is None:
             continue
@@ -46,7 +50,7 @@ def merge_xmltv_files(output_file, display_name_file, input_urls):
         # 合并<channel>元素
         for channel in temp_tree.findall('channel'):
             for display_name in channel.findall('display-name'):
-                if display_name.text and display_name.text not in display_names:
+                if display_name.text and display_name.text in channels and display_name.text not in display_names:
                     display_names.add(display_name.text)
                     existing_channel = next((c for c in root.findall('channel') if c.find('display-name').text == display_name.text), None)
                     if existing_channel is None:
@@ -75,6 +79,44 @@ def merge_xmltv_files(output_file, display_name_file, input_urls):
             f.write(display_name + '\n')
     print(f"唯一的display-name已保存到 {display_name_file}")
 
+import requests
+
+def extract_channels_from_url(url):
+    """
+    从指定的网络地址获取内容，并提取频道名称。
+    去除空行和含有"#genre#"的行。
+
+    :param url: 网络地址
+    :return: 频道名称列表
+    """
+    try:
+        # 发送请求获取内容
+        response = requests.get(url)
+        response.encoding = 'utf-8'  # 确保正确处理文本编码
+
+        # 初始化一个空列表来存储频道名称
+        channels = []
+
+        # 按行处理内容
+        for line in response.text.splitlines():
+            # 去除行首和行尾的空白字符
+            line = line.strip()
+            # 判断是否为空行或包含"#genre#"，如果不是，则添加到频道列表中
+            if line and "#genre#" not in line:
+                # 假设频道名称在逗号之前
+                channel_name = line.split(',')[0]
+                channels.append(channel_name)
+        
+        print("ok")
+        return channels
+
+    except requests.RequestException as e:
+        print(f"请求失败: {e}")
+        return []
+
+# 示例调用
+channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
+
 
 # 定义输入网址和输出文件路径
     
@@ -91,4 +133,4 @@ output_file = "e.xml"
 display_name_file = "display_names.txt"
 
 # 调用函数
-merge_xmltv_files(output_file, display_name_file, input_urls)
+merge_xmltv_files(input_urls,output_file, display_name_file, channel_url)
