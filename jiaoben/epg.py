@@ -116,7 +116,7 @@ def merge_xmltv_files(input_urls,output_file, display_name_file, channel_url):
         return
 
     # 初始化根元素
-    root = ET.Element('tv', attrib={'generator-info-name': 'My EPG Generator', 'generator-info-url': '<url id="d1cjg02vtfelsas39b2g" type="url" status="parsed" title="Example Domain" wc="173">http://example.com</url>'})
+    root = ET.Element('tv', attrib={'generator-info-name': 'My EPG Generator', 'generator-info': 'TXPP'})
 
     # 用于存储display-name的集合，避免重复
     display_names = set()
