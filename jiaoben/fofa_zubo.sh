@@ -296,7 +296,24 @@ function get_zubo_ip(){
                 asn='asn=""'  # 如果不是已知运营商，设置为空
             fi
 
-            query='"udpxy" && country="CN" && region="'$province_en'" && '$asn' && protocol="http"'
+
+if [ "$provider" == "联通" ]; then
+    isp_en="cucc"
+    if [ "$province_cn" == "北京" ]; then
+        org="China Unicom Beijing Province Network"
+    else
+        org="CHINA UNICOM China169 Backbone"
+    fi
+elif [ "$provider" == "电信" ]; then
+    org="Chinanet"
+    isp_en="ctcc"
+elif [ "$provider" == "移动" ]; then
+    org="China Mobile communications corporation"
+    isp_en="cmcc"
+fi
+
+
+            query='"udpxy" && country="CN" && region="'$province_en'" && org="'$org'" && protocol="http"'
             url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
             full_url="${base_url}${url_fofa}"
             echo "${full_url}"
