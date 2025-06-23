@@ -50,42 +50,40 @@ def extract_channels_from_url(url):
         print(f"请求失败: {e}")
         return []
 
+
 def format_programme(programme):
     """
-    格式化 programme 元素。
+    格式化 programme 元素，并返回一个新的 programme 元素。
 
-    :param programme: ElementTree.Element 对象，表示 programme 元素
+    :param programme: ElementTree.Element 对象，表示原始的 programme 元素
+    :return: ElementTree.Element 对象，表示格式化后的新 programme 元素
     """
-    # 确保 start 和 stop 属性是有效的日期时间格式
-    start = programme.get('start')
-    stop = programme.get('stop')
-    if start:
-        # 假设 start 是一个 ISO 8601 格式的日期时间字符串
-        # 这里可以根据需要进行进一步的验证或转换
-        programme.set('start', start)
-    if stop:
-        # 假设 stop 是一个 ISO 8601 格式的日期时间字符串
-        # 这里可以根据需要进行进一步的验证或转换
-        programme.set('stop', stop)
+    # 创建一个新的 programme 元素
+    new_programme = ET.Element('programme')
 
-    # 添加 title 子元素，如果它不存在
+    # 复制原始 programme 的属性
+    new_programme.set('start', programme.get('start', ''))
+    new_programme.set('stop', programme.get('stop', ''))
+    new_programme.set('channel', programme.get('channel', ''))
+
+    # 添加 title 子元素
     title = programme.find('title')
-    if title is None:
-        title = ET.SubElement(programme, 'title')
-        title.text = '未知标题'
-
-    # 更新 desc 子元素的文本内容
-    desc = programme.find('desc')
-    if desc is None:
-        desc = ET.SubElement(programme, 'desc')
-        desc.text = '无描述'
+    new_title = ET.SubElement(new_programme, 'title')
+    if title is not None and title.text is not None:
+        new_title.text = title.text.strip()
     else:
-        if desc.text is not None:
-            desc.text = desc.text.strip()  # 去除多余的空白字符
-        else:
-            desc.text = '无描述'  # 如果 desc.text 是 None，则设置默认值
-        
-    return programme
+        new_title.text = '未知标题'
+
+    # 添加 desc 子元素
+    desc = programme.find('desc')
+    new_desc = ET.SubElement(new_programme, 'desc')
+    if desc is not None and desc.text is not None:
+        new_desc.text = desc.text.strip()
+    else:
+        new_desc.text = '无描述'
+
+    return new_programme
+
 
 def merge_xmltv_files(input_urls,output_file, display_name_file, channel_url):
     # 收集我需要的名称
