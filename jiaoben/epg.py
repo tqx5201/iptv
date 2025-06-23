@@ -87,14 +87,14 @@ def merge_xmltv_files(output_file, channel_id_file, input_urls):
 
 epg_urls = [
     "http://epg.51zmt.top:8000/e.xml",
-    #"https://e.erw.cc/e.xml",
-    "https://ghfast.top/https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
-    #"https://assets.livednow.com/epg.xml",
-    #"https://epg.pw/xmltv/epg_CN.xml",
-    #"https://epg.pw/xmltv/epg_HK.xml",
+    "https://e.erw.cc/e.xml",
+    "https://ghfast.top/https://raw.bgithub.xyz/fanmingming/live/main/e.xml",
+    "https://assets.livednow.com/epg.xml",
+    "https://epg.pw/xmltv/epg_CN.xml",
+    "https://epg.pw/xmltv/epg_HK.xml",
     "https://epg.pw/xmltv/epg_TW.xml"
 ]
-output_file = "output.xml"
+output_file = "e.xml"
 channel_id_file = "channel_ids.txt"
 
 # 调用函数
