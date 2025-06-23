@@ -85,7 +85,8 @@ def format_programme(programme):
         new_title.text = title.text.strip()
     else:
         new_title.text = '未知标题'
-"""
+        
+    """
     # 添加 desc 子元素
     desc = programme.find('desc')
     new_desc = ET.SubElement(new_programme, 'desc')
@@ -93,7 +94,8 @@ def format_programme(programme):
         new_desc.text = desc.text.strip()
     else:
         new_desc.text = '无描述'
-"""
+    """
+    
     return new_programme
 
 
