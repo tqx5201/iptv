@@ -80,8 +80,11 @@ def format_programme(programme):
         desc = ET.SubElement(programme, 'desc')
         desc.text = '无描述'
     else:
-        desc.text = desc.text.strip()  # 去除多余的空白字符
-
+        if desc.text is not None:
+            desc.text = desc.text.strip()  # 去除多余的空白字符
+        else:
+            desc.text = '无描述'  # 如果 desc.text 是 None，则设置默认值
+        
     return programme
 
 def merge_xmltv_files(input_urls,output_file, display_name_file, channel_url):
