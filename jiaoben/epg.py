@@ -16,10 +16,46 @@ def download_xmltv(url):
         print(f"下载文件 {url} 时出错: {e}")
         return None
 
+
+def extract_channels_from_url(url):
+    """
+    从指定的网络地址获取内容，并提取频道名称。
+    去除空行和含有"#genre#"的行。
+
+    :param url: 网络地址
+    :return: 频道名称列表
+    """
+    try:
+        # 发送请求获取内容
+        response = requests.get(url)
+        response.encoding = 'utf-8'  # 确保正确处理文本编码
+
+        # 初始化一个空列表来存储频道名称
+        channels = []
+
+        # 按行处理内容
+        for line in response.text.splitlines():
+            # 去除行首和行尾的空白字符
+            line = line.strip()
+            # 判断是否为空行或包含"#genre#"，如果不是，则添加到频道列表中
+            if line and "#genre#" not in line:
+                # 假设频道名称在逗号之前
+                channel_name = line.split(',')[0]
+                channels.append(channel_name)
+        
+        print("获取我的频道成功")
+        return channels
+
+    except requests.RequestException as e:
+        print(f"请求失败: {e}")
+        return []
+
+
+
 def merge_xmltv_files(input_urls,output_file, display_name_file, channel_url):
     # 收集我需要的名称
     channels = extract_channels_from_url(channel_url)
-    print(channels)
+    #print(channels)
     """
     合并多个XMLTV文件到一个文件中，并将唯一的display-name写入文本文件。
     
@@ -32,7 +68,7 @@ def merge_xmltv_files(input_urls,output_file, display_name_file, channel_url):
         return
 
     # 初始化根元素
-    root = ET.Element('tv', attrib={'generator-info-name': 'My EPG Generator', 'generator-info-url': 'http://example.com'})
+    root = ET.Element('tv', attrib={'generator-info-name': 'My EPG Generator', 'generator-info-url': '<url id="d1cjg02vtfelsas39b2g" type="url" status="parsed" title="Example Domain" wc="173">http://example.com</url>'})
 
     # 用于存储display-name的集合，避免重复
     display_names = set()
@@ -65,8 +101,12 @@ def merge_xmltv_files(input_urls,output_file, display_name_file, channel_url):
         for programme in temp_tree.findall('programme'):
             programme_key = (programme.get('start'), programme.get('channel'))
             if programme_key and programme_key not in programme_keys:
-                programme_keys.add(programme_key)
-                root.append(programme)
+                # 获取programme对应的channel的display-name
+                channel_display_name = next((c.find('display-name').text for c in root.findall('channel') if c.get('id') == programme.get('channel')), None)
+                # 判断channel的display-name是否在channels中
+                if channel_display_name in channels:
+                    programme_keys.add(programme_key)
+                    root.append(programme)
 
     # 写入到输出文件
     tree = ET.ElementTree(root)
@@ -79,40 +119,6 @@ def merge_xmltv_files(input_urls,output_file, display_name_file, channel_url):
             f.write(display_name + '\n')
     print(f"唯一的display-name已保存到 {display_name_file}")
 
-import requests
-
-def extract_channels_from_url(url):
-    """
-    从指定的网络地址获取内容，并提取频道名称。
-    去除空行和含有"#genre#"的行。
-
-    :param url: 网络地址
-    :return: 频道名称列表
-    """
-    try:
-        # 发送请求获取内容
-        response = requests.get(url)
-        response.encoding = 'utf-8'  # 确保正确处理文本编码
-
-        # 初始化一个空列表来存储频道名称
-        channels = []
-
-        # 按行处理内容
-        for line in response.text.splitlines():
-            # 去除行首和行尾的空白字符
-            line = line.strip()
-            # 判断是否为空行或包含"#genre#"，如果不是，则添加到频道列表中
-            if line and "#genre#" not in line:
-                # 假设频道名称在逗号之前
-                channel_name = line.split(',')[0]
-                channels.append(channel_name)
-        
-        print("ok")
-        return channels
-
-    except requests.RequestException as e:
-        print(f"请求失败: {e}")
-        return []
 
 # 示例调用
 channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
@@ -122,8 +128,8 @@ channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
     
 input_urls = [
     "http://epg.51zmt.top:8000/e.xml",
-    "https://e.erw.cc/e.xml",
-    "https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
+    #"https://e.erw.cc/e.xml",
+    #"https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
     "https://assets.livednow.com/epg.xml",
     "https://epg.pw/xmltv/epg_CN.xml",
     "https://epg.pw/xmltv/epg_HK.xml",
