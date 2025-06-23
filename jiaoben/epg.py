@@ -85,7 +85,7 @@ def format_programme(programme):
         new_title.text = title.text.strip()
     else:
         new_title.text = '未知标题'
-
+"""
     # 添加 desc 子元素
     desc = programme.find('desc')
     new_desc = ET.SubElement(new_programme, 'desc')
@@ -93,7 +93,7 @@ def format_programme(programme):
         new_desc.text = desc.text.strip()
     else:
         new_desc.text = '无描述'
-
+"""
     return new_programme
 
 
@@ -175,7 +175,7 @@ channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
 input_urls = [
     "http://epg.51zmt.top:8000/e.xml",
     #"https://e.erw.cc/e.xml",
-    #"https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
+    #"https://raw.bgithub.xyz/fanmingming/live/main/e.xml",
     "https://assets.livednow.com/epg.xml",
     "https://epg.pw/xmltv/epg_CN.xml",
     "https://epg.pw/xmltv/epg_HK.xml",
