@@ -61,9 +61,21 @@ def format_programme(programme):
     # 创建一个新的 programme 元素
     new_programme = ET.Element('programme')
 
-    # 复制原始 programme 的属性
-    new_programme.set('start', programme.get('start', ''))
-    new_programme.set('stop', programme.get('stop', ''))
+    # 获取原始的 start 和 stop 属性，并去掉时区偏移量
+    start = programme.get('start', '').split()[0]  # 只取前面部分
+    stop = programme.get('stop', '').split()[0]   # 只取前面部分
+
+    # 转换 start 时间
+    if start:
+        new_start = start + ' +0800'
+        new_programme.set('start', new_start)
+
+    # 转换 stop 时间
+    if stop:
+        new_stop = stop + ' +0800'
+        new_programme.set('stop', new_stop)
+
+    # 添加 channel 属性
     new_programme.set('channel', programme.get('channel', ''))
 
     # 添加 title 子元素
@@ -83,6 +95,7 @@ def format_programme(programme):
         new_desc.text = '无描述'
 
     return new_programme
+
 
 
 def merge_xmltv_files(input_urls,output_file, display_name_file, channel_url):
