@@ -16,86 +16,79 @@ def download_xmltv(url):
         print(f"下载文件 {url} 时出错: {e}")
         return None
 
-def merge_xmltv_files(output_file, channel_id_file, input_urls):
+def merge_xmltv_files(output_file, display_name_file, input_urls):
     """
-    合并多个XMLTV文件到一个文件中，并将channel ID写入文本文件。
+    合并多个XMLTV文件到一个文件中，并将唯一的display-name写入文本文件。
     
     :param output_file: 输出文件路径
-    :param channel_id_file: 保存channel ID的文本文件路径
+    :param display_name_file: 保存唯一display-name的文本文件路径
     :param input_urls: 输入文件网址列表
     """
-    # 下载并解析第一个文件，作为基础结构
     if not input_urls:
         print("没有输入网址。")
         return
-    
-    first_url = input_urls[0]
-    first_tree = download_xmltv(first_url)
-    if first_tree is None:
-        print("无法下载或解析第一个文件。")
-        return
-    
-    root = first_tree
-    
-    # 用于存储channel ID和programme的集合，避免重复
-    channel_ids = set()
+
+    # 初始化根元素
+    root = ET.Element('tv', attrib={'generator-info-name': 'My EPG Generator', 'generator-info-url': 'http://example.com'})
+
+    # 用于存储display-name的集合，避免重复
+    display_names = set()
+
+    # 用于存储programme的集合，避免重复
     programme_keys = set()
-    
-    # 从第一个文件中提取channel ID和programme
-    for channel in root.findall('channel'):
-        channel_id = channel.get('id')
-        if channel_id:
-            channel_ids.add(channel_id)
-    
-    for programme in root.findall('programme'):
-        programme_key = (programme.get('start'), programme.get('channel'))
-        if programme_key:
-            programme_keys.add(programme_key)
-    
-    # 遍历其余的网址并合并
-    for url in input_urls[1:]:
+
+    # 遍历所有输入文件
+    for url in input_urls:
         temp_tree = download_xmltv(url)
         if temp_tree is None:
             continue
-        
+
         # 合并<channel>元素
         for channel in temp_tree.findall('channel'):
-            channel_id = channel.get('id')
-            if channel_id and channel_id not in channel_ids:
-                channel_ids.add(channel_id)
-                root.append(channel)
-        
+            for display_name in channel.findall('display-name'):
+                if display_name.text and display_name.text not in display_names:
+                    display_names.add(display_name.text)
+                    existing_channel = next((c for c in root.findall('channel') if c.find('display-name').text == display_name.text), None)
+                    if existing_channel is None:
+                        root.append(channel)
+                    else:
+                        # 合并其他信息，例如 icon 和 url
+                        for child in channel:
+                            if child.tag not in [c.tag for c in existing_channel]:
+                                existing_channel.append(child)
+
         # 合并<programme>元素
         for programme in temp_tree.findall('programme'):
             programme_key = (programme.get('start'), programme.get('channel'))
             if programme_key and programme_key not in programme_keys:
                 programme_keys.add(programme_key)
                 root.append(programme)
-    
+
     # 写入到输出文件
     tree = ET.ElementTree(root)
     tree.write(output_file, encoding='utf-8', xml_declaration=True)
     print(f"合并完成，结果已保存到 {output_file}")
-    
-    # 将channel ID写入文本文件
-    with open(channel_id_file, 'w', encoding='utf-8') as f:
-        for channel_id in sorted(channel_ids):
-            f.write(channel_id + '\n')
-    print(f"Channel ID已保存到 {channel_id_file}")
+
+    # 将唯一的display-name写入文本文件
+    with open(display_name_file, 'w', encoding='utf-8') as f:
+        for display_name in sorted(display_names):
+            f.write(display_name + '\n')
+    print(f"唯一的display-name已保存到 {display_name_file}")
+
 
 # 定义输入网址和输出文件路径
-
-epg_urls = [
+    
+input_urls = [
     "http://epg.51zmt.top:8000/e.xml",
     "https://e.erw.cc/e.xml",
-    "https://ghfast.top/https://raw.bgithub.xyz/fanmingming/live/main/e.xml",
+    "https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
     "https://assets.livednow.com/epg.xml",
     "https://epg.pw/xmltv/epg_CN.xml",
     "https://epg.pw/xmltv/epg_HK.xml",
     "https://epg.pw/xmltv/epg_TW.xml"
 ]
 output_file = "e.xml"
-channel_id_file = "channel_ids.txt"
+display_name_file = "display_names.txt"
 
 # 调用函数
-merge_xmltv_files(output_file, channel_id_file, epg_urls)
+merge_xmltv_files(output_file, display_name_file, input_urls)
