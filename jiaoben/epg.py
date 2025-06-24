@@ -33,7 +33,7 @@ def extract_channels_from_url(url):
             line = line.strip()
             if line and "#genre#" not in line:
                 channel_name = line.split(',')[0]
-                channels.append(channel_name.replace('CCTV-','CCTV'))
+                channels.append(channel_name)
         
         print("获取我的频道成功")
         return channels
@@ -64,12 +64,41 @@ def format_programme(programme):
     title = programme.find('title')
     new_title = ET.SubElement(new_programme, 'title')
     new_title.text = title.text.strip() if title is not None and title.text is not None else '未知标题'
-
+    """
     desc = programme.find('desc')
     new_desc = ET.SubElement(new_programme, 'desc')
     new_desc.text = desc.text.strip() if desc is not None and desc.text is not None else '无描述'
-
+    """
     return new_programme
+
+
+
+
+def format_channel(channel):
+    """
+    格式化 channel 元素，并返回一个新的 channel 元素。
+
+    :param channel: ElementTree.Element 对象，表示原始的 channel 元素
+    :return: ElementTree.Element 对象，表示格式化后的新 channel 元素
+    """
+    new_channel = ET.Element('channel')
+    new_channel.set('id', channel.get('id', ''))
+
+    for display_name in channel.findall('display-name'):
+        new_display_name = ET.SubElement(new_channel, 'display-name')
+        new_display_name.text = display_name.text.strip() if display_name.text is not None else '未知频道名称'
+    """
+
+    for icon in channel.findall('icon'):
+        new_icon = ET.SubElement(new_channel, 'icon')
+        new_icon.set('src', icon.get('src', ''))
+
+    for url in channel.findall('url'):
+        new_url = ET.SubElement(new_channel, 'url')
+        new_url.text = url.text.strip() if url.text is not None else ''
+    """
+
+    return new_channel
 
 def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channel_file, unmatched_channel_file, channel_url):
     """
@@ -110,7 +139,7 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
                     display_names.add(display_name.text)
                     if display_name.text in channels:
                         matched_channels.add(display_name.text)
-                        root.append(channel)  # 添加匹配的 channel 到 root
+                        root.append(format_channel(channel))  # 添加格式化后的 channel 到 root
                     else:
                         unmatched_channels.add(display_name.text)
 
@@ -171,6 +200,7 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
 
 
 
+
 # 示例调用
 # 我的列表txt
 channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
@@ -179,8 +209,8 @@ channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
     
 input_urls = [
     "http://epg.51zmt.top:8000/e.xml",
-    #"https://e.erw.cc/e.xml",
-    #"https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
+    "https://e.erw.cc/e.xml",
+    "https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
     "https://assets.livednow.com/epg.xml",
     "https://epg.pw/xmltv/epg_CN.xml",
     "https://epg.pw/xmltv/epg_HK.xml",
