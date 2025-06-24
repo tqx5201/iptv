@@ -300,7 +300,7 @@ channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
 input_urls = [
     "http://epg.51zmt.top:8000/e.xml",
     #"https://e.erw.cc/e.xml",
-    "https://raw.bgithub.xyz/kuke31/xmlgz/main/e.xml",
+    "https://raw.githubusercontent.com/kuke31/xmlgz/main/e.xml",
     "https://epg.112114.xyz/pp.xml",
     "https://assets.livednow.com/epg.xml",
     "https://epg.pw/xmltv/epg_TW.xml",
