@@ -1,5 +1,7 @@
 import xml.etree.ElementTree as ET
 import requests
+import gzip
+import os
 
 def download_xmltv(url):
     """
@@ -64,11 +66,11 @@ def format_programme(programme):
     title = programme.find('title')
     new_title = ET.SubElement(new_programme, 'title')
     new_title.text = title.text.strip() if title is not None and title.text is not None else '未知标题'
-    """
+
     desc = programme.find('desc')
     new_desc = ET.SubElement(new_programme, 'desc')
     new_desc.text = desc.text.strip() if desc is not None and desc.text is not None else '无描述'
-    """
+
     return new_programme
 
 def format_channel(channel):
@@ -82,9 +84,12 @@ def format_channel(channel):
     new_channel.set('id', channel.get('id', ''))
 
     for display_name in channel.findall('display-name'):
+        formatted_name = display_name.text.strip().replace('台', '').replace(' ', '') + '台'
+        if 'HD' not in formatted_name:
+            formatted_name += ' HD'
         new_display_name = ET.SubElement(new_channel, 'display-name')
-        new_display_name.text = display_name.text.strip() if display_name.text is not None else '未知频道名称'
-    """
+        new_display_name.text = formatted_name
+
     for icon in channel.findall('icon'):
         new_icon = ET.SubElement(new_channel, 'icon')
         new_icon.set('src', icon.get('src', ''))
@@ -92,8 +97,43 @@ def format_channel(channel):
     for url in channel.findall('url'):
         new_url = ET.SubElement(new_channel, 'url')
         new_url.text = url.text.strip() if url.text is not None else ''
-    """
+
     return new_channel
+
+def check_display_name(display_name_text, channels):
+    """
+    检查 display-name.text 或其经过格式化后的值是否在 channels 列表中。
+    
+    :param display_name_text: 原始的 display-name.text
+    :param channels: 频道名称列表
+    :return: 匹配的频道名称，如果匹配成功；否则返回 None
+    """
+    # 检查原始值是否在 channels 中
+    if display_name_text in channels:
+        return display_name_text
+    
+    # 检查加上 "HD" 后缀的值是否在 channels 中
+    hd_name = display_name_text + ' HD'
+    if hd_name in channels:
+        return hd_name
+    
+    # 检查删除“台”字后的值是否在 channels 中
+    no_tai_name = display_name_text.replace('台', '')
+    if no_tai_name in channels:
+        return no_tai_name
+    
+    # 检查加上“台”字后的值是否在 channels 中
+    tai_name = display_name_text + '台'
+    if tai_name in channels:
+        return tai_name
+    
+    # 检查加上“台”字和“HD”后缀的值是否在 channels 中
+    tai_hd_name = display_name_text + '台 HD'
+    if tai_hd_name in channels:
+        return tai_hd_name
+    
+    # 如果都不匹配，返回 None
+    return None
 
 def indent(elem, level=0):
     """
@@ -152,17 +192,18 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
 
         for channel in temp_tree.findall('channel'):
             for display_name in channel.findall('display-name'):
-                if display_name.text:
-                    display_names.add(display_name.text)
-                    if display_name.text in channels:
-                        if display_name.text not in channel_display_name_map:
-                            new_channel = format_channel(channel)
-                            root.append(new_channel)
-                            new_channel_id = new_channel.get('id')
-                            channel_display_name_map[display_name.text] = new_channel_id
-                            matched_channels.add(display_name.text)
-                        else:
-                            unmatched_channels.add(display_name.text)
+                matched_name = check_display_name(display_name.text, channels)
+                if matched_name:
+                    if matched_name not in channel_display_name_map:
+                        new_channel = format_channel(channel)
+                        root.append(new_channel)
+                        new_channel_id = new_channel.get('id')
+                        channel_display_name_map[matched_name] = new_channel_id
+                        matched_channels.add(matched_name)
+                    else:
+                        unmatched_channels.add(display_name.text)
+                else:
+                    unmatched_channels.add(display_name.text)
 
         for programme in temp_tree.findall('programme'):
             programme_key = (programme.get('start'), programme.get('channel'))
@@ -195,10 +236,21 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
     # 为 XML 元素添加缩进和换行
     indent(root)
 
+    # 确保输出目录存在
+    output_dir = os.path.dirname(output_file)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
     # 写入到输出文件
     tree = ET.ElementTree(root)
     tree.write(output_file, encoding='utf-8', xml_declaration=True)
     print(f"合并完成，结果已保存到 {output_file}")
+
+    # 生成 gzip 文件
+    with open(output_file, 'rb') as f_in:
+        with gzip.open(output_file + '.gz', 'wb') as f_out:
+            f_out.writelines(f_in)
+    print(f"压缩文件已保存到 {output_file}.gz")
 
     # 将所有的display-name写入文本文件
     with open(display_name_file, 'w', encoding='utf-8') as f:
@@ -218,8 +270,6 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
             f.write(display_name + '\n')
     print(f"没有匹配到的channel已保存到 {unmatched_channel_file}")
 
-
-
 # 示例调用
 # 我的列表txt
 channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
@@ -229,7 +279,7 @@ channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
 input_urls = [
     "http://epg.51zmt.top:8000/e.xml",
     "https://e.erw.cc/e.xml",
-    "https://raw.bgithub.xyz/fanmingming/live/main/e.xml",
+    "https://epg.112114.xyz/pp.xml",
     "https://assets.livednow.com/epg.xml",
     "https://epg.pw/xmltv/epg_CN.xml",
     "https://epg.pw/xmltv/epg_HK.xml",
