@@ -110,11 +110,22 @@ def check_display_name(display_name_text, channels):
     if display_name_text in channels:
         return display_name_text
     
+    # 如果包含空格，取空格前的内容
+    if ' ' in display_name_text:
+        space_split_name = display_name_text.split(' ')[0]
+        if space_split_name in channels:
+            return space_split_name
+    
     # 检查加上 "HD" 后缀的值是否在 channels 中
     hd_name = display_name_text + ' HD'
     if hd_name in channels:
         return hd_name
-    
+        
+    # 检查删除“台”字后的值是否在 channels 中
+    no_hd_name = display_name_text.replace('HD', '')
+    if no_hd_name in channels:
+        return no_hd_name
+        
     # 检查删除“台”字后的值是否在 channels 中
     no_tai_name = display_name_text.replace('台', '')
     if no_tai_name in channels:
@@ -126,7 +137,7 @@ def check_display_name(display_name_text, channels):
         return tai_name
     
     # 检查加上“台”字和“HD”后缀的值是否在 channels 中
-    tai_hd_name = display_name_text + '台 HD'
+    tai_hd_name = display_name_text + '台HD'
     if tai_hd_name in channels:
         return tai_hd_name
     
