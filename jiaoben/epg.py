@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 import requests
 import gzip
 import io
+import os
 
 def download_xmltv(url):
     """
