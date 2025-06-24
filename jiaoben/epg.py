@@ -33,7 +33,7 @@ def extract_channels_from_url(url):
             line = line.strip()
             if line and "#genre#" not in line:
                 channel_name = line.split(',')[0]
-                channels.append(channel_name.replace('CCTV-','CCTV'))
+                channels.append(channel_name)
         
         print("获取我的频道成功")
         return channels
@@ -142,6 +142,7 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
     matched_channels = set()
     unmatched_channels = set()
     channel_map = {}  # 用于存储旧 channel-id 到新 channel-id 的映射
+    channel_display_name_map = {}  # 用于存储 display-name 到新 channel-id 的映射
 
     for url in input_urls:
         print(f"正在获取 {url} 的数据")
@@ -154,10 +155,14 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
                 if display_name.text:
                     display_names.add(display_name.text)
                     if display_name.text in channels:
-                        matched_channels.add(display_name.text)
-                        root.append(format_channel(channel))  # 添加格式化后的 channel 到 root
-                    else:
-                        unmatched_channels.add(display_name.text)
+                        if display_name.text not in channel_display_name_map:
+                            new_channel = format_channel(channel)
+                            root.append(new_channel)
+                            new_channel_id = new_channel.get('id')
+                            channel_display_name_map[display_name.text] = new_channel_id
+                            matched_channels.add(display_name.text)
+                        else:
+                            unmatched_channels.add(display_name.text)
 
         for programme in temp_tree.findall('programme'):
             programme_key = (programme.get('start'), programme.get('channel'))
@@ -165,7 +170,9 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
                 channel_display_name = next((c.find('display-name').text for c in root.findall('channel') if c.get('id') == programme.get('channel')), None)
                 if channel_display_name in channels:
                     programme_keys.add(programme_key)
-                    root.append(format_programme(programme))  # 添加格式化后的 programme 到 root
+                    new_programme = format_programme(programme)
+                    new_programme.set('channel', channel_display_name_map[channel_display_name])
+                    root.append(new_programme)
 
     # 重置 channel-id 并更新 programme 的 channel 属性
     channel_id_counter = 1
@@ -210,9 +217,6 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
         for display_name in sorted(unmatched_channels):
             f.write(display_name + '\n')
     print(f"没有匹配到的channel已保存到 {unmatched_channel_file}")
-
-
-
 
 
 
