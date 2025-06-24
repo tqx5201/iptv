@@ -24,9 +24,14 @@ jobs:
       - name: 运行脚本
         run: |
           python jiaoben/epg.py
-          
+
+      - name: Check workspace and epg directory
+        run: |
+          echo "Current workspace: $GITHUB_WORKSPACE"
+          ls -la $GITHUB_WORKSPACE/epg/
+
       - name: 缓存运行结果
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: cache
           path: $GITHUB_WORKSPACE/epg/
