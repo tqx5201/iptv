@@ -1,11 +1,12 @@
 import xml.etree.ElementTree as ET
 import requests
 import gzip
-import os
+import io
 
 def download_xmltv(url):
     """
     从网址下载XMLTV文件并解析为ElementTree对象。
+    如果文件是 gzip 压缩的，则解压后再解析。
     
     :param url: XMLTV文件的网址
     :return: ElementTree对象
@@ -13,10 +14,21 @@ def download_xmltv(url):
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()  # 检查请求是否成功
-        return ET.fromstring(response.content)
+
+        if url.endswith('.gz'):
+            # 如果是 gzip 文件，解压内容
+            with gzip.open(io.BytesIO(response.content), 'rt', encoding='utf-8') as f:
+                content = f.read()
+        else:
+            # 如果不是 gzip 文件，直接使用内容
+            content = response.content.decode('utf-8')
+
+        return ET.fromstring(content)
     except requests.RequestException as e:
         print(f"下载文件 {url} 时出错: {e}")
-        return None
+    except ET.ParseError as e:
+        print(f"解析文件 {url} 时出错: {e}")
+    return None
 
 def extract_channels_from_url(url):
     """
@@ -300,12 +312,12 @@ channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
 input_urls = [
     "http://epg.51zmt.top:8000/e.xml",
     #"https://e.erw.cc/e.xml",
-    "https://raw.githubusercontent.com/kuke31/xmlgz/main/e.xml",
+    "https://raw.bgithub.xyz/kuke31/xmlgz/main/e.xml",
     "https://epg.112114.xyz/pp.xml",
     "https://assets.livednow.com/epg.xml",
-    "https://epg.pw/xmltv/epg_TW.xml",
-    "https://epg.pw/xmltv/epg_HK.xml",
-    "https://epg.pw/xmltv/epg_CN.xml"
+    "https://epg.pw/xmltv/epg_TW.xml.gz",
+    "https://epg.pw/xmltv/epg_HK.xml.gz",
+    "https://epg.pw/xmltv/epg_CN.xml.gz"
     
     
 ]
