@@ -64,11 +64,11 @@ def format_programme(programme):
     title = programme.find('title')
     new_title = ET.SubElement(new_programme, 'title')
     new_title.text = title.text.strip() if title is not None and title.text is not None else '未知标题'
-
+    """
     desc = programme.find('desc')
     new_desc = ET.SubElement(new_programme, 'desc')
     new_desc.text = desc.text.strip() if desc is not None and desc.text is not None else '无描述'
-
+    """
     return new_programme
 
 def format_channel(channel):
@@ -84,7 +84,7 @@ def format_channel(channel):
     for display_name in channel.findall('display-name'):
         new_display_name = ET.SubElement(new_channel, 'display-name')
         new_display_name.text = display_name.text.strip() if display_name.text is not None else '未知频道名称'
-
+    """
     for icon in channel.findall('icon'):
         new_icon = ET.SubElement(new_channel, 'icon')
         new_icon.set('src', icon.get('src', ''))
@@ -92,7 +92,7 @@ def format_channel(channel):
     for url in channel.findall('url'):
         new_url = ET.SubElement(new_channel, 'url')
         new_url.text = url.text.strip() if url.text is not None else ''
-
+    """
     return new_channel
 
 def indent(elem, level=0):
@@ -229,7 +229,7 @@ channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
 input_urls = [
     "http://epg.51zmt.top:8000/e.xml",
     "https://e.erw.cc/e.xml",
-    "https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
+    "https://raw.bgithub.xyz/fanmingming/live/main/e.xml",
     "https://assets.livednow.com/epg.xml",
     "https://epg.pw/xmltv/epg_CN.xml",
     "https://epg.pw/xmltv/epg_HK.xml",
