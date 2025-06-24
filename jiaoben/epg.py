@@ -74,29 +74,37 @@ def format_programme(programme):
     return new_programme
 
 def format_channel(channel):
+def format_channel(channel, matched_name):
     """
     格式化 channel 元素，并返回一个新的 channel 元素。
-    只提取 display-name, icon, url 等信息，不进行任何替换或格式化。
+    只提取 display-name，并将 display-name 替换为 matched_name。
+    注释掉 icon 和 url 的处理部分。
 
     :param channel: ElementTree.Element 对象，表示原始的 channel 元素
+    :param matched_name: 匹配到的频道名称
     :return: ElementTree.Element 对象，表示格式化后的新 channel 元素
     """
     new_channel = ET.Element('channel')
     new_channel.set('id', channel.get('id', ''))
 
-    for display_name in channel.findall('display-name'):
-        new_display_name = ET.SubElement(new_channel, 'display-name')
-        new_display_name.text = display_name.text.strip() if display_name.text is not None else '未知频道名称'
+    # 替换 display-name 为 matched_name
+    new_display_name = ET.SubElement(new_channel, 'display-name')
+    new_display_name.text = matched_name
+
     """
+    # 注释掉 icon 的处理部分
     for icon in channel.findall('icon'):
         new_icon = ET.SubElement(new_channel, 'icon')
         new_icon.set('src', icon.get('src', ''))
-
+    
+    # 注释掉 url 的处理部分
     for url in channel.findall('url'):
         new_url = ET.SubElement(new_channel, 'url')
         new_url.text = url.text.strip() if url.text is not None else ''
     """
+
     return new_channel
+
 
 def check_display_name(display_name_text, channels):
     """
@@ -205,7 +213,7 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
                 matched_name = check_display_name(display_name.text, channels)
                 if matched_name:
                     if matched_name not in channel_display_name_map:
-                        new_channel = format_channel(channel)
+                        new_channel = format_channel(channel,matched_name)
                         root.append(new_channel)
                         new_channel_id = new_channel.get('id')
                         channel_display_name_map[matched_name] = new_channel_id
@@ -292,7 +300,7 @@ channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
 input_urls = [
     "http://epg.51zmt.top:8000/e.xml",
     #"https://e.erw.cc/e.xml",
-    "https://raw.githubusercontent.com/kuke31/xmlgz/main/e.xml",
+    "https://raw.bgithub.xyz/kuke31/xmlgz/main/e.xml",
     "https://epg.112114.xyz/pp.xml",
     "https://assets.livednow.com/epg.xml",
     "https://epg.pw/xmltv/epg_TW.xml",
