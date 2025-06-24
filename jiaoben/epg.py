@@ -66,16 +66,17 @@ def format_programme(programme):
     title = programme.find('title')
     new_title = ET.SubElement(new_programme, 'title')
     new_title.text = title.text.strip() if title is not None and title.text is not None else '未知标题'
-
+"""
     desc = programme.find('desc')
     new_desc = ET.SubElement(new_programme, 'desc')
     new_desc.text = desc.text.strip() if desc is not None and desc.text is not None else '无描述'
-
+"""
     return new_programme
 
 def format_channel(channel):
     """
     格式化 channel 元素，并返回一个新的 channel 元素。
+    只提取 display-name, icon, url 等信息，不进行任何替换或格式化。
 
     :param channel: ElementTree.Element 对象，表示原始的 channel 元素
     :return: ElementTree.Element 对象，表示格式化后的新 channel 元素
@@ -84,12 +85,9 @@ def format_channel(channel):
     new_channel.set('id', channel.get('id', ''))
 
     for display_name in channel.findall('display-name'):
-        formatted_name = display_name.text.strip().replace('台', '').replace(' ', '') + '台'
-        if 'HD' not in formatted_name:
-            formatted_name += ' HD'
         new_display_name = ET.SubElement(new_channel, 'display-name')
-        new_display_name.text = formatted_name
-
+        new_display_name.text = display_name.text.strip() if display_name.text is not None else '未知频道名称'
+"""
     for icon in channel.findall('icon'):
         new_icon = ET.SubElement(new_channel, 'icon')
         new_icon.set('src', icon.get('src', ''))
@@ -97,7 +95,7 @@ def format_channel(channel):
     for url in channel.findall('url'):
         new_url = ET.SubElement(new_channel, 'url')
         new_url.text = url.text.strip() if url.text is not None else ''
-
+"""
     return new_channel
 
 def check_display_name(display_name_text, channels):
@@ -192,6 +190,7 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
 
         for channel in temp_tree.findall('channel'):
             for display_name in channel.findall('display-name'):
+                display_names.add(display_name.text.strip())  # 添加到 display_names 集合
                 matched_name = check_display_name(display_name.text, channels)
                 if matched_name:
                     if matched_name not in channel_display_name_map:
@@ -269,6 +268,9 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
         for display_name in sorted(unmatched_channels):
             f.write(display_name + '\n')
     print(f"没有匹配到的channel已保存到 {unmatched_channel_file}")
+
+
+
 
 # 示例调用
 # 我的列表txt
