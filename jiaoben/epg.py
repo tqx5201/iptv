@@ -33,7 +33,7 @@ def extract_channels_from_url(url):
             line = line.strip()
             if line and "#genre#" not in line:
                 channel_name = line.split(',')[0]
-                channels.append(channel_name)
+                channels.append(channel_name.replace('CCTV-','CCTV'))
         
         print("获取我的频道成功")
         return channels
@@ -64,15 +64,12 @@ def format_programme(programme):
     title = programme.find('title')
     new_title = ET.SubElement(new_programme, 'title')
     new_title.text = title.text.strip() if title is not None and title.text is not None else '未知标题'
-    """
+
     desc = programme.find('desc')
     new_desc = ET.SubElement(new_programme, 'desc')
     new_desc.text = desc.text.strip() if desc is not None and desc.text is not None else '无描述'
-    """
+
     return new_programme
-
-
-
 
 def format_channel(channel):
     """
@@ -87,7 +84,6 @@ def format_channel(channel):
     for display_name in channel.findall('display-name'):
         new_display_name = ET.SubElement(new_channel, 'display-name')
         new_display_name.text = display_name.text.strip() if display_name.text is not None else '未知频道名称'
-    """
 
     for icon in channel.findall('icon'):
         new_icon = ET.SubElement(new_channel, 'icon')
@@ -96,9 +92,29 @@ def format_channel(channel):
     for url in channel.findall('url'):
         new_url = ET.SubElement(new_channel, 'url')
         new_url.text = url.text.strip() if url.text is not None else ''
-    """
 
     return new_channel
+
+def indent(elem, level=0):
+    """
+    为 XML 元素添加缩进和换行，使其更易于阅读。
+    
+    :param elem: ElementTree.Element 对象
+    :param level: 当前缩进级别
+    """
+    i = "\n" + level * "  "
+    if len(elem):
+        if not elem.text or not elem.text.strip():
+            elem.text = i + "  "
+        if not elem.tail or not elem.tail.strip():
+            elem.tail = i
+        for elem in elem:
+            indent(elem, level + 1)
+        if not elem.tail or not elem.tail.strip():
+            elem.tail = i
+    else:
+        if level and (not elem.tail or not elem.tail.strip()):
+            elem.tail = i
 
 def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channel_file, unmatched_channel_file, channel_url):
     """
@@ -169,6 +185,9 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
     # 重新排序 root 的子元素，确保 channel 元素在 programme 元素之前
     root[:] = sorted(root, key=lambda child: child.tag)
 
+    # 为 XML 元素添加缩进和换行
+    indent(root)
+
     # 写入到输出文件
     tree = ET.ElementTree(root)
     tree.write(output_file, encoding='utf-8', xml_declaration=True)
@@ -191,10 +210,6 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
         for display_name in sorted(unmatched_channels):
             f.write(display_name + '\n')
     print(f"没有匹配到的channel已保存到 {unmatched_channel_file}")
-
-
-
-
 
 
 
