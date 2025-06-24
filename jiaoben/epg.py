@@ -182,14 +182,14 @@ input_urls = [
     #"https://e.erw.cc/e.xml",
     #"https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
     "https://assets.livednow.com/epg.xml",
-    #"https://epg.pw/xmltv/epg_CN.xml",
-    #"https://epg.pw/xmltv/epg_HK.xml",
-    #"https://epg.pw/xmltv/epg_TW.xml"
+    "https://epg.pw/xmltv/epg_CN.xml",
+    "https://epg.pw/xmltv/epg_HK.xml",
+    "https://epg.pw/xmltv/epg_TW.xml"
 ]
-output_file = "e.xml.txt"
-display_name_file = "display_names.txt"
-matched_channel_file = "matched_channels.txt"
-unmatched_channel_file = "unmatched_channels.txt"
+output_file = "epg/e.xml"
+display_name_file = "epg/display_names.txt"
+matched_channel_file = "epg/matched_channels.txt"
+unmatched_channel_file = "epg/unmatched_channels.txt"
 
 
 merge_xmltv_files(input_urls, output_file, display_name_file, matched_channel_file, unmatched_channel_file, channel_url)
