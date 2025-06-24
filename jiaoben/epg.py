@@ -73,7 +73,7 @@ def format_programme(programme):
     """
     return new_programme
 
-def format_channel(channel):
+
 def format_channel(channel, matched_name):
     """
     格式化 channel 元素，并返回一个新的 channel 元素。
