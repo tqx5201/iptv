@@ -294,9 +294,11 @@ input_urls = [
     "https://e.erw.cc/e.xml",
     "https://epg.112114.xyz/pp.xml",
     "https://assets.livednow.com/epg.xml",
-    "https://epg.pw/xmltv/epg_CN.xml",
+    "https://epg.pw/xmltv/epg_TW.xml",
     "https://epg.pw/xmltv/epg_HK.xml",
-    "https://epg.pw/xmltv/epg_TW.xml"
+    "https://epg.pw/xmltv/epg_CN.xml"
+    
+    
 ]
 output_file = "epg/e.xml"
 display_name_file = "epg/display_names.txt"
