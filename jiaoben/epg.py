@@ -33,7 +33,7 @@ def extract_channels_from_url(url):
             line = line.strip()
             if line and "#genre#" not in line:
                 channel_name = line.split(',')[0]
-                channels.append(channel_name)
+                channels.append(channel_name.replace('CCTV-','CCTV'))
         
         print("获取我的频道成功")
         return channels
@@ -96,6 +96,7 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
     programme_keys = set()
     matched_channels = set()
     unmatched_channels = set()
+    channel_map = {}  # 用于存储旧 channel-id 到新 channel-id 的映射
 
     for url in input_urls:
         print(f"正在获取 {url} 的数据")
@@ -109,6 +110,7 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
                     display_names.add(display_name.text)
                     if display_name.text in channels:
                         matched_channels.add(display_name.text)
+                        root.append(channel)  # 添加匹配的 channel 到 root
                     else:
                         unmatched_channels.add(display_name.text)
 
@@ -118,13 +120,25 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
                 channel_display_name = next((c.find('display-name').text for c in root.findall('channel') if c.get('id') == programme.get('channel')), None)
                 if channel_display_name in channels:
                     programme_keys.add(programme_key)
-                    root.append(format_programme(programme))
+                    root.append(format_programme(programme))  # 添加格式化后的 programme 到 root
 
-    # 重置 channel-id
+    # 重置 channel-id 并更新 programme 的 channel 属性
     channel_id_counter = 1
     for channel in root.findall('channel'):
-        channel.set('id', str(channel_id_counter))
+        old_channel_id = channel.get('id')
+        new_channel_id = str(channel_id_counter)
+        channel.set('id', new_channel_id)
+        channel_map[old_channel_id] = new_channel_id
         channel_id_counter += 1
+
+    # 更新 programme 的 channel 属性
+    for programme in root.findall('programme'):
+        old_channel_id = programme.get('channel')
+        if old_channel_id in channel_map:
+            programme.set('channel', channel_map[old_channel_id])
+
+    # 重新排序 root 的子元素，确保 channel 元素在 programme 元素之前
+    root[:] = sorted(root, key=lambda child: child.tag)
 
     # 写入到输出文件
     tree = ET.ElementTree(root)
@@ -149,8 +163,15 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
             f.write(display_name + '\n')
     print(f"没有匹配到的channel已保存到 {unmatched_channel_file}")
 
-# 示例调用
 
+
+
+
+
+
+
+
+# 示例调用
 # 我的列表txt
 channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
 
@@ -159,16 +180,16 @@ channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
 input_urls = [
     "http://epg.51zmt.top:8000/e.xml",
     #"https://e.erw.cc/e.xml",
-    #"https://raw.bgithub.xyz/fanmingming/live/main/e.xml",
+    #"https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
     "https://assets.livednow.com/epg.xml",
-    "https://epg.pw/xmltv/epg_CN.xml",
-    "https://epg.pw/xmltv/epg_HK.xml",
-    "https://epg.pw/xmltv/epg_TW.xml"
+    #"https://epg.pw/xmltv/epg_CN.xml",
+    #"https://epg.pw/xmltv/epg_HK.xml",
+    #"https://epg.pw/xmltv/epg_TW.xml"
 ]
-output_file = "epg/e.xml"
-display_name_file = "epg/display_names.txt"
-matched_channel_file = "epg/matched_channels.txt"
-unmatched_channel_file = "epg/unmatched_channels.txt"
+output_file = "e.xml.txt"
+display_name_file = "display_names.txt"
+matched_channel_file = "matched_channels.txt"
+unmatched_channel_file = "unmatched_channels.txt"
 
 
 merge_xmltv_files(input_urls, output_file, display_name_file, matched_channel_file, unmatched_channel_file, channel_url)
