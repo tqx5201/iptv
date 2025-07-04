@@ -276,9 +276,9 @@ function get_zubo_ip(){
     current_hour=${current_hour#0}
     
     # 遍历数组
-    for ((start_index=0; start_index<2; start_index++)); do
+    for ((start_index=0; start_index<4; start_index++)); do
         # 计算当前取出的数据索引
-        i=$(( (start_index + current_hour * 2) % len ))
+        i=$(( (start_index + current_hour * 4) % len ))
         echo "正在获取第$i个"
         province_cn=${provinces_cn[i]}
         province_en=${provinces_en[i]}
@@ -374,8 +374,8 @@ fi
     #provinces_en=("Hunan")
 
     # 定义运营商类型数组
-    providers=("电信" "移动" "联通")
-    #providers=("电信")
+    #providers=("电信" "移动" "联通")
+    providers=("电信")
 get_zubo_ip $provinces_cn $provinces_en $providers
 make_zubo_txt
 make_zubo_fofa $provinces_cn
