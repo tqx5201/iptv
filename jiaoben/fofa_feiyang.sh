@@ -19,9 +19,6 @@ fi
 
 ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' "$html" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
     
-# 初始化一个变量来存储成功连接的 IP 和端口
-good_ips=""
-
 for tmp_ip in $ips; do
   tmpip=$(echo -n "$tmp_ip" | sed 's/:/ /')
   echo "  是否可连接：nc -w 1 -v -z $tmpip 2>&1"
@@ -30,8 +27,8 @@ for tmp_ip in $ips; do
   # 如果连接成功，且输出包含 "succeeded"，则将结果添加到变量中
   if [[ $output == *"succeeded"* ]]; then
     # 将成功的 IP 和端口添加到变量中，每个条目用换行符分隔
-        echo -e "$good_ips"
-        echo -e "$good_ips" >> "$ipfile"
+        echo -e "$temp_ip"
+        echo -e "$temp_ip" >> "$ip_file"
 
 fi
 done
