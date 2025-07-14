@@ -1,0 +1,52 @@
+#!/bin/bash
+#设置时区
+export TZ=Asia/Shanghai
+
+base_url="https://fofa.info/result?qbase64="
+query='"udpxy" && country="CN" && region="'$province_en'" && org="'$org'" && protocol="http"'
+url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
+full_url="${base_url}${url_fofa}"
+echo "${full_url}"
+if grep -q '\[-3000\] IP访问异常，疑似为爬虫被暂时禁止访问，登录账号可用。' "$html"; then
+        echo "检测到错误信息：IP访问异常，疑似为爬虫被暂时禁止访问。"
+        #exit 1
+    else
+        echo "未检测到错误信息。"
+    fi
+
+    ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' "$html" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
+    
+    # 初始化一个变量来存储成功连接的 IP 和端口
+    good_ips=""
+
+    for tmp_ip in $ips; do
+        tmpip=$(echo -n "$tmp_ip" | sed 's/:/ /')
+        echo "  是否可连接：nc -w 1 -v -z $tmpip 2>&1"
+        output=$(nc -w 1 -v -z $tmpip 2>&1)
+        echo "  $output"
+        # 如果连接成功，且输出包含 "succeeded"，则将结果添加到变量中
+        if [[ $output == *"succeeded"* ]]; then
+            # 将成功的 IP 和端口添加到变量中，每个条目用换行符分隔
+                echo -e "$good_ips"
+                echo -e "$good_ips" >> "$ipfile"
+            
+            echo "  ************测速开始************"
+            echo "    http://$tmp_ip/$stream"
+            if [[ $stream =~ ^udp ]]; then
+                #a=$(./speedtest/speed.sh "$tmp_ip" "$stream")
+                a=$(speed_test "http://$tmp_ip/$stream")
+                #echo "第 $line_i/$lines 个：$ip $a"
+                echo "    ip:$tmp_ip,连接速度:$a"
+                echo "$tmp_ip $a" >> "$ip_speedtest"
+            else
+                echo "    错误的rtp地址"
+            fi
+            echo "  ************测速结束************"
+            
+        fi
+    done
+    echo "===============检索完成================="
+    echo ""
+    echo ""
+}
+
