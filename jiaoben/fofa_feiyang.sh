@@ -2,6 +2,7 @@
 #设置时区
 export TZ=Asia/Shanghai
 ip_file="ip/feiyang.txt"
+rm -rf ip/feiyang.txt
 base_url="https://fofa.info/result?qbase64="
 query='""请求成功，当前ALLINONE版本构建时间为"'
 url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
