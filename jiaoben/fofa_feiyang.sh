@@ -2,7 +2,7 @@
 #设置时区
 export TZ=Asia/Shanghai
 ip_file="ip/feiyang.txt"
-rm -rf ip/feiyang.txt
+rm -rf ip_file
 base_url="https://fofa.info/result?qbase64="
 query='"请求成功，当前ALLINONE版本构建时间为"'
 url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
@@ -27,8 +27,8 @@ for tmp_ip in $ips; do
   # 如果连接成功，且输出包含 "succeeded"，则将结果添加到变量中
   if [[ $output == *"succeeded"* ]]; then
     # 将成功的 IP 和端口添加到变量中，每个条目用换行符分隔
-        echo -e "$temp_ip"
-        echo -e "$temp_ip" >> "$ip_file"
+        echo -e "$tmp_ip"
+        echo -e "$tmp_ip" >> "$ip_file"
 
 fi
 done
