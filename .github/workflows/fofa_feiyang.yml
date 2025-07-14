@@ -2,7 +2,8 @@ name: 从fofa获取肥羊IP
 
 on:
   schedule:
-    - cron: "5 * * * *"
+    - cron: '0 20 * * *'  # 每天北京时间 4:00 执行，即北京时间 9:00
+
   #push:
     #branches:
       #- main # 只在master上push触发部署
