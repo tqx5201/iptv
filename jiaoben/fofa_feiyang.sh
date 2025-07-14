@@ -29,7 +29,6 @@ for tmp_ip in $ips; do
     # 将成功的 IP 和端口添加到变量中，每个条目用换行符分隔
         echo -e "$tmp_ip"
         echo -e "$tmp_ip" >> "$ip_file"
-
-fi
+  fi
 done
 echo "===============检索完成================="
