@@ -1,0 +1,56 @@
+name: 从fofa获取肥羊IP
+
+on:
+  schedule:
+    - cron: "5 * * * *"
+  #push:
+    #branches:
+      #- main # 只在master上push触发部署
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 获取IP
+      id: ip
+      uses: haythem/public-ip@v1.3
+    
+    - name: 显示IP
+      run: |
+        echo "IPv4: ${{ steps.ip.outputs.ipv4 }}"
+        echo "IPv6: ${{ steps.ip.outputs.ipv6 }}"
+
+    - name: 代码检出
+      uses: actions/checkout@v3
+      
+    - name: 安装插件
+      run: |
+        sudo apt-get update && sudo apt-get install -y yt-dlp sed nmap
+        ffmpeg -version
+
+    #- name: Install FFmpeg
+      #run: sudo apt-get update && sudo apt-get install -y ffmpeg sed
+      
+    - name: 运行脚本
+      #working-directory: iptv/speedtest
+      run: |
+        #cd $GITHUB_WORKSPACE/speedtest
+        #chmod +x ./speedtest/speed.sh
+        bash ./jiaoben/fofa_feiyang.sh
+        
+    #- name: 缓存运行结果
+      #uses: actions/upload-artifact@v4
+      #with:
+          #name: cache
+          #path: $GITHUB_WORKSPACE
+          
+    - name: 提交更改
+      run: |
+        #cd $GITHUB_WORKSPACE/speedtest
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "更新组播IP"
+        git push -f
