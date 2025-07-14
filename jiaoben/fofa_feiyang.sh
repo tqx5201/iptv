@@ -1,9 +1,9 @@
 #!/bin/bash
 #设置时区
 export TZ=Asia/Shanghai
-
+ip_file="ip/feiyang.txt"
 base_url="https://fofa.info/result?qbase64="
-query='"udpxy" && country="CN" && region="'$province_en'" && org="'$org'" && protocol="http"'
+query='""请求成功，当前ALLINONE版本构建时间为"'
 url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
 full_url="${base_url}${url_fofa}"
 echo "${full_url}"
@@ -31,18 +31,7 @@ if grep -q '\[-3000\] IP访问异常，疑似为爬虫被暂时禁止访问，�
                 echo -e "$good_ips" >> "$ipfile"
             
             echo "  ************测速开始************"
-            echo "    http://$tmp_ip/$stream"
-            if [[ $stream =~ ^udp ]]; then
-                #a=$(./speedtest/speed.sh "$tmp_ip" "$stream")
-                a=$(speed_test "http://$tmp_ip/$stream")
-                #echo "第 $line_i/$lines 个：$ip $a"
-                echo "    ip:$tmp_ip,连接速度:$a"
-                echo "$tmp_ip $a" >> "$ip_speedtest"
-            else
-                echo "    错误的rtp地址"
-            fi
-            echo "  ************测速结束************"
-            
+        
         fi
     done
     echo "===============检索完成================="
