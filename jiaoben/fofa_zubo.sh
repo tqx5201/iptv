@@ -167,8 +167,8 @@ function get_ip_fofa(){
         # 如果连接成功，且输出包含 "succeeded"，则将结果添加到变量中
         if [[ $output == *"succeeded"* ]]; then
             # 将成功的 IP 和端口添加到变量中，每个条目用换行符分隔
-                echo -e "$good_ips"
-                echo -e "$good_ips" >> "$ipfile"
+                echo -e "$tmp_ip"
+                echo -e "$tmp_ip" >> "$ipfile"
             
             echo "  ************测速开始************"
             echo "    http://$tmp_ip/$stream"
