@@ -6,7 +6,7 @@ on:
       template:
         description: "IP 模板，如 192.168.2.x"
         required: true
-        default: "192.168.2.x"
+        default: "153.99.2.x"
       m3u8:
         description: "原始 m3u8 地址"
         required: true
