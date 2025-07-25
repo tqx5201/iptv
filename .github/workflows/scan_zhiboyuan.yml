@@ -4,9 +4,9 @@ on:
   workflow_dispatch:            # 手动触发
     inputs:
       template:
-        description: "IP 模板，如 192.168.2"
+        description: "IP 模板，如 192.168"
         required: true
-        default: "153.99.2"
+        default: "153.99"
       m3u8:
         description: "原始 m3u8 地址"
         required: true
