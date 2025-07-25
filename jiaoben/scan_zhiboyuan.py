@@ -26,12 +26,12 @@ async def main(template: str, m3u8: str, timeout: int, max_conn: int) -> None:
 
 
     parts = urlparse(m3u8)
-    netloc‌ = parts.netloc‌
+    domain = parts.netloc‌
     path_and_query = parts.path
     if parts.query:
         path_and_query += "?" + parts.query
 
-    urls = [f"{parts.scheme}://{ip}/{netloc‌}{path_and_query}" for ip in ips]
+    urls = [f"{parts.scheme}://{ip}/{domain}{path_and_query}" for ip in ips]
 
     # 3. 并发检测
     sem = asyncio.Semaphore(max_conn)
