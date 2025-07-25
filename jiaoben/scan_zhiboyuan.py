@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import asyncio, aiohttp, argparse, csv, re
 from typing import List, Tuple
+from urllib.parse import urlparse
 
 async def check(session: aiohttp.ClientSession, url: str, timeout: int) -> Tuple[str, bool]:
     try:
@@ -20,8 +21,16 @@ async def main(template: str, m3u8: str, timeout: int, max_conn: int) -> None:
         raise ValueError("模板只能含 1 或 2 个 x")
 
     # 2. 拼缓存 URL
-    host_suffix = m3u8.replace("http://", "", 1)
-    urls = [f"http://{ip}/{host_suffix}" for ip in ips]
+    #host_suffix = m3u8.replace("http://", "", 1)
+    #urls = [f"http://{ip}/{host_suffix}" for ip in ips]
+
+
+    parts = urlparse(m3u8)
+    path_and_query = parts.path
+    if parts.query:
+        path_and_query += "?" + parts.query
+
+    urls = [f"{parts.scheme}://{ip}/{path_and_query}" for ip in ips]
 
     # 3. 并发检测
     sem = asyncio.Semaphore(max_conn)
