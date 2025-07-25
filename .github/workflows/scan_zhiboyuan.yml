@@ -23,7 +23,7 @@ jobs:
       
       - run: pip install aiohttp
       
-      - run: python scan_zhiboyuan.py ${{ github.event.inputs.template }} ${{ github.event.inputs.m3u8 }}
+      - run: python jiaoben/scan_zhiboyuan.py ${{ github.event.inputs.template }} ${{ github.event.inputs.m3u8 }}
       
       - uses: actions/upload-artifact@v4
         with:
