@@ -5,10 +5,11 @@ from urllib.parse import urlparse, urlunparse
 async def check(session, url, timeout):
     try:
         async with session.get(url, timeout=timeout) as resp:
-            return url, resp.status == 200
+            ok = resp.status == 200
     except Exception as e:
+        ok = False
         print(f"{url}-{e}")
-        return url, False
+    return url, ok
 
 async def main(template, m3u8, timeout, conn):
     # 根据模板生成 IP 列表
