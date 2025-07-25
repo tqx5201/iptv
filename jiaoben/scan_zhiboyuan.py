@@ -6,7 +6,8 @@ async def check(session, url, timeout):
     try:
         async with session.get(url, timeout=timeout) as resp:
             return url, resp.status == 200
-    except Exception:
+    except Exception as e:
+        print(f"{url}-{e}")
         return url, False
 
 async def main(template, m3u8, timeout, conn):
