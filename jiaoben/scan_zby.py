@@ -7,7 +7,7 @@ from typing import List, Tuple
 ORIGINAL_URL = "https://hlslive-tx-cdn.ysp.cctv.cn/2022576702.m3u8"   # 改成你的
 TIMEOUT      = 5                             # 单次超时
 CONCURRENCY  = 300                           # 并发协程数
-OUTPUT_FILE  = "loop_result.csv"
+OUTPUT_FILE  = "epg/scan_result.csv"
 # ====================================
 
 semaphore = asyncio.Semaphore(CONCURRENCY)
