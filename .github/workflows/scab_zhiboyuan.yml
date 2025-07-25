@@ -1,0 +1,27 @@
+name: Scan m3u8 with cache IPs
+
+on:
+  workflow_dispatch:            # 手动触发
+    inputs:
+      template:
+        description: "IP 模板，如 192.168.2.x"
+        required: true
+        default: "192.168.2.x"
+      m3u8:
+        description: "原始 m3u8 地址"
+        required: true
+        default: "http://example.com/1.m3u8"
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install aiohttp
+      - run: python scan_cli_v4.py ${{ github.event.inputs.template }} ${{ github.event.inputs.m3u8 }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scan-result
+          path: result.csv
