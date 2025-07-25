@@ -7,7 +7,7 @@ on:
   workflow_dispatch:  # 手动触发
 
 jobs:
-  epg:
+  scan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
