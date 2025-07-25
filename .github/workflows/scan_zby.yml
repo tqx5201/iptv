@@ -19,7 +19,7 @@ jobs:
           python-version: '3.x'
 
       - name: 安装扩展库
-        run: pip install requests
+        run: pip install asyncio, aiohttp, csv,typing
 
       - name: 运行脚本
         run: |
