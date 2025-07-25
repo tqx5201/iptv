@@ -26,7 +26,7 @@ async def main(template: str, m3u8: str, timeout: int, max_conn: int) -> None:
 
 
     parts = urlparse(m3u8)
-    domain = parts.netloc‌
+    domain = parts.netloc
     path_and_query = parts.path
     if parts.query:
         path_and_query += "?" + parts.query
