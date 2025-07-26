@@ -1,4 +1,4 @@
-name: Scan m3u8 with cache IPs
+name: 扫M3U8缓存IP
 
 on:
   workflow_dispatch:            # 手动触发
