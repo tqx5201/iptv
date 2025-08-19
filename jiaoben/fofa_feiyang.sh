@@ -31,7 +31,8 @@ for tmp_ip in $ips; do
     # 将成功的 IP 和端口添加到变量中，每个条目用换行符分隔
         echo -e "$tmp_ip"
         echo -e "$tmp_ip" >> "$ip_file"
-        url="http://$tmp_ip/tv.m3u"
+        url="http://$tmp_ip/huyayqk.m3u"
+        #tv.m3u
 
         curl -sS "$url" | awk -F '[,<>]' '
             /^#EXTINF:/ {
