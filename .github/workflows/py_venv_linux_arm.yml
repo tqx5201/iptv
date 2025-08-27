@@ -5,11 +5,21 @@ on:
 
 jobs:
   build-aarch64:
-    runs-on: ubuntu-22.04-arm    # GitHub 原生 aarch64
+    runs-on: ubuntu-22.04-arm   # GitHub 原生 ARM64 运行器
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 关键：安装带共享库的 Python 开发包
+      - name: Install Python shared library
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y libpython3.11-dev
 
       - name: Create portable venv
         run: |
@@ -17,7 +27,8 @@ jobs:
           source venv/bin/activate
           pip install -U pip wheel setuptools \
             openpyxl pandas numpy matplotlib seaborn \
-            #jupyterlab jupyterlab-language-pack-zh-CN jupyterlab-lsp python-lsp-server[all]
+            jupyterlab jupyterlab-language-pack-zh-CN \
+            jupyterlab-lsp python-lsp-server[all]
 
       - name: Make venv portable
         run: |
@@ -32,7 +43,8 @@ jobs:
       - name: Tar aarch64 bundle
         run: tar -czf jupyterlab-aarch64.tar.gz venv start-jupyterlab.sh
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
           name: jupyterlab-aarch64
           path: jupyterlab-aarch64.tar.gz
