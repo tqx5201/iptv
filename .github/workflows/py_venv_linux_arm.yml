@@ -16,8 +16,8 @@ jobs:
           python3.11 -m venv venv --copies --clear
           source venv/bin/activate
           pip install -U pip wheel setuptools \
-            jupyterlab openpyxl pandas numpy matplotlib seaborn \
-            jupyterlab-language-pack-zh-CN jupyterlab-lsp python-lsp-server[all]
+            openpyxl pandas numpy matplotlib seaborn \
+            #jupyterlab jupyterlab-language-pack-zh-CN jupyterlab-lsp python-lsp-server[all]
 
       - name: Make venv portable
         run: |
