@@ -1,0 +1,38 @@
+name: Build aarch64 Green JupyterLab
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-aarch64:
+    runs-on: ubuntu-22.04-arm    # GitHub 原生 aarch64
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+
+      - name: Create portable venv
+        run: |
+          python3.11 -m venv venv --copies --clear
+          source venv/bin/activate
+          pip install -U pip wheel setuptools \
+            jupyterlab openpyxl pandas numpy matplotlib seaborn \
+            jupyterlab-language-pack-zh-CN jupyterlab-lsp python-lsp-server[all]
+
+      - name: Make venv portable
+        run: |
+          sed -i "s|/opt/hostedtoolcache/Python/3.11[^ ]*bin|./venv/bin|g" venv/pyvenv.cfg
+          sed -i '1s|#!/.*venv/bin/python3\.11|#!/usr/bin/env python3|' venv/bin/*
+
+      - name: Create launcher
+        run: |
+          printf '#!/bin/bash\nDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"\n"$DIR/venv/bin/python3" -m jupyter lab --ip=0.0.0.0 --no-browser "$@"\n' > start-jupyterlab.sh
+          chmod +x start-jupyterlab.sh
+
+      - name: Tar aarch64 bundle
+        run: tar -czf jupyterlab-aarch64.tar.gz venv start-jupyterlab.sh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jupyterlab-aarch64
+          path: jupyterlab-aarch64.tar.gz
