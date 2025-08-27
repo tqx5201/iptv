@@ -7,18 +7,21 @@ jobs:
   build-aarch64:
     runs-on: ubuntu-22.04-arm
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      # 1. 装带共享库的 Python 开发包
-      - name: Install system deps
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install build tools
         run: |
           sudo apt-get update -y
           sudo apt-get install -y libpython3.11-dev patchelf
 
-      # 2. 创建 venv
-      - name: Create portable venv
+      # 1. 创建 venv
+      - name: Create venv
         run: |
           python3.11 -m venv venv --copies --clear
           source venv/bin/activate
@@ -27,37 +30,40 @@ jobs:
             jupyterlab jupyterlab-language-pack-zh-CN \
             jupyterlab-lsp python-lsp-server[all]
 
-      # 3. 拷贝全部依赖的共享库到 venv/lib
-      - name: Collect runtime libraries
+      # 2. 拷贝全部运行时共享库到 venv/lib
+      - name: Bundle runtime libraries
         run: |
           mkdir -p venv/lib
-          # 当前 python 主程序依赖
-          for so in $(ldd /opt/hostedtoolcache/Python/3.11*/x64/bin/python3.11 | awk '/=> \//{print $3}'); do
-            [ -f "$so" ] && cp -L "$so" venv/lib/
-          done
-          # 常见扩展模块依赖（ssl, crypto, ffi 等）
-          for so in /usr/lib/aarch64-linux-gnu/libssl.so.3 \
-                    /usr/lib/aarch64-linux-gnu/libcrypto.so.3 \
-                    /usr/lib/aarch64-linux-gnu/libffi.so.8 \
-                    /lib/aarch64-linux-gnu/libexpat.so.1 \
-                    /lib/aarch64-linux-gnu/libz.so.1; do
+          # 需要打包的共享库清单
+          SO_LIST="
+            /usr/lib/aarch64-linux-gnu/libpython3.11.so.1.0
+            /lib/aarch64-linux-gnu/libm.so.6
+            /lib/aarch64-linux-gnu/libexpat.so.1
+            /lib/aarch64-linux-gnu/libz.so.1
+            /lib/aarch64-linux-gnu/libc.so.6
+            /lib/aarch64-linux-gnu/libutil.so.1
+            /lib/aarch64-linux-gnu/libdl.so.2
+            /lib/aarch64-linux-gnu/libpthread.so.0
+            /lib/ld-linux-aarch64.so.1
+          "
+          for so in $SO_LIST; do
             [ -f "$so" ] && cp -L "$so" venv/lib/
           done
 
-      # 4. 调整 rpath 让 python 优先找 venv/lib
+      # 3. 让 python 二进制优先找 venv/lib
       - name: Patch binaries
         run: |
           patchelf --set-rpath '$ORIGIN/../lib' venv/bin/python3.11
           patchelf --set-rpath '$ORIGIN/../lib' venv/bin/python3
 
-      # 5. 修正脚本里的绝对路径
+      # 4. 修正脚本里的绝对路径
       - name: Make venv portable
         run: |
           sed -i "s|/opt/hostedtoolcache/Python/3.11[^ ]*bin|./venv/bin|g" venv/pyvenv.cfg
           sed -i '1s|#!/.*venv/bin/python3\.11|#!/usr/bin/env python3|' venv/bin/*
           sed -i "s|/opt/hostedtoolcache/Python/3.11[^ ]*|$(pwd)/venv|g" venv/bin/activate
 
-      # 6. 生成启动脚本（自动设置 LD_LIBRARY_PATH）
+      # 5. 生成启动脚本（自动设置 LD_LIBRARY_PATH）
       - name: Create launcher
         run: |
           cat > start-jupyterlab.sh <<'EOF'
@@ -68,11 +74,12 @@ jobs:
           EOF
           chmod +x start-jupyterlab.sh
 
-      # 7. 打包
-      - name: Tar aarch64 bundle
+      # 6. 打包 & 上传
+      - name: Create tarball
         run: tar -czf jupyterlab-aarch64.tar.gz venv start-jupyterlab.sh
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
           name: jupyterlab-aarch64
           path: jupyterlab-aarch64.tar.gz
