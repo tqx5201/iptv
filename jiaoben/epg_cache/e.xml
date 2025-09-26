@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tv>
+	<channel id="咪咕高清大片">
+		<display-name lang="zh">咪咕高清大片</display-name>
+	</channel>
+	<channel id="咪咕红色轮播">
+		<display-name lang="zh">咪咕红色轮播</display-name>
+	</channel>
+	<channel id="经典香港电影">
+		<display-name lang="zh">经典香港电影</display-name>
+	</channel>
+	<channel id="抗战经典影片">
+		<display-name lang="zh">抗战经典影片</display-name>
+	</channel>
+	<channel id="咪咕新片放映">
+		<display-name lang="zh">咪咕新片放映</display-name>
+	</channel>
+	<channel id="咪咕高能悬疑">
+		<display-name lang="zh">咪咕高能悬疑</display-name>
+	</channel>
+<programme channel="咪咕高清大片" start="20250927000000 +0800" stop="20250927011300 +0800">
+    <title lang="zh">冰山税花</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927011300 +0800" stop="20250927025000 +0800">
+    <title lang="zh">杨警官的假期</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927025000 +0800" stop="20250927041400 +0800">
+    <title lang="zh">胡杨的夏天</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927041400 +0800" stop="20250927053800 +0800">
+    <title lang="zh">恋爱恐慌症</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927053800 +0800" stop="20250927070100 +0800">
+    <title lang="zh">恐怖理发店</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927070100 +0800" stop="20250927081700 +0800">
+    <title lang="zh">杂技小精灵</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927081700 +0800" stop="20250927094100 +0800">
+    <title lang="zh">浪漫天降</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927094100 +0800" stop="20250927105500 +0800">
+    <title lang="zh">宋慈之红油纸伞</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927105500 +0800" stop="20250927122500 +0800">
+    <title lang="zh">冷雨剑潇潇</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927122500 +0800" stop="20250927134800 +0800">
+    <title lang="zh">诡娃娃</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927134800 +0800" stop="20250927152600 +0800">
+    <title lang="zh">爱未央</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927152600 +0800" stop="20250927165400 +0800">
+    <title lang="zh">二师兄来了</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927165400 +0800" stop="20250927183800 +0800">
+    <title lang="zh">青云之梦</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927183800 +0800" stop="20250927201100 +0800">
+    <title lang="zh">绝战香炉寺</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927201100 +0800" stop="20250927213000 +0800">
+    <title lang="zh">囧贼</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927213000 +0800" stop="20250927225400 +0800">
+    <title lang="zh">既然青春留不住</title>
+</programme>
+<programme channel="咪咕高清大片" start="20250927225400 +0800" stop="20250928000000 +0800">
+    <title lang="zh">惊天时速</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250926224000 +0800" stop="20250927001700 +0800">
+    <title lang="zh">地道战</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927001700 +0800" stop="20250927003200 +0800">
+    <title lang="zh">《七三一真相》第01集：迟来的审判</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927003200 +0800" stop="20250927004700 +0800">
+    <title lang="zh">《七三一真相》第02集：七三一留守名簿</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927004700 +0800" stop="20250927010200 +0800">
+    <title lang="zh">《七三一真相》第03集：特别移送</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927010200 +0800" stop="20250927011600 +0800">
+    <title lang="zh">《七三一真相》第4集：被实验的“马路大”</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927011600 +0800" stop="20250927013100 +0800">
+    <title lang="zh">《七三一真相》第05集：安达野外实验场</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927013100 +0800" stop="20250927014600 +0800">
+    <title lang="zh">《七三一真相》第06集：细菌战初战</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927014600 +0800" stop="20250927015900 +0800">
+    <title lang="zh">《七三一真相》第07集：华中细菌攻击</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927015900 +0800" stop="20250927021300 +0800">
+    <title lang="zh">《七三一真相》第08集：浙赣线上的“保号”作战</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927021300 +0800" stop="20250927022700 +0800">
+    <title lang="zh">《七三一真相》第09集：销毁证据</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927022700 +0800" stop="20250927024200 +0800">
+    <title lang="zh">《七三一真相》第10集：历史不能忘记</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927024200 +0800" stop="20250927042400 +0800">
+    <title lang="zh">小兵张嘎</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927042400 +0800" stop="20250927051800 +0800">
+    <title lang="zh">《二战全史》01新德国</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927051800 +0800" stop="20250927061200 +0800">
+    <title lang="zh">《二战全史》02遥远的战争</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927061200 +0800" stop="20250927070700 +0800">
+    <title lang="zh">《二战全史》03法国沦陷</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927070700 +0800" stop="20250927080100 +0800">
+    <title lang="zh">《二战全史》04单独作战</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927080100 +0800" stop="20250927085500 +0800">
+    <title lang="zh">《二战全史》05巴尔巴罗萨</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927085500 +0800" stop="20250927095000 +0800">
+    <title lang="zh">《二战全史》06万岁</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927095000 +0800" stop="20250927104500 +0800">
+    <title lang="zh">《二战全史》07我们在路上</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927104500 +0800" stop="20250927113900 +0800">
+    <title lang="zh">《二战全史》08沙漠之战</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927113900 +0800" stop="20250927123300 +0800">
+    <title lang="zh">《二战全史》09斯大林格勒</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927123300 +0800" stop="20250927132800 +0800">
+    <title lang="zh">《二战全史》10狼群战术</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927132800 +0800" stop="20250927142300 +0800">
+    <title lang="zh">《二战全史》11战火中的世界</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927142300 +0800" stop="20250927151700 +0800">
+    <title lang="zh">《二战全史》12旋风战</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927151700 +0800" stop="20250927161000 +0800">
+    <title lang="zh">《二战全史》13坚硬又古老的中心</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927161000 +0800" stop="20250927170500 +0800">
+    <title lang="zh">《二战全史》14明天是美好的一天</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927170500 +0800" stop="20250927175900 +0800">
+    <title lang="zh">《二战全史》15家中战火</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927175900 +0800" stop="20250927185400 +0800">
+    <title lang="zh">《二战全史》16德意志帝国内部</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927185400 +0800" stop="20250927194900 +0800">
+    <title lang="zh">《二战全史》17清晨</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927194900 +0800" stop="20250927204300 +0800">
+    <title lang="zh">《二战全史》18占领荷兰</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927204300 +0800" stop="20250927213800 +0800">
+    <title lang="zh">《二战全史》19铁钳</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927213800 +0800" stop="20250927223300 +0800">
+    <title lang="zh">《二战全史》20大屠杀</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927223300 +0800" stop="20250927232700 +0800">
+    <title lang="zh">《二战全史》21报应</title>
+</programme>
+<programme channel="咪咕红色轮播" start="20250927232700 +0800" stop="20250928002100 +0800">
+    <title lang="zh">《二战全史》22日本</title>
+</programme>
+<programme channel="经典香港电影" start="20250926224800 +0800" stop="20250927002600 +0800">
+    <title lang="zh">水浒传之英雄本色</title>
+</programme>
+<programme channel="经典香港电影" start="20250927002600 +0800" stop="20250927024500 +0800">
+    <title lang="zh">爆裂点</title>
+</programme>
+<programme channel="经典香港电影" start="20250927024500 +0800" stop="20250927041800 +0800">
+    <title lang="zh">门徒（普通话）</title>
+</programme>
+<programme channel="经典香港电影" start="20250927041800 +0800" stop="20250927054600 +0800">
+    <title lang="zh">反贪风暴（普通话）</title>
+</programme>
+<programme channel="经典香港电影" start="20250927054600 +0800" stop="20250927072500 +0800">
+    <title lang="zh">赌神3之少年赌神（普通话）</title>
+</programme>
+<programme channel="经典香港电影" start="20250927072500 +0800" stop="20250927091100 +0800">
+    <title lang="zh">被消失的凶案（普通话）</title>
+</programme>
+<programme channel="经典香港电影" start="20250927091100 +0800" stop="20250927104900 +0800">
+    <title lang="zh">水浒传之英雄本色</title>
+</programme>
+<programme channel="经典香港电影" start="20250927104900 +0800" stop="20250927130700 +0800">
+    <title lang="zh">爆裂点</title>
+</programme>
+<programme channel="经典香港电影" start="20250927130700 +0800" stop="20250927144100 +0800">
+    <title lang="zh">门徒（普通话）</title>
+</programme>
+<programme channel="经典香港电影" start="20250927144100 +0800" stop="20250927160900 +0800">
+    <title lang="zh">反贪风暴（普通话）</title>
+</programme>
+<programme channel="经典香港电影" start="20250927160900 +0800" stop="20250927174800 +0800">
+    <title lang="zh">赌神3之少年赌神（普通话）</title>
+</programme>
+<programme channel="经典香港电影" start="20250927174800 +0800" stop="20250927193400 +0800">
+    <title lang="zh">被消失的凶案（普通话）</title>
+</programme>
+<programme channel="经典香港电影" start="20250927193400 +0800" stop="20250927211200 +0800">
+    <title lang="zh">水浒传之英雄本色</title>
+</programme>
+<programme channel="经典香港电影" start="20250927211200 +0800" stop="20250927233000 +0800">
+    <title lang="zh">爆裂点</title>
+</programme>
+<programme channel="经典香港电影" start="20250927233000 +0800" stop="20250928010400 +0800">
+    <title lang="zh">门徒（普通话）</title>
+</programme>
+<programme channel="抗战经典影片" start="20250926231900 +0800" stop="20250927010900 +0800">
+    <title lang="zh">黄河绝恋</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927010900 +0800" stop="20250927025400 +0800">
+    <title lang="zh">紫日</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927025400 +0800" stop="20250927043100 +0800">
+    <title lang="zh">血战许昌</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927043100 +0800" stop="20250927055600 +0800">
+    <title lang="zh">让这首歌作证</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927055600 +0800" stop="20250927073200 +0800">
+    <title lang="zh">浴血誓言</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927073200 +0800" stop="20250927090300 +0800">
+    <title lang="zh">浴血阻击</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927090300 +0800" stop="20250927103800 +0800">
+    <title lang="zh">突围</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927103800 +0800" stop="20250927121300 +0800">
+    <title lang="zh">抗日名将卫立煌</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927121300 +0800" stop="20250927134400 +0800">
+    <title lang="zh">密使</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927134400 +0800" stop="20250927153500 +0800">
+    <title lang="zh">金江1936</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927153500 +0800" stop="20250927170200 +0800">
+    <title lang="zh">战争角落</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927170200 +0800" stop="20250927182700 +0800">
+    <title lang="zh">血浴羊山</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927182700 +0800" stop="20250927200800 +0800">
+    <title lang="zh">闪闪的红星</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927200800 +0800" stop="20250927220200 +0800">
+    <title lang="zh">国歌</title>
+</programme>
+<programme channel="抗战经典影片" start="20250927220200 +0800" stop="20250928001800 +0800">
+    <title lang="zh">血战台儿庄</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250926232700 +0800" stop="20250927005700 +0800">
+    <title lang="zh">龙门飞雪：寻龙教</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927005700 +0800" stop="20250927022800 +0800">
+    <title lang="zh">浴血阻击</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927022800 +0800" stop="20250927035600 +0800">
+    <title lang="zh">无名刀</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927035600 +0800" stop="20250927053300 +0800">
+    <title lang="zh">缉仇</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927053300 +0800" stop="20250927070000 +0800">
+    <title lang="zh">最后一次审判</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927070000 +0800" stop="20250927082200 +0800">
+    <title lang="zh">密探之黑白局</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927082200 +0800" stop="20250927095300 +0800">
+    <title lang="zh">密使</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927095300 +0800" stop="20250927112700 +0800">
+    <title lang="zh">绝密追击</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927112700 +0800" stop="20250927130200 +0800">
+    <title lang="zh">突围</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927130200 +0800" stop="20250927151400 +0800">
+    <title lang="zh">陀螺女孩</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927151400 +0800" stop="20250927170300 +0800">
+    <title lang="zh">乌蒙奇缘</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927170300 +0800" stop="20250927183000 +0800">
+    <title lang="zh">京都风云</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927183000 +0800" stop="20250927200100 +0800">
+    <title lang="zh">醉剑侠</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927200100 +0800" stop="20250927214300 +0800">
+    <title lang="zh">梦回金鸡岭</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927214300 +0800" stop="20250927232000 +0800">
+    <title lang="zh">此心安处是故乡</title>
+</programme>
+<programme channel="咪咕新片放映" start="20250927232000 +0800" stop="20250928005600 +0800">
+    <title lang="zh">冰下的鱼</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250926235700 +0800" stop="20250927013100 +0800">
+    <title lang="zh">王千源、冯绍峰《金钱堡垒》</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927013100 +0800" stop="20250927034400 +0800">
+    <title lang="zh">张译《三大队》</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927034400 +0800" stop="20250927053400 +0800">
+    <title lang="zh">肖央、佟丽娅、段奕宏《误杀3》</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927053400 +0800" stop="20250927075200 +0800">
+    <title lang="zh">邓超、段奕宏《烈日灼心》</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927075200 +0800" stop="20250927084600 +0800">
+    <title lang="zh">《雪迷宫》第1集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927084600 +0800" stop="20250927092100 +0800">
+    <title lang="zh">《雪迷宫》第2集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927092100 +0800" stop="20250927095500 +0800">
+    <title lang="zh">《雪迷宫》第3集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927095500 +0800" stop="20250927103500 +0800">
+    <title lang="zh">《雪迷宫》第4集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927103500 +0800" stop="20250927112100 +0800">
+    <title lang="zh">《雪迷宫》第5集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927112100 +0800" stop="20250927120700 +0800">
+    <title lang="zh">《雪迷宫》第6集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927120700 +0800" stop="20250927124600 +0800">
+    <title lang="zh">《雪迷宫》第7集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927124600 +0800" stop="20250927133400 +0800">
+    <title lang="zh">《雪迷宫》第8集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927133400 +0800" stop="20250927141200 +0800">
+    <title lang="zh">《雪迷宫》第9集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927141200 +0800" stop="20250927144800 +0800">
+    <title lang="zh">《雪迷宫》第10集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927144800 +0800" stop="20250927152200 +0800">
+    <title lang="zh">《雪迷宫》第11集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927152200 +0800" stop="20250927161100 +0800">
+    <title lang="zh">《雪迷宫》第12集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927161100 +0800" stop="20250927165200 +0800">
+    <title lang="zh">《雪迷宫》第13集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927165200 +0800" stop="20250927174800 +0800">
+    <title lang="zh">《雪迷宫》第14集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927174800 +0800" stop="20250927183400 +0800">
+    <title lang="zh">《雪迷宫》第15集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927183400 +0800" stop="20250927191700 +0800">
+    <title lang="zh">《雪迷宫》第16集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927191700 +0800" stop="20250927200000 +0800">
+    <title lang="zh">《雪迷宫》第17集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927200000 +0800" stop="20250927205800 +0800">
+    <title lang="zh">《雪迷宫》第18集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927205800 +0800" stop="20250927214900 +0800">
+    <title lang="zh">《雪迷宫》第19集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927214900 +0800" stop="20250927223200 +0800">
+    <title lang="zh">《雪迷宫》第20集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927223200 +0800" stop="20250927231300 +0800">
+    <title lang="zh">《雪迷宫》第21集</title>
+</programme>
+<programme channel="咪咕高能悬疑" start="20250927231300 +0800" stop="20250928000300 +0800">
+    <title lang="zh">《雪迷宫》第22集</title>
+</programme>
+</tv>
