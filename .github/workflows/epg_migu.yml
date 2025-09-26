@@ -39,11 +39,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cache
-          path: $GITHUB_WORKSPACE/epg/
+          path: $GITHUB_WORKSPACE/jiaoben/
           
       - name: 提交更新
         run: |
-          cd $GITHUB_WORKSPACE/epg/
+          cd $GITHUB_WORKSPACE/jiaoben/
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
