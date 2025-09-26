@@ -1,8 +1,8 @@
-name: 合并epg
+name: 获取migu_epg
 
 on:
   schedule:
-    - cron: '0 22 * * *'  # 每天 UTC 时间 1:00 执行，即北京时间 9:00
+    - cron: '0 20 * * *'  # 每天 UTC 时间 1:00 执行，即北京时间 9:00
 
   workflow_dispatch:  # 手动触发
 
