@@ -1,0 +1,51 @@
+name: 合并epg
+
+on:
+  schedule:
+    - cron: '0 22 * * *'  # 每天 UTC 时间 1:00 执行，即北京时间 9:00
+
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  epg:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. 安装 PHP + Composer
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'                  # 🔧 改版本
+          extensions: mbstring,intl
+          ini-values: date.timezone=Asia/Shanghai
+          tools: composer
+
+      # 3. 装依赖（如不需要可删掉）
+      #- name: Composer install
+        #run: composer install --no-progress --prefer-dist
+
+      - name: 运行脚本
+        run: |
+          python jiaoben/epg_migu.php
+
+      - name: Check workspace and epg directory
+        run: |
+          echo "Current workspace: $GITHUB_WORKSPACE"
+          ls -la $GITHUB_WORKSPACE/epg/
+
+      - name: 缓存运行结果
+        uses: actions/upload-artifact@v4
+        with:
+          name: cache
+          path: $GITHUB_WORKSPACE/epg/
+          
+      - name: 提交更新
+        run: |
+          cd $GITHUB_WORKSPACE/epg/
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update xmigu epg"
+          git push
