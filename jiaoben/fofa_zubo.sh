@@ -273,8 +273,8 @@ function get_zubo_ip(){
     provinces_en=$2
     providers=$3
     # 基础 URL
-    #base_url="https://fofa.info/result?qbase64="
-    base_url="https://www.zoomeye.org/searchResult?q="
+    base_url="https://fofa.info/result?qbase64="
+    #base_url="https://www.zoomeye.org/searchResult?q="
     
     # 获取数组长度
     len=${#provinces_cn[@]}
@@ -321,8 +321,8 @@ elif [ "$provider" == "移动" ]; then
 fi
 
 
-            #query='"udpxy" && country="CN" && region="'$province_en'" && org="'$org'" && protocol="http"'
-            query='"udpxy" && subdivisions="'$province_cn'" && asn="4134"'
+            query='"udpxy" && country="CN" && region="'$province_en'" && org="'$org'" && protocol="http"'
+            q#uery='"udpxy" && subdivisions="'$province_cn'" && asn="4134"'
    
             
             url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
