@@ -271,8 +271,9 @@ function get_zubo_ip(){
     provinces_en=$2
     providers=$3
     # 基础 URL
-    base_url="https://fofa.info/result?qbase64="
-
+    #base_url="https://fofa.info/result?qbase64="
+    base_url="https://www.zoomeye.org/searchResult?q="
+    
     # 获取数组长度
     len=${#provinces_cn[@]}
     # 获取当前的小时数（24小时制）
@@ -318,9 +319,12 @@ elif [ "$provider" == "移动" ]; then
 fi
 
 
-            query='"udpxy" && country="CN" && region="'$province_en'" && org="'$org'" && protocol="http"'
+            #query='"udpxy" && country="CN" && region="'$province_en'" && org="'$org'" && protocol="http"'
+            query='udpxy" && subdivisions="'$province_en'" && asn="4134"'
+   
+            
             url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
-            full_url="${base_url}${url_fofa}"
+            full_url="${base_url}${url_fofa}&t="
             echo "${full_url}"
 
             # 开始时间
