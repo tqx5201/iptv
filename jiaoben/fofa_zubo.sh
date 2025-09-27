@@ -161,6 +161,7 @@ function get_ip_fofa(){
     good_ips=""
 
     for tmp_ip in $ips; do
+        echo "$tmp_ip"
         tmpip=$(echo -n "$tmp_ip" | sed 's/:/ /')
         echo "  是否可连接：nc -w 1 -v -z $tmpip 2>&1"
         output=$(nc -w 1 -v -z $tmpip 2>&1)
