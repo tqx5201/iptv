@@ -146,11 +146,8 @@ function get_ip_fofa(){
     # 使用正则表达式提取IP和端口
     #ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' <<< "$response" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
 
-    #curl -o "$html" "$url_fofa"
-    curl -H "Authorization: eyJhbGciOiJIUzUxMiIsImtpZCI6Ik5XWTVZakF4TVRkalltSTJNRFZsWXpRM05EWXdaakF3TURVMlkyWTNZemd3TUdRd1pUTmpZUT09IiwidHlwIjoiSldUIn0.eyJpZCI6MjkwMjkyLCJtaWQiOjEwMDE2NDQ3NiwidXNlcm5hbWUiOiLlpKnku5nlqYblqYYiLCJwYXJlbnRfaWQiOjAsImV4cCI6MTc1OTU2MjcwM30.UrWz7NcuIzZJuSglIDEuZ-JzU349kPf812R6_r7MVjeKZ0_M4oYZp8fEOA7wOKHk1n6wRZWhqtMzPA3XoNNy7A" \
-     -b "acw_tc=3ccdc15917589579056873556e3e6659e5a1e1d24617ab48463a17fe7ecaef; __fcd=L6A5MOXZOGGXJXSJBA1C829C184F8BA2" \
-     -o "$html" \
-     "$url_fofa"
+    curl -o "$html" "$url_fofa"
+    
     if grep -q '\[-3000\] IP访问异常，疑似为爬虫被暂时禁止访问，登录账号可用。' "$html"; then
         echo "检测到错误信息：IP访问异常，疑似为爬虫被暂时禁止访问。"
         #exit 1
@@ -200,8 +197,10 @@ function get_zubo_ip_day_hour(){
     provinces_en=$2
     providers=$3
     # 基础 URL
-    base_url="https://fofa.info/result?qbase64="
-
+    #base_url="https://fofa.info/result?qbase64="
+    base_url="https://www.zoomeye.org/searchResult?q="
+    
+    
     # 获取数组长度
     len=${#provinces_cn[@]}
 
@@ -239,9 +238,11 @@ function get_zubo_ip_day_hour(){
                 asn='asn=""'  # 如果不是已知运营商，设置为空
             fi
 
-            query='"udpxy" && country="CN" && region="'$province_en'" && '$asn' && protocol="http"'
+            #query='"udpxy" && country="CN" && region="'$province_en'" && '$asn' && protocol="http"'
+            query='udpxy" && subdivisions="'$province_en'" && asn="4134"'
+   
             url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
-            full_url="${base_url}${url_fofa}"
+            full_url="${base_url}${url_fofa}&t="
             echo "${full_url}"
             
             # 假设 get_ip_fofa 是一个函数，用于处理 URL 并保存 IP 到文件
