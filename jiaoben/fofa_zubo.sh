@@ -146,8 +146,9 @@ function get_ip_fofa(){
     # 使用正则表达式提取IP和端口
     #ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' <<< "$response" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
 
-    curl -o "$html" "$url_fofa"
-    
+    #curl -o "$html" "$url_fofa"
+    curl -o "$html" "$url_fofa" && cat "$html"
+
     if grep -q '\[-3000\] IP访问异常，疑似为爬虫被暂时禁止访问，登录账号可用。' "$html"; then
         echo "检测到错误信息：IP访问异常，疑似为爬虫被暂时禁止访问。"
         #exit 1
