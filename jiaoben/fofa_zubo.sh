@@ -239,7 +239,7 @@ function get_zubo_ip_day_hour(){
             fi
 
             #query='"udpxy" && country="CN" && region="'$province_en'" && '$asn' && protocol="http"'
-            query='udpxy" && subdivisions="'$province_en'" && asn="4134"'
+            query='"udpxy" && subdivisions="'$province_cn'" && asn="4134"'
    
             url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
             full_url="${base_url}${url_fofa}&t="
@@ -320,7 +320,7 @@ fi
 
 
             #query='"udpxy" && country="CN" && region="'$province_en'" && org="'$org'" && protocol="http"'
-            query='udpxy" && subdivisions="'$province_en'" && asn="4134"'
+            query='"udpxy" && subdivisions="'$province_cn'" && asn="4134"'
    
             
             url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
