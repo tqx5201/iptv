@@ -146,7 +146,11 @@ function get_ip_fofa(){
     # 使用正则表达式提取IP和端口
     #ips=$(grep -E '^\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$' <<< "$response" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+')
 
-    curl -o "$html" "$url_fofa"
+    #curl -o "$html" "$url_fofa"
+    curl -H "Authorization: eyJhbGciOiJIUzUxMiIsImtpZCI6Ik5XWTVZakF4TVRkalltSTJNRFZsWXpRM05EWXdaakF3TURVMlkyWTNZemd3TUdRd1pUTmpZUT09IiwidHlwIjoiSldUIn0.eyJpZCI6MjkwMjkyLCJtaWQiOjEwMDE2NDQ3NiwidXNlcm5hbWUiOiLlpKnku5nlqYblqYYiLCJwYXJlbnRfaWQiOjAsImV4cCI6MTc1OTU2MjcwM30.UrWz7NcuIzZJuSglIDEuZ-JzU349kPf812R6_r7MVjeKZ0_M4oYZp8fEOA7wOKHk1n6wRZWhqtMzPA3XoNNy7A" \
+     -b "acw_tc=3ccdc15917589579056873556e3e6659e5a1e1d24617ab48463a17fe7ecaef; __fcd=L6A5MOXZOGGXJXSJBA1C829C184F8BA2" \
+     -o "$html" \
+     "$url_fofa"
     if grep -q '\[-3000\] IP访问异常，疑似为爬虫被暂时禁止访问，登录账号可用。' "$html"; then
         echo "检测到错误信息：IP访问异常，疑似为爬虫被暂时禁止访问。"
         #exit 1
