@@ -322,7 +322,7 @@ fi
 
 
             query='"udpxy" && country="CN" && region="'$province_en'" && org="'$org'" && protocol="http"'
-            q#uery='"udpxy" && subdivisions="'$province_cn'" && asn="4134"'
+            #query='"udpxy" && subdivisions="'$province_cn'" && asn="4134"'
    
             
             url_fofa=$(echo -n "$query" | base64 | tr -d '\n')
