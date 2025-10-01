@@ -2,6 +2,15 @@
 #设置时区
 export TZ=Asia/Shanghai
 
+set -e
+ROOT="$(git rev-parse --show-toplevel)"   # 仓库根
+FFMPEG="$ROOT/ffmpeg"
+chmod +x "$FFMPEG"
+
+# 调用
+"$FFMPEG" -version
+#"$FFMPEG" -i "$1" -vf scale=1280:-2 -c:a copy output.mp4
+
 
 #在线测试https://www.jyshare.com/compile/18/
 
@@ -24,7 +33,7 @@ function speed_test(){
     START_TIME=$(date +%s)
 
     # 使用 ffmpeg 下载视频并保存 10 秒  10秒超时
-    ffmpeg -timeout 10000000 -i "$URL" -t 10 -c copy "$OUTPUT_FILE" -y 2>/dev/null
+    "$FFMPEG" -timeout 10000000 -i "$URL" -t 10 -c copy "$OUTPUT_FILE" -y 2>/dev/null
 
     # 检查 ffmpeg 的退出状态
     if [ $? -ne 0 ]; then
