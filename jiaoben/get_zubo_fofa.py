@@ -224,7 +224,7 @@ def make_zubo_fofa():
 def main():
     # 按小时轮询省份
     now = datetime.now()
-    hour = (now.hour + 4) % 24          # 修正：保证 0-23
+    hour = (now.hour + 8) % 24          # 修正：保证 0-23
     total = len(PROVINCES_CN)
     batch = (hour - 1) % ((total + 3) // 4)  # 0-based 批次
     start = batch * 4
