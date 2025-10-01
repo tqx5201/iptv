@@ -133,6 +133,7 @@ function get_ip_fofa(){
     ipfile="ip/${province}_${provider}.txt"
     html="ip/${province}_${provider}.html"
     ip_speedtest="ip/${province}_${provider}_测速.txt"
+    rm -rf "$html"
     rm -rf "$ipfile"
     rm -rf "$ip_speedtest"
 
