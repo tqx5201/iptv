@@ -1,0 +1,33 @@
+name: Update yt-dlp binary
+
+on:
+  schedule:
+    # 每月 1 号 02:00 UTC 跑一次
+    - cron: '0 2 1 * *'
+  workflow_dispatch:   # 也可以手动触发
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # 需要写仓库
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 下载最新 yt-dlp
+        run: |
+          curl -L -o yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+          chmod +x yt-dlp
+
+      - name: 提交并推送
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add yt-dlp
+          # 如果文件没变化，git diff --cached 会退出 0，下面命令就不会产生空提交
+          git diff --cached --quiet || (
+            git commit -m "chore: update yt-dlp to $(./yt-dlp --version)"
+            git push
+          )
