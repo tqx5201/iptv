@@ -27,8 +27,9 @@ jobs:
       
     - name: 安装插件
       run: |
-        sudo apt-get update && sudo apt-get install -y yt-dlp sed nmap
-        ffmpeg -version
+        #sudo apt-get update && sudo apt-get install -y yt-dlp sed nmap
+        #ffmpeg -version
+        apt-get install sed nmap
 
     #- name: Install FFmpeg
       #run: sudo apt-get update && sudo apt-get install -y ffmpeg sed
