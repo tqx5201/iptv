@@ -29,7 +29,7 @@ jobs:
       run: |
         #sudo apt-get update && sudo apt-get install -y yt-dlp sed nmap
         #ffmpeg -version
-        sudo apt-get install -y sed nmap
+        sudo apt-get install -y sed
 
     #- name: Install FFmpeg
       #run: sudo apt-get update && sudo apt-get install -y ffmpeg sed
