@@ -2,7 +2,7 @@
 #设置时区
 export TZ=Asia/Shanghai
 
-set -e
+#set -e
 ROOT="$(git rev-parse --show-toplevel)"   # 仓库根
 FFMPEG="$ROOT/ffmpeg"
 chmod +x "$FFMPEG"
