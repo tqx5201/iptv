@@ -1,0 +1,30 @@
+name: Update static ffmpeg
+
+on:
+  schedule:
+    - cron: '0 3 1 * *'   # 每月 1 号 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: 下载并解压最新静态构建
+        run: |
+          curl -L -o ffmpeg.tar.xz \
+            https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
+          tar -xf ffmpeg.tar.xz --wildcards --no-anchored 'ffmpeg' --strip-components=1
+          chmod +x ffmpeg
+          ./ffmpeg -version
+      - name: 提交并推送
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ffmpeg
+          git diff --cached --quiet || (
+            git commit -m "chore: update static ffmpeg"
+            git push
+          )
