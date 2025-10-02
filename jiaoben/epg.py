@@ -306,8 +306,8 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
 
 # 示例调用
 # 我的列表txt
-channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
-
+#channel_url = 'https://remix.7259.dpdns.org/list/yd.txt'
+channel_url = 'https://7259.cloudns.ch/iptv/source/list_yd.txt'
 # 定义输入网址和输出文件路径
     
 input_urls = [
