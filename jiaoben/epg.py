@@ -12,6 +12,7 @@ def download_xmltv(url):
     :param url: XMLTV文件的网址
     :return: ElementTree对象
     """
+    url = url.replace('bgithub.xyz','githubusercontent')
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()  # 检查请求是否成功
