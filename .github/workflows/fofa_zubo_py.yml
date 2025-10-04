@@ -23,6 +23,7 @@ jobs:
 
       - name: 运行脚本
         run: |
+          ls
           python jiaoben/get_zubo_fofa.py
 
       - name: Check workspace and epg directory
