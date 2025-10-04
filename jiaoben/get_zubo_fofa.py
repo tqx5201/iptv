@@ -105,6 +105,7 @@ def ffmpeg_speed(url: str, probe_seconds: int = 10) -> float:
             elapsed = time.perf_counter() - start
             mbps = tmp.stat().st_size * 8 / elapsed / 1_000_000
             #tmp.unlink(missing_ok=True)
+            print(mbps)
             return round(mbps, 2) if mbps >= 0.01 else 0.0
     return 0.0
 
