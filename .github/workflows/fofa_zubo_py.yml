@@ -1,4 +1,4 @@
-name: get_fofa_zubo_py
+name: get_zubo_fofa_py
 
 on:
   schedule:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:  # 手动触发
 
 jobs:
-  epg:
+  get_zubo_fofa:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -23,7 +23,7 @@ jobs:
 
       - name: 运行脚本
         run: |
-          python jiaoben/get_fofa_zubo.py
+          python jiaoben/get_zubo_fofa.py
 
       - name: Check workspace and epg directory
         run: |
