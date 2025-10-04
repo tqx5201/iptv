@@ -245,4 +245,5 @@ def main():
 
 if __name__ == '__main__':
     #main()
-    ffmpeg_speed('http://111.127.156.228:51234/udp/239.29.0.2:5000')
+    #ffmpeg_speed('http://111.127.156.228:51234/udp/239.29.0.2:5000')
+    ffmpeg_speed('https://7259.cloudns.ch/000.mp4')
