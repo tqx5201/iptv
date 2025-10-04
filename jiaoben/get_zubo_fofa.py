@@ -75,7 +75,7 @@ def ffmpeg_speed(url: str, probe_seconds: int = 10) -> float:
     #base_dir = Path(__file__).absolute().parent   # 脚本所在目录
     ffmpeg_exe = Path('./ffmpeg')
     #base_dir / ("ffmpeg_v4.2.2/bin/ffmpeg.exe" if sys.platform == "win32" else "ffmpeg")
-
+    print(ffmpeg_exe)
     if not ffmpeg_exe.is_file():
         raise FileNotFoundError(f"当前目录缺少 {ffmpeg_exe.name}")
 
@@ -245,4 +245,5 @@ def main():
     log("全部完成")
 
 if __name__ == '__main__':
-    main()
+    #main()
+    ffmpeg_speed('http://111.127.156.228:51234/udp/239.29.0.2:5000')
