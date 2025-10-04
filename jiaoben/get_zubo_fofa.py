@@ -68,18 +68,13 @@ def nc_alive(ip_port: str, timeout: float = 1.0) -> bool:
     except (socket.timeout, socket.error, ValueError):
         return False
 def ffmpeg_speed(url: str, probe_seconds: int = 10) -> float:
-    """
-    仅使用**当前脚本所在目录**的 ffmpeg 可执行文件
-    """
-    # 1. 找到当前目录的 ffmpeg
-    #base_dir = Path(__file__).absolute().parent   # 脚本所在目录
-    ffmpeg_exe = Path('./ffmpeg')
-    #base_dir / ("ffmpeg_v4.2.2/bin/ffmpeg.exe" if sys.platform == "win32" else "ffmpeg")
-    print(ffmpeg_exe)
+    # 1. 指向仓库根目录的 ffmpeg
+    repo_root = Path(__file__).resolve().parent.parent  # jiaoben 的上一级
+    ffmpeg_exe = repo_root / 'ffmpeg'
     if not ffmpeg_exe.is_file():
-        raise FileNotFoundError(f"当前目录缺少 {ffmpeg_exe.name}")
+        raise FileNotFoundError(f'仓库根目录缺少 {ffmpeg_exe.name}')
 
-    tmp = Path("./speed_test.ts")
+    tmp = repo_root / 'speed_test.ts'  # 临时文件也放根目录，避免权限问题
     #print(tmp)
 
     cmd = [
