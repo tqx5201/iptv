@@ -1,0 +1,46 @@
+name: get_fofa_zubo_py
+
+on:
+  schedule:
+    - cron: '0 22 * * *'  # 每天 UTC 时间 1:00 执行，即北京时间 9:00
+
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  epg:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: 安装扩展库
+        run: pip install requests
+
+      - name: 运行脚本
+        run: |
+          python jiaoben/get_fofa_zubo.py
+
+      - name: Check workspace and epg directory
+        run: |
+          echo "Current workspace: $GITHUB_WORKSPACE"
+          ls -la $GITHUB_WORKSPACE/epg/
+
+      - name: 缓存运行结果
+        uses: actions/upload-artifact@v4
+        with:
+          name: cache
+          path: $GITHUB_WORKSPACE/epg/
+          
+      - name: 提交更新
+        run: |
+          cd $GITHUB_WORKSPACE/epg/
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update xmltv epg"
+          git push
