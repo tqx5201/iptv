@@ -75,7 +75,7 @@ def ffmpeg_speed(url: str, probe_seconds: int = 10) -> float:
         raise FileNotFoundError(f'仓库根目录缺少 {ffmpeg_exe.name}')
 
     tmp = repo_root / 'speed_test.ts'  # 临时文件也放根目录，避免权限问题
-    #print(tmp)
+    print(tmp)
 
     cmd = [
         str(ffmpeg_exe),          # 强制用当前目录的
@@ -96,11 +96,12 @@ def ffmpeg_speed(url: str, probe_seconds: int = 10) -> float:
     except subprocess.CalledProcessError:
         return 0.0
     finally:
+        print('66')
         if tmp.exists():
             elapsed = time.perf_counter() - start
             mbps = tmp.stat().st_size * 8 / elapsed / 1_000_000
             #tmp.unlink(missing_ok=True)
-            print(mbps)
+            print(tmp.stat().st_size)
             return round(mbps, 2) if mbps >= 0.01 else 0.0
     return 0.0
 
@@ -241,5 +242,5 @@ def main():
     log("全部完成")
 
 if __name__ == '__main__':
-    main()
-    #ffmpeg_speed('http://111.127.156.228:51234/udp/239.29.0.2:5000')
+    #main()
+    ffmpeg_speed('http://111.127.156.228:51234/udp/239.29.0.2:5000')
