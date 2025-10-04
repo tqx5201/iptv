@@ -28,7 +28,7 @@ jobs:
           # 2. 加可执行权限
           chmod +x ffmpeg
           # 3. 验证
-          ./ffmpeg -version        # 必须能打印出版本号
+          .#/ffmpeg -version        # 必须能打印出版本号
 
           python jiaoben/get_zubo_fofa.py
 
@@ -41,13 +41,12 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cache
-          path: $GITHUB_WORKSPACE/epg/
+          path: .
           
       - name: 提交更新
         run: |
-          cd $GITHUB_WORKSPACE/epg/
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "Update xmltv epg"
+          git commit -m "PYTHON fofa"
           git push
