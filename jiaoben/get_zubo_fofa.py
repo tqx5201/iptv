@@ -172,7 +172,7 @@ def get_ip_fofa(full_url: str, province: str, provider: str):
 
     for ip_port in ip_ports:
         if not nc_alive(ip_port):
-            print('not ok')
+            print(f'{ip_port},not ok')
             continue
         else:
             print(f'{ip_port},ok')
@@ -234,8 +234,8 @@ def main():
 
 
     for provider in PROVIDERS:
-        for prov_cn, prov_en in zip(prov_cns, prov_ens):   # 同时拿中英文,每小时4个省份
-        #for prov_cn, prov_en in zip(PROVINCES_CN, PROVINCES_EN):   # 同时拿中英文,全部搞定
+        #for prov_cn, prov_en in zip(prov_cns, prov_ens):   # 同时拿中英文,每小时4个省份
+        for prov_cn, prov_en in zip(PROVINCES_CN, PROVINCES_EN):   # 同时拿中英文,全部搞定
             url = fofa_query(prov_en, provider)
             #print(url)
             get_ip_fofa(url, prov_cn, provider)
@@ -244,9 +244,9 @@ def main():
     log("全部完成")
 
 if __name__ == '__main__':
-    #main()
+    main()
     #ffmpeg_speed('http://111.127.156.228:51234/udp/239.29.0.2:5000')
     #ffmpeg_speed('https://7259.cloudns.ch/000.mp4')
-    repo_root = Path(__file__).resolve().parent.parent
-    ffmpeg_speed(str(repo_root / 'temp_video.mp4'))
+    #repo_root = Path(__file__).resolve().parent.parent
+    #ffmpeg_speed(str(repo_root / 'temp_video.mp4'))
 
