@@ -148,8 +148,8 @@ def get_ip_fofa(full_url: str, province: str, provider: str):
     stream = rtp_part.replace('rtp://', 'udp/')
     print(stream)
 
-
-    if os.path.isfile(html_file) and file_older_than_hours(html_file):
+    cache = 0
+    if os.path.isfile(html_file) and cache and file_older_than_hours(html_file):
         print('本地存在')
         with open(html_file,  encoding='utf-8') as file:
             html = file.read()
