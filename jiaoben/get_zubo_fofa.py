@@ -72,13 +72,14 @@ def ffmpeg_speed(url: str, probe_seconds: int = 10) -> float:
     仅使用**当前脚本所在目录**的 ffmpeg 可执行文件
     """
     # 1. 找到当前目录的 ffmpeg
-    base_dir = Path(__file__).absolute().parent   # 脚本所在目录
-    ffmpeg_exe = base_dir / ("ffmpeg_v4.2.2/bin/ffmpeg.exe" if sys.platform == "win32" else "ffmpeg")
+    #base_dir = Path(__file__).absolute().parent   # 脚本所在目录
+    ffmpeg_exe = Path('./ffmpeg')
+    #base_dir / ("ffmpeg_v4.2.2/bin/ffmpeg.exe" if sys.platform == "win32" else "ffmpeg")
 
     if not ffmpeg_exe.is_file():
         raise FileNotFoundError(f"当前目录缺少 {ffmpeg_exe.name}")
 
-    tmp = base_dir / f"speed_test.ts"
+    tmp = Path("./speed_test.ts")
     #print(tmp)
 
     cmd = [
