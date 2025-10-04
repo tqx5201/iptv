@@ -24,11 +24,11 @@ jobs:
       - name: 运行脚本
         run: |
           # 1. 确认文件真的在
-          ls -l ffmpeg
+          #ls -l ffmpeg
           # 2. 加可执行权限
           chmod +x ffmpeg
           # 3. 验证
-          .#/ffmpeg -version        # 必须能打印出版本号
+          #./ffmpeg -version        # 必须能打印出版本号
 
           python jiaoben/get_zubo_fofa.py
 
