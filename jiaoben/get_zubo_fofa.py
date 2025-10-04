@@ -13,10 +13,10 @@ os.environ['TZ'] = 'Asia/Shanghai'
 
 # ========== 全局配置 ==========
 BASE_URL = 'https://fofa.info/result?qbase64='
-RTP_DIR = Path('../rtp')
-IP_DIR = Path('../ip')
-TXT_DIR = Path('../txt')
-OUTPUT_FILE = Path('../zubo_fofa.txt')
+RTP_DIR = Path('./rtp')
+IP_DIR = Path('./ip')
+TXT_DIR = Path('./txt')
+OUTPUT_FILE = Path('./zubo_fofa.txt')
 
 IP_DIR.mkdir(exist_ok=True)
 TXT_DIR.mkdir(exist_ok=True)
