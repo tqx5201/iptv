@@ -4,7 +4,7 @@ set_time_limit(0); //
 
 
 
-$mgChannels = [
+$Channels = [
     '1905国内经典' => 'series',
     '1905环球经典' => 'cctv6networkv2',
     'CCTV6' => '340',
@@ -29,32 +29,33 @@ if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < $cacheTime)) {
 }
 /* ------------------- 生成节目XML ------------------- */
 function generateProgramXml($channel, $start, $end, $title, $desc = '') {
-        $startFmt = date('YmdHis O', $start);
-        $endFmt = date('YmdHis O', $end);
-        $title = htmlspecialchars($title);
-        $desc = htmlspecialchars($desc);
-        $xml = '<programme channel="'.$channel.'" start="'.$startFmt.'" stop="'.$endFmt.'">'.PHP_EOL;
-        $xml.= '    <title lang="zh">'.$title.'</title>'.PHP_EOL;
-        if (!empty($desc)) {
-            $xml .= '    <desc lang="zh">'.$desc.'</desc>'.PHP_EOL;
-        }
-        $xml.= '</programme>'.PHP_EOL;
-        return $xml;
+    $startFmt = date('YmdHis O', $start);
+    $endFmt = date('YmdHis O', $end);
+    $title = htmlspecialchars($title);
+    $desc = htmlspecialchars($desc);
+    $xml = "\t<programme channel=\"{$channel}\" start=\"{$startFmt}\" stop=\"{$endFmt}\">".PHP_EOL;
+    $xml.= "\t\t<title lang=\"zh\">{$title}</title>".PHP_EOL;
+    if (!empty($desc)) {
+        $xml .= "\t\t<desc lang=\"zh\">{$desc}</desc>".PHP_EOL;
     }
-    // 初始化EPG内容
+    $xml.= "\t</programme>".PHP_EOL;
+    return $xml;
+}
+
+// 初始化EPG内容
 $epgContent = '<?xml version="1.0" encoding="UTF-8"?>'.PHP_EOL;
 $epgContent.= '<tv>'.PHP_EOL;
 // 添加所有频道信息
-foreach(array_keys($mgChannels) as $channelName) {
-        $epgContent.= "\t<channel id=\"{$channelName}\">".PHP_EOL;
-        $epgContent.= "\t\t<display-name lang=\"zh\">{$channelName}</display-name>".PHP_EOL;
-        $epgContent.= "\t</channel>".PHP_EOL;
-    }
-    /* ------------------- 处理咪咕频道 ------------------- */
+foreach(array_keys($Channels) as $channelName) {
+    $epgContent.= "\t<channel id=\"{$channelName}\">".PHP_EOL;
+    $epgContent.= "\t\t<display-name lang=\"zh\">{$channelName}</display-name>".PHP_EOL;
+    $epgContent.= "\t</channel>".PHP_EOL;
+}
+/* ------------------- 处理频道 ------------------- */
 $date = $today = date('Ymd');
-// 咪咕API使用Ymd格式日期
+//使用Ymd格式日期
 $tomorrow = date('Ymd', strtotime('+1 day'));
-foreach($mgChannels as $channelName => $channelId) {
+foreach($Channels as $channelName => $channelId) {
     if (is_numeric($channelId)) {
         $api = "https://www.1905.com/api/content/?m=Epginfo&a=getPcinfo&cid={$channelId}&dt={$date}&_=";
     } else {
