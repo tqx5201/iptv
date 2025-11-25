@@ -110,16 +110,14 @@ $mgChannels = [
 ];
 // 缓存设置
 $cacheDir = __DIR__ . '/epg_cache/';
-if (!file_exists($cacheDir))
-{
+if (!file_exists($cacheDir)){
     mkdir($cacheDir, 0755, true);
 }
 $cacheFile = $cacheDir . 'epg_migu.xml';
 $cacheTime = 86400;
 // 24小时缓存
 // 检查缓存是否存在且未过期
-if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < $cacheTime))
-{
+if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < $cacheTime)){
     $epgContent = file_get_contents($cacheFile);
     header('Content-Type: application/xml; charset=utf-8');
     echo $epgContent;
@@ -127,76 +125,71 @@ if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < $cacheTime))
 }
 /* ------------------- HTTP 请求 ------------------- */
 function httpGet($url,$Referer='') {
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-'Referer: '.$Referer,
-'Accept: application/json, text/plain, */*'
-]);
-$response = curl_exec($ch);
-if (curl_errno($ch)) {
-curl_close($ch);
-return false;
-}
-curl_close($ch);
-return $response;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+    'Referer: '.$Referer,
+    'Accept: application/json, text/plain, */*'
+    ]);
+    $response = curl_exec($ch);
+    if (curl_errno($ch)) {
+        curl_close($ch);
+        return false;
+    }
+    curl_close($ch);
+    return $response;
 };
 /* ------------------- 生成节目XML ------------------- */
 function generateProgramXml($channel, $start, $end, $title, $desc = '') {
-$startFmt = date('YmdHis O', $start);
-$endFmt = date('YmdHis O', $end);
-$title = htmlspecialchars($title);
-$desc = htmlspecialchars($desc);
-$xml = '<programme channel="' . $channel . '" start="' . $startFmt . '" stop="' . $endFmt . '">' . PHP_EOL;
-$xml .= '    <title lang="zh">' . $title . '</title>' . PHP_EOL;
-if (!empty($desc)) {
-$xml .= '    <desc lang="zh">' . $desc . '</desc>' . PHP_EOL;
-}
-$xml .= '</programme>' . PHP_EOL;
-return $xml;
+    $startFmt = date('YmdHis O', $start);
+    $endFmt = date('YmdHis O', $end);
+    $title = htmlspecialchars($title);
+    $desc = htmlspecialchars($desc);
+    $xml = "\t<programme channel=\"{$channel}\" start=\"{$startFmt}\" stop=\"{$endFmt}\">".PHP_EOL;
+    $xml.= "\t\t<title lang=\"zh\">{$title}</title>".PHP_EOL;
+    if (!empty($desc)) {
+        $xml .= "\t\t<desc lang=\"zh\">{$desc}</desc>".PHP_EOL;
+    }
+    $xml.= "\t</programme>".PHP_EOL;
+    return $xml;
 }
 // 初始化EPG内容
 $epgContent = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
 $epgContent .= '<tv>' . PHP_EOL;
 // 添加所有频道信息
 foreach (array_keys($mgChannels) as $channelName) {
-$epgContent .= "\t<channel id=\"{$channelName}\">" . PHP_EOL;
-$epgContent .= "\t\t<display-name lang=\"zh\">{$channelName}</display-name>" . PHP_EOL;
-$epgContent .= "\t</channel>" . PHP_EOL;
+    $epgContent .= "\t<channel id=\"{$channelName}\">" . PHP_EOL;
+    $epgContent .= "\t\t<display-name lang=\"zh\">{$channelName}</display-name>" . PHP_EOL;
+    $epgContent .= "\t</channel>" . PHP_EOL;
 }
 /* ------------------- 处理咪咕频道 ------------------- */
 $today = date('Ymd');
 $tomorrow = date('Ymd', strtotime('+1 day'));
-foreach ($mgChannels as $channelName => $channelId)
-{
+foreach ($mgChannels as $channelName => $channelId){
     echo $channelName;
     echo '<br>';
-    foreach ([$today] as $date)
-    {
+    foreach ([$today] as $date) {
         // 想加明天就把 $tomorrow 也写进来
         // 1. 干净接口
         $url = "https://program-sc.miguvideo.com/live/v2/tv-programs-data/{$channelId}/{$date}";
         // 2. 取回 JSONP
         $jsonp = httpGet($url, 'https://www.miguvideo.com/');
-        if (!$jsonp)
-        {
+        if (!$jsonp) {
             continue;
         }
         // 3. 去头去尾变纯 JSON
         $json = preg_replace('/^callback $|$;?$/', '', $jsonp);
         // 4. 解析
         $data = json_decode($json, true);
-        if (!$data || !isset($data['body']['program'][0]['content']))
-        {
+        if (!$data || !isset($data['body']['program'][0]['content'])){
             continue;
         }
         // 5. 写 XML
-        foreach ($data['body']['program'][0]['content'] as $p)
-        {
+        foreach ($data['body']['program'][0]['content'] as $p){
             $epgContent .= generateProgramXml(
             $channelName,
             $p['startTime'] / 1000,
@@ -208,8 +201,7 @@ foreach ($mgChannels as $channelName => $channelId)
 }
 $epgContent .= '</tv>';
 // 清除旧缓存
-if (file_exists($cacheFile))
-{
+if (file_exists($cacheFile)){
     unlink($cacheFile);
 }
 // 保存到缓存
