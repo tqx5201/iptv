@@ -312,6 +312,9 @@ channel_url = 'https://7259.cloudns.ch/iptv/source/list_yd.txt'
 # 定义输入网址和输出文件路径
     
 input_urls = [
+    "https://raw.bgithub.xyz/tqx5201/iptv/main/jiaoben/epg/epg_cache/epg_1905.xml",
+    "https://raw.bgithub.xyz/tqx5201/iptv/main/jiaoben/epg/epg_cache/epg_migu.xml",
+    
     "https://raw.bgithub.xyz/kuke31/xmlgz/main/e.xml.gz",
     "http://epg.51zmt.top:8000/e.xml",
     #"https://e.erw.cc/e.xml",
