@@ -1,4 +1,4 @@
-name: 获取migu_epg
+name: php获取epg
 
 on:
   schedule:
@@ -39,7 +39,7 @@ jobs:
       - name: 缓存运行结果
         uses: actions/upload-artifact@v4
         with:
-          name: migu_epg
+          name: php_epg
           path: jiaoben/epg_cache
           
       - name: 提交更新
@@ -48,5 +48,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "Update xmigu epg"
+          git commit -m "Update migu 1905 epg"
           git push
