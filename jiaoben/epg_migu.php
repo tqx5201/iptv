@@ -114,7 +114,7 @@ if (!file_exists($cacheDir))
 {
     mkdir($cacheDir, 0755, true);
 }
-$cacheFile = $cacheDir . 'e.xml';
+$cacheFile = $cacheDir . 'epg_migu.xml';
 $cacheTime = 86400;
 // 24小时缓存
 // 检查缓存是否存在且未过期
