@@ -2,8 +2,6 @@
 date_default_timezone_set('Asia/Shanghai');
 set_time_limit(0); // 
 
-$date = $today = date('Ymd');echo $date;
-
 $Channels = [
     '1905国内经典' => 'series',
     '1905环球经典' => 'cctv6networkv2',
@@ -21,12 +19,14 @@ $cacheFile = $cacheDir.'epg_1905.xml';
 $cacheTime = 86400;
 // 24小时缓存
 // 检查缓存是否存在且未过期
+/*
 if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < $cacheTime)) {
     $epgContent = file_get_contents($cacheFile);
     header('Content-Type: application/xml; charset=utf-8');
     echo $epgContent;
     exit;
 }
+*/
 /* ------------------- 生成节目XML ------------------- */
 function generateProgramXml($channel, $start, $end, $title, $desc = '') {
     $startFmt = date('YmdHis O', $start);
