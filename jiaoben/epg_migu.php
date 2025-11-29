@@ -117,12 +117,14 @@ $cacheFile = $cacheDir . 'epg_migu.xml';
 $cacheTime = 86400;
 // 24小时缓存
 // 检查缓存是否存在且未过期
+/*
 if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < $cacheTime)){
     $epgContent = file_get_contents($cacheFile);
     header('Content-Type: application/xml; charset=utf-8');
     echo $epgContent;
     exit;
 }
+*/
 /* ------------------- HTTP 请求 ------------------- */
 function httpGet($url,$Referer='') {
     $ch = curl_init();
