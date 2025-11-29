@@ -2,7 +2,7 @@
 date_default_timezone_set('Asia/Shanghai');
 set_time_limit(0); // 
 
-
+$date = $today = date('Ymd');echo $date;
 
 $Channels = [
     '1905国内经典' => 'series',
