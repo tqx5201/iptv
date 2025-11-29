@@ -28,7 +28,7 @@ jobs:
 
       - name: 运行脚本
         run: |
-          php jiaoben/epg_migu.php
+          #php jiaoben/epg_migu.php
           php jiaoben/epg_1905.php
 
       - name: Check workspace and epg directory
