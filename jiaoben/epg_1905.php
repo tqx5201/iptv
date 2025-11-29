@@ -52,7 +52,7 @@ foreach(array_keys($Channels) as $channelName) {
     $epgContent.= "\t</channel>".PHP_EOL;
 }
 /* ------------------- 处理频道 ------------------- */
-$date = $today = date('Ymd');
+$date = $today = date('Ymd');echo $date;
 //使用Ymd格式日期
 $tomorrow = date('Ymd', strtotime('+1 day'));
 foreach($Channels as $channelName => $channelId) {
