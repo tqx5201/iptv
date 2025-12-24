@@ -18,322 +18,331 @@
 	<channel id="CMC香港">
 		<display-name lang="zh">CMC香港</display-name>
 	</channel>
-	<programme channel="1905国内经典" start="20251224000000 +0800" stop="20251224004100 +0800">
-		<title lang="zh">流浪地球2</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224004100 +0800" stop="20251224022200 +0800">
-		<title lang="zh">康定情歌</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224022200 +0800" stop="20251224035700 +0800">
-		<title lang="zh">布谷催春</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224035700 +0800" stop="20251224052400 +0800">
-		<title lang="zh">唐伯虎点秋香</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224052400 +0800" stop="20251224072000 +0800">
-		<title lang="zh">快把我哥带走</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224072000 +0800" stop="20251224091100 +0800">
-		<title lang="zh">我的女友是机器人</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224091100 +0800" stop="20251224105100 +0800">
-		<title lang="zh">大鱼海棠</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224105100 +0800" stop="20251224122900 +0800">
-		<title lang="zh">霸王别姬</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224122900 +0800" stop="20251224143500 +0800">
-		<title lang="zh">山河故人</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224143500 +0800" stop="20251224161900 +0800">
-		<title lang="zh">黑蝴蝶</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224161900 +0800" stop="20251224175300 +0800">
-		<title lang="zh">爱情银行</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224175300 +0800" stop="20251224192200 +0800">
-		<title lang="zh">上一当</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224192200 +0800" stop="20251224211800 +0800">
-		<title lang="zh">飞驰人生2</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224211800 +0800" stop="20251224232800 +0800">
-		<title lang="zh">唐人街探案3</title>
-	</programme>
-	<programme channel="1905国内经典" start="20251224232800 +0800" stop="20251224235959 +0800">
+	<programme channel="1905国内经典" start="20251225000000 +0800" stop="20251225012300 +0800">
 		<title lang="zh">非诚勿扰3</title>
 	</programme>
-	<programme channel="1905环球经典" start="20251224000000 +0800" stop="20251224014100 +0800">
-		<title lang="zh">杀死一只知更鸟</title>
+	<programme channel="1905国内经典" start="20251225012300 +0800" stop="20251225030000 +0800">
+		<title lang="zh">焦裕禄</title>
 	</programme>
-	<programme channel="1905环球经典" start="20251224014100 +0800" stop="20251224032400 +0800">
-		<title lang="zh">呼啸山庄</title>
+	<programme channel="1905国内经典" start="20251225030000 +0800" stop="20251225045400 +0800">
+		<title lang="zh">保密局的枪声</title>
 	</programme>
-	<programme channel="1905环球经典" start="20251224032400 +0800" stop="20251224064400 +0800">
-		<title lang="zh">日瓦戈医生</title>
+	<programme channel="1905国内经典" start="20251225045400 +0800" stop="20251225064400 +0800">
+		<title lang="zh">红色娘子军</title>
 	</programme>
-	<programme channel="1905环球经典" start="20251224064400 +0800" stop="20251224100200 +0800">
-		<title lang="zh">巨人传</title>
+	<programme channel="1905国内经典" start="20251225064400 +0800" stop="20251225081000 +0800">
+		<title lang="zh">澳门情缘</title>
 	</programme>
-	<programme channel="1905环球经典" start="20251224100200 +0800" stop="20251224120600 +0800">
-		<title lang="zh">天涯何处觅知音</title>
+	<programme channel="1905国内经典" start="20251225081000 +0800" stop="20251225095100 +0800">
+		<title lang="zh">走四方</title>
 	</programme>
-	<programme channel="1905环球经典" start="20251224120600 +0800" stop="20251224160000 +0800">
-		<title lang="zh">乱世佳人</title>
+	<programme channel="1905国内经典" start="20251225095100 +0800" stop="20251225132200 +0800">
+		<title lang="zh">大决战之淮海战役</title>
 	</programme>
-	<programme channel="1905环球经典" start="20251224160000 +0800" stop="20251224172600 +0800">
-		<title lang="zh">一封陌生女子的来信</title>
+	<programme channel="1905国内经典" start="20251225132200 +0800" stop="20251225144700 +0800">
+		<title lang="zh">女子别动队</title>
 	</programme>
-	<programme channel="1905环球经典" start="20251224172600 +0800" stop="20251224203400 +0800">
-		<title lang="zh">悲惨世界</title>
-	</programme>
-	<programme channel="1905环球经典" start="20251224203400 +0800" stop="20251224223300 +0800">
-		<title lang="zh">巴黎圣母院</title>
-	</programme>
-	<programme channel="1905环球经典" start="20251224223300 +0800" stop="20251224235959 +0800">
-		<title lang="zh">大话西游之大圣娶亲</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224000000 +0800" stop="20251224001300 +0800">
-		<title lang="zh">我是谁（下）</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224001300 +0800" stop="20251224002100 +0800">
-		<title lang="zh">今日影评2025-255</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224002100 +0800" stop="20251224002600 +0800">
-		<title lang="zh">光影星播客</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224002600 +0800" stop="20251224020200 +0800">
-		<title lang="zh">人生路不熟</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224020200 +0800" stop="20251224032600 +0800">
-		<title lang="zh">军统特遣队</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224032600 +0800" stop="20251224040000 +0800">
-		<title lang="zh">时间中的孩子（上）</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224040000 +0800" stop="20251224045500 +0800">
-		<title lang="zh">时间中的孩子（下）</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224045500 +0800" stop="20251224064300 +0800">
-		<title lang="zh">横空出世</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224064300 +0800" stop="20251224081300 +0800">
-		<title lang="zh">李天佑血战四平</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224081300 +0800" stop="20251224081800 +0800">
-		<title lang="zh">光影星播客</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224081800 +0800" stop="20251224094900 +0800">
-		<title lang="zh">立水桥北</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224094900 +0800" stop="20251224095600 +0800">
-		<title lang="zh">光影星播客</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224095600 +0800" stop="20251224112700 +0800">
-		<title lang="zh">鱼妖志</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224112700 +0800" stop="20251224113300 +0800">
-		<title lang="zh">光影星播客</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224113300 +0800" stop="20251224113900 +0800">
-		<title lang="zh">音乐电影欣赏</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224113900 +0800" stop="20251224131700 +0800">
-		<title lang="zh">桌球少女</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224131700 +0800" stop="20251224132400 +0800">
-		<title lang="zh">光影星播客</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224132400 +0800" stop="20251224145600 +0800">
-		<title lang="zh">徐海东喋血町店</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224145600 +0800" stop="20251224164100 +0800">
-		<title lang="zh">博物馆奇妙夜</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224164100 +0800" stop="20251224164800 +0800">
-		<title lang="zh">光影星播客</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224164800 +0800" stop="20251224181600 +0800">
-		<title lang="zh">狼袭草原</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224181600 +0800" stop="20251224182400 +0800">
-		<title lang="zh">光影星播客</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224182400 +0800" stop="20251224182900 +0800">
-		<title lang="zh">光影星播客</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224182900 +0800" stop="20251224183900 +0800">
-		<title lang="zh">今日影评2025-256</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224183900 +0800" stop="20251224201800 +0800">
-		<title lang="zh">漫长归途</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224201800 +0800" stop="20251224202400 +0800">
-		<title lang="zh">光影星播客</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224202400 +0800" stop="20251224215600 +0800">
-		<title lang="zh">把家虎</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224215600 +0800" stop="20251224220000 +0800">
-		<title lang="zh">光影星播客</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224220000 +0800" stop="20251224221800 +0800">
-		<title lang="zh">中国电影报道 2025-358</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224221800 +0800" stop="20251224222300 +0800">
-		<title lang="zh">中国福利彩票阳光开奖2025-12-24</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224222300 +0800" stop="20251224230000 +0800">
-		<title lang="zh">特种部队：蛇眼起源（上）</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224230000 +0800" stop="20251224230100 +0800">
-		<title lang="zh">中国体育彩票阳光开奖2025-12-24</title>
-	</programme>
-	<programme channel="CCTV6" start="20251224230100 +0800" stop="20251224235959 +0800">
-		<title lang="zh">特种部队：蛇眼起源（下）</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224000000 +0800" stop="20251224012000 +0800">
-		<title lang="zh">戴帽绅士</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224012000 +0800" stop="20251224024500 +0800">
-		<title lang="zh">奇遇天缘</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224024500 +0800" stop="20251224042500 +0800">
-		<title lang="zh">卡拉是条狗（上、下）</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224042500 +0800" stop="20251224061500 +0800">
-		<title lang="zh">等风来</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224061500 +0800" stop="20251224080000 +0800">
-		<title lang="zh">武馆</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224080000 +0800" stop="20251224094000 +0800">
-		<title lang="zh">剩者为王</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224094000 +0800" stop="20251224115000 +0800">
-		<title lang="zh">孤胆保镖</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224115000 +0800" stop="20251224140000 +0800">
-		<title lang="zh">亡命救护车</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224140000 +0800" stop="20251224154000 +0800">
-		<title lang="zh">帕丁顿熊2</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224154000 +0800" stop="20251224172000 +0800">
-		<title lang="zh">摩登年代</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224172000 +0800" stop="20251224185000 +0800">
-		<title lang="zh">哀乐女子天团</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224185000 +0800" stop="20251224202500 +0800">
-		<title lang="zh">卧底巨星</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224202500 +0800" stop="20251224220000 +0800">
-		<title lang="zh">疯狂密码</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224220000 +0800" stop="20251224232500 +0800">
-		<title lang="zh">她的奇妙的圣诞夜</title>
-	</programme>
-	<programme channel="CHC家庭" start="20251224232500 +0800" stop="20251224235959 +0800">
-		<title lang="zh">分手大师</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224000000 +0800" stop="20251224010400 +0800">
-		<title lang="zh">李志民军管包头</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224010400 +0800" stop="20251224023700 +0800">
-		<title lang="zh">西域大都护</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224023700 +0800" stop="20251224041100 +0800">
-		<title lang="zh">卧底千金</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224041100 +0800" stop="20251224053700 +0800">
-		<title lang="zh">抗日冲锋队 截杀行动</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224053700 +0800" stop="20251224071200 +0800">
-		<title lang="zh">陆小凤传奇之银钩赌坊</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224071200 +0800" stop="20251224083300 +0800">
-		<title lang="zh">小镇追凶</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224083300 +0800" stop="20251224100000 +0800">
-		<title lang="zh">哈尔滨往事之血色宝藏</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224100000 +0800" stop="20251224113300 +0800">
-		<title lang="zh">红樱桃之谜</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224113300 +0800" stop="20251224131000 +0800">
-		<title lang="zh">御医传奇</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224131000 +0800" stop="20251224144400 +0800">
-		<title lang="zh">远东特遣队 第2部 狭路相逢</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224144400 +0800" stop="20251224161600 +0800">
-		<title lang="zh">远东特遣队 第6部 密令截击</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224161600 +0800" stop="20251224175000 +0800">
-		<title lang="zh">湘女萧萧</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224175000 +0800" stop="20251224191100 +0800">
-		<title lang="zh">回望长安</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224191100 +0800" stop="20251224204000 +0800">
-		<title lang="zh">夺魂异阵图</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224204000 +0800" stop="20251224221400 +0800">
-		<title lang="zh">男人上路</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224221400 +0800" stop="20251224234200 +0800">
-		<title lang="zh">产房</title>
-	</programme>
-	<programme channel="CMC北美" start="20251224234200 +0800" stop="20251224235959 +0800">
-		<title lang="zh">抗日冲锋队 夺宝锄奸</title>
-	</programme>
-	<programme channel="CMC香港" start="20251224000000 +0800" stop="20251224002700 +0800">
-		<title lang="zh">宴遇奇缘</title>
-	</programme>
-	<programme channel="CMC香港" start="20251224002700 +0800" stop="20251224020600 +0800">
-		<title lang="zh">二子开店</title>
-	</programme>
-	<programme channel="CMC香港" start="20251224020600 +0800" stop="20251224034000 +0800">
-		<title lang="zh">灿烂的季节</title>
-	</programme>
-	<programme channel="CMC香港" start="20251224034000 +0800" stop="20251224052200 +0800">
+	<programme channel="1905国内经典" start="20251225144700 +0800" stop="20251225162900 +0800">
 		<title lang="zh">万家灯火</title>
 	</programme>
-	<programme channel="CMC香港" start="20251224052200 +0800" stop="20251224070400 +0800">
-		<title lang="zh">刑警张玉贵之三执法者</title>
+	<programme channel="1905国内经典" start="20251225162900 +0800" stop="20251225180200 +0800">
+		<title lang="zh">少年巴比伦</title>
 	</programme>
-	<programme channel="CMC香港" start="20251224070400 +0800" stop="20251224083700 +0800">
-		<title lang="zh">风云荡寇</title>
+	<programme channel="1905国内经典" start="20251225180200 +0800" stop="20251225193200 +0800">
+		<title lang="zh">战狼</title>
 	</programme>
-	<programme channel="CMC香港" start="20251224083700 +0800" stop="20251224101200 +0800">
-		<title lang="zh">弹无虚发之天国宝藏</title>
+	<programme channel="1905国内经典" start="20251225193200 +0800" stop="20251225205900 +0800">
+		<title lang="zh">举起手来</title>
 	</programme>
-	<programme channel="CMC香港" start="20251224101200 +0800" stop="20251224113900 +0800">
-		<title lang="zh">笨贼总动员</title>
+	<programme channel="1905国内经典" start="20251225205900 +0800" stop="20251225224700 +0800">
+		<title lang="zh">超能一家人</title>
 	</programme>
-	<programme channel="CMC香港" start="20251224113900 +0800" stop="20251224131800 +0800">
-		<title lang="zh">陌路狂刀</title>
+	<programme channel="1905国内经典" start="20251225224700 +0800" stop="20251225235959 +0800">
+		<title lang="zh">股疯</title>
 	</programme>
-	<programme channel="CMC香港" start="20251224131800 +0800" stop="20251224145200 +0800">
-		<title lang="zh">铁翼重生之绝境勇士</title>
+	<programme channel="1905环球经典" start="20251225000000 +0800" stop="20251225000800 +0800">
+		<title lang="zh">大话西游之大圣娶亲</title>
 	</programme>
-	<programme channel="CMC香港" start="20251224145200 +0800" stop="20251224162700 +0800">
-		<title lang="zh">第五行动组I对决</title>
+	<programme channel="1905环球经典" start="20251225000800 +0800" stop="20251225014400 +0800">
+		<title lang="zh">如何嫁给百万富翁</title>
 	</programme>
-	<programme channel="CMC香港" start="20251224162700 +0800" stop="20251224180900 +0800">
+	<programme channel="1905环球经典" start="20251225014400 +0800" stop="20251225030100 +0800">
+		<title lang="zh">豆蔻年华</title>
+	</programme>
+	<programme channel="1905环球经典" start="20251225030100 +0800" stop="20251225043200 +0800">
+		<title lang="zh">绅士爱美人</title>
+	</programme>
+	<programme channel="1905环球经典" start="20251225043200 +0800" stop="20251225060900 +0800">
+		<title lang="zh">妙药春情</title>
+	</programme>
+	<programme channel="1905环球经典" start="20251225060900 +0800" stop="20251225080600 +0800">
+		<title lang="zh">娱乐至上</title>
+	</programme>
+	<programme channel="1905环球经典" start="20251225080600 +0800" stop="20251225095100 +0800">
+		<title lang="zh">七年之痒</title>
+	</programme>
+	<programme channel="1905环球经典" start="20251225095100 +0800" stop="20251225112500 +0800">
+		<title lang="zh">巴士站</title>
+	</programme>
+	<programme channel="1905环球经典" start="20251225112500 +0800" stop="20251225132600 +0800">
+		<title lang="zh">热情如火</title>
+	</programme>
+	<programme channel="1905环球经典" start="20251225132600 +0800" stop="20251225152000 +0800">
+		<title lang="zh">让我们相爱吧</title>
+	</programme>
+	<programme channel="1905环球经典" start="20251225152000 +0800" stop="20251225173800 +0800">
+		<title lang="zh">彗星美人</title>
+	</programme>
+	<programme channel="1905环球经典" start="20251225173800 +0800" stop="20251225193500 +0800">
+		<title lang="zh">游龙戏凤</title>
+	</programme>
+	<programme channel="1905环球经典" start="20251225193500 +0800" stop="20251225212000 +0800">
+		<title lang="zh">一夜风流</title>
+	</programme>
+	<programme channel="1905环球经典" start="20251225212000 +0800" stop="20251225231400 +0800">
+		<title lang="zh">龙凤配</title>
+	</programme>
+	<programme channel="1905环球经典" start="20251225231400 +0800" stop="20251225235959 +0800">
+		<title lang="zh">巴黎假期</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225000000 +0800" stop="20251225001900 +0800">
+		<title lang="zh">特种部队：蛇眼起源（下）</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225001900 +0800" stop="20251225002700 +0800">
+		<title lang="zh">今日影评2025-256</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225002700 +0800" stop="20251225003200 +0800">
+		<title lang="zh">光影星播客</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225003200 +0800" stop="20251225021300 +0800">
+		<title lang="zh">煎饼侠</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225021300 +0800" stop="20251225034200 +0800">
+		<title lang="zh">我心雀跃</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225034200 +0800" stop="20251225052300 +0800">
+		<title lang="zh">盛糖乐队</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225052300 +0800" stop="20251225062800 +0800">
+		<title lang="zh">杨门女将  大破天门阵</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225062800 +0800" stop="20251225075800 +0800">
+		<title lang="zh">把家虎</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225075800 +0800" stop="20251225080400 +0800">
+		<title lang="zh">光影星播客</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225080400 +0800" stop="20251225094500 +0800">
+		<title lang="zh">鹞鹰行动</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225094500 +0800" stop="20251225095200 +0800">
+		<title lang="zh">光影星播客</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225095200 +0800" stop="20251225112700 +0800">
+		<title lang="zh">木鸢迷踪</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225112700 +0800" stop="20251225113300 +0800">
+		<title lang="zh">光影星播客</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225113300 +0800" stop="20251225113800 +0800">
+		<title lang="zh">音乐电影欣赏</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225113800 +0800" stop="20251225130900 +0800">
+		<title lang="zh">凿空者之使命召唤</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225130900 +0800" stop="20251225131600 +0800">
+		<title lang="zh">光影星播客</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225131600 +0800" stop="20251225145600 +0800">
+		<title lang="zh">精武英雄</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225145600 +0800" stop="20251225153300 +0800">
+		<title lang="zh">马永贞（1972）（上）</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225153300 +0800" stop="20251225164300 +0800">
+		<title lang="zh">马永贞（1972）（下）</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225164300 +0800" stop="20251225165100 +0800">
+		<title lang="zh">光影星播客</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225165100 +0800" stop="20251225181600 +0800">
+		<title lang="zh">少年派方世玉</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225181600 +0800" stop="20251225182300 +0800">
+		<title lang="zh">光影星播客</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225182300 +0800" stop="20251225182800 +0800">
+		<title lang="zh">光影星播客</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225182800 +0800" stop="20251225183800 +0800">
+		<title lang="zh">今日影评2025-257</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225183800 +0800" stop="20251225201300 +0800">
+		<title lang="zh">广东十虎苏灿之亢龙有悔</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225201300 +0800" stop="20251225202000 +0800">
+		<title lang="zh">光影星播客</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225202000 +0800" stop="20251225215600 +0800">
+		<title lang="zh">广东十虎苏灿之潜龙出世</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225215600 +0800" stop="20251225220000 +0800">
+		<title lang="zh">光影星播客</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225220000 +0800" stop="20251225221800 +0800">
+		<title lang="zh">中国电影报道 2025-359</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225221800 +0800" stop="20251225222400 +0800">
+		<title lang="zh">中国福利彩票阳光开奖2025-12-25</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225222400 +0800" stop="20251225230000 +0800">
+		<title lang="zh">小鬼当街（上）</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225230000 +0800" stop="20251225230100 +0800">
+		<title lang="zh">中国体育彩票阳光开奖2025-12-25</title>
+	</programme>
+	<programme channel="CCTV6" start="20251225230100 +0800" stop="20251225235959 +0800">
+		<title lang="zh">小鬼当街（下）</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225000000 +0800" stop="20251225011500 +0800">
+		<title lang="zh">分手大师</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225011500 +0800" stop="20251225024000 +0800">
+		<title lang="zh">武僧</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225024000 +0800" stop="20251225041500 +0800">
+		<title lang="zh">红辣椒</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225041500 +0800" stop="20251225055500 +0800">
+		<title lang="zh">鹦鹉杀</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225055500 +0800" stop="20251225072500 +0800">
+		<title lang="zh">极速保镖</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225072500 +0800" stop="20251225090000 +0800">
+		<title lang="zh">卧底巨星</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225090000 +0800" stop="20251225114000 +0800">
+		<title lang="zh">阿凡达</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225114000 +0800" stop="20251225132000 +0800">
+		<title lang="zh">百变爱人</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225132000 +0800" stop="20251225153500 +0800">
+		<title lang="zh">卓别林</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225153500 +0800" stop="20251225172000 +0800">
+		<title lang="zh">异界</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225172000 +0800" stop="20251225184500 +0800">
+		<title lang="zh">翻滚吧姐妹</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225184500 +0800" stop="20251225202500 +0800">
+		<title lang="zh">情遇曼哈顿</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225202500 +0800" stop="20251225220000 +0800">
+		<title lang="zh">亲爱的爸爸</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225220000 +0800" stop="20251225232500 +0800">
+		<title lang="zh">冰雪大作战2</title>
+	</programme>
+	<programme channel="CHC家庭" start="20251225232500 +0800" stop="20251225235959 +0800">
+		<title lang="zh">“骗骗”喜欢你</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225000000 +0800" stop="20251225011700 +0800">
+		<title lang="zh">抗日冲锋队 夺宝锄奸</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225011700 +0800" stop="20251225024700 +0800">
+		<title lang="zh">抗日冲锋队--雪域追踪</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225024700 +0800" stop="20251225042300 +0800">
+		<title lang="zh">陆小凤传奇之绣花大盗</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225042300 +0800" stop="20251225055700 +0800">
+		<title lang="zh">女神捕之现形</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225055700 +0800" stop="20251225071700 +0800">
+		<title lang="zh">我们的岁月</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225071700 +0800" stop="20251225082800 +0800">
+		<title lang="zh">五虎将</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225082800 +0800" stop="20251225100000 +0800">
+		<title lang="zh">业余警察</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225100000 +0800" stop="20251225114400 +0800">
+		<title lang="zh">邻居</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225114400 +0800" stop="20251225131900 +0800">
+		<title lang="zh">学区房72小时</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225131900 +0800" stop="20251225150100 +0800">
+		<title lang="zh">来自南方的北方捕快</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225150100 +0800" stop="20251225163600 +0800">
+		<title lang="zh">施公案之火铳案</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225163600 +0800" stop="20251225181100 +0800">
+		<title lang="zh">医痴叶天士</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225181100 +0800" stop="20251225194400 +0800">
+		<title lang="zh">胖婶进城</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225194400 +0800" stop="20251225210900 +0800">
+		<title lang="zh">虎山行</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225210900 +0800" stop="20251225224100 +0800">
+		<title lang="zh">远东特遣队 第8部 铁血奇兵</title>
+	</programme>
+	<programme channel="CMC北美" start="20251225224100 +0800" stop="20251225235959 +0800">
+		<title lang="zh">灭世魔珠</title>
+	</programme>
+	<programme channel="CMC香港" start="20251225000000 +0800" stop="20251225001400 +0800">
+		<title lang="zh">红旗谱</title>
+	</programme>
+	<programme channel="CMC香港" start="20251225001400 +0800" stop="20251225015700 +0800">
 		<title lang="zh">草房子</title>
 	</programme>
-	<programme channel="CMC香港" start="20251224180900 +0800" stop="20251224193200 +0800">
-		<title lang="zh">陈漫远奔袭会宁</title>
+	<programme channel="CMC香港" start="20251225015700 +0800" stop="20251225033200 +0800">
+		<title lang="zh">老妈学车</title>
 	</programme>
-	<programme channel="CMC香港" start="20251224193200 +0800" stop="20251224210000 +0800">
-		<title lang="zh">鼠辈之名</title>
+	<programme channel="CMC香港" start="20251225033200 +0800" stop="20251225050600 +0800">
+		<title lang="zh">不亦乐乎</title>
 	</programme>
-	<programme channel="CMC香港" start="20251224210000 +0800" stop="20251224222100 +0800">
-		<title lang="zh">我是外星人</title>
+	<programme channel="CMC香港" start="20251225050600 +0800" stop="20251225065200 +0800">
+		<title lang="zh">渡江侦察记</title>
 	</programme>
-	<programme channel="CMC香港" start="20251224222100 +0800" stop="20251224235959 +0800">
-		<title lang="zh">红旗谱</title>
+	<programme channel="CMC香港" start="20251225065200 +0800" stop="20251225082500 +0800">
+		<title lang="zh">黄河喜事</title>
+	</programme>
+	<programme channel="CMC香港" start="20251225082500 +0800" stop="20251225100700 +0800">
+		<title lang="zh">甲午风云</title>
+	</programme>
+	<programme channel="CMC香港" start="20251225100700 +0800" stop="20251225113200 +0800">
+		<title lang="zh">麻辣白玉堂之致命棋局</title>
+	</programme>
+	<programme channel="CMC香港" start="20251225113200 +0800" stop="20251225131100 +0800">
+		<title lang="zh">最强铁血奶爸</title>
+	</programme>
+	<programme channel="CMC香港" start="20251225131100 +0800" stop="20251225144800 +0800">
+		<title lang="zh">丢人</title>
+	</programme>
+	<programme channel="CMC香港" start="20251225144800 +0800" stop="20251225162800 +0800">
+		<title lang="zh">混在北京</title>
+	</programme>
+	<programme channel="CMC香港" start="20251225162800 +0800" stop="20251225175300 +0800">
+		<title lang="zh">狼牙关</title>
+	</programme>
+	<programme channel="CMC香港" start="20251225175300 +0800" stop="20251225192700 +0800">
+		<title lang="zh">枭龙</title>
+	</programme>
+	<programme channel="CMC香港" start="20251225192700 +0800" stop="20251225210000 +0800">
+		<title lang="zh">别跟狗较劲</title>
+	</programme>
+	<programme channel="CMC香港" start="20251225210000 +0800" stop="20251225224000 +0800">
+		<title lang="zh">铁血阳泉</title>
+	</programme>
+	<programme channel="CMC香港" start="20251225224000 +0800" stop="20251225235959 +0800">
+		<title lang="zh">龙之战</title>
 	</programme>
 </tv>
