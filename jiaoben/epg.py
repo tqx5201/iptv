@@ -131,7 +131,12 @@ def check_display_name(display_name_text, channels):
     # 检查原始值是否在 channels 中
     if display_name_text in channels:
         return display_name_text
-    
+
+    # 检查“CCTV”替换为"CCTV-"后的值是否在 channels 中
+    CCTV_name = display_name_text.replace('CCTV', 'CCTV-')
+    if CCTV_name in channels:
+        return CCTV_name
+        
     # 如果包含空格，取空格前的内容
     if ' ' in display_name_text:
         space_split_name = display_name_text.split(' ')[0]
