@@ -3,6 +3,9 @@ import requests
 import gzip
 import io
 import os
+# 新增：禁用HTTPS证书验证警告（核心解决InsecureRequestWarning）
+from urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
 # 全局请求头：模拟浏览器，避免被源地址拦截
 HEADERS = {
@@ -13,7 +16,7 @@ HEADERS = {
 }
 
 def ignore_xml_namespace(elem):
-    """忽略XML命名空间，解决带命名空间的节点无法查找问题（核心修复）"""
+    """忽略XML命名空间，解决带命名空间的节点无法查找问题"""
     if elem.tag.startswith('{'):
         elem.tag = elem.tag.split('}', 1)[1]
     for child in elem:
@@ -21,15 +24,9 @@ def ignore_xml_namespace(elem):
     return elem
 
 def get_node_text(elem, node_name):
-    """
-    通用节点文本提取工具：兼容命名空间/多层嵌套/多节点，返回第一个有效文本
-    :param elem: 父节点
-    :param node_name: 要查找的子节点名（如title/desc）
-    :return: 清洗后的文本，无则返回空字符串
-    """
+    """通用节点文本提取：兼容命名空间/多层嵌套/多节点，返回第一个有效文本"""
     if elem is None:
         return ""
-    # 查找所有同名节点（兼容多层嵌套）
     nodes = elem.findall(f'.//{node_name}')
     for node in nodes:
         if node.text and node.text.strip():
@@ -43,14 +40,12 @@ def download_xmltv(url):
         response = requests.get(url, headers=HEADERS, timeout=10, verify=False)
         response.raise_for_status()
 
-        # 处理gzip压缩
         if url.endswith('.gz'):
             with gzip.open(io.BytesIO(response.content), 'rt', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
         else:
             content = response.content.decode('utf-8', errors='ignore')
 
-        # 解析并忽略命名空间（关键：解决大部分源解析不到节点的问题）
         elem = ET.fromstring(content)
         elem = ignore_xml_namespace(elem)
         return elem
@@ -68,13 +63,11 @@ def extract_channels_from_url(url):
         channels = []
         for line in response.text.splitlines():
             line = line.strip()
-            # 过滤空行、含#genre#的行
             if line and "#genre#" not in line:
                 channel_name = line.split(',')[0].strip()
-                # 过滤空频道名，保证列表有效性
                 if channel_name:
                     channels.append(channel_name)
-        # 去重自定义频道（避免重复匹配）
+        # 去重自定义频道，避免重复匹配
         channels = list(set(channels))
         print(f"✅ 获取我的频道成功，共{len(channels)}个有效频道")
         return channels
@@ -83,16 +76,16 @@ def extract_channels_from_url(url):
         return []
 
 def format_programme(programme):
-    """格式化programme节点，补全东八区时区，修复title解析（核心修改）"""
+    """格式化programme节点，补全东八区时区，兼容所有格式的title解析"""
     new_programme = ET.Element('programme')
-    # 处理时间，裁剪多余后缀并补全+0800
+    # 处理时间，裁剪多余后缀并补全+0800时区
     start = programme.get('start', '').split()[0] if programme.get('start') else ''
     stop = programme.get('stop', '').split()[0] if programme.get('stop') else ''
     new_programme.set('start', f"{start} +0800" if start else '')
     new_programme.set('stop', f"{stop} +0800" if stop else '')
     new_programme.set('channel', programme.get('channel', ''))
 
-    # 核心修复：用通用工具函数提取title，兼容命名空间/多层嵌套/多节点
+    # 提取节目标题，无有效标题则显示「未知标题」
     title_text = get_node_text(programme, 'title')
     new_title = ET.SubElement(new_programme, 'title')
     new_title.text = title_text if title_text else '未知标题'
@@ -102,7 +95,7 @@ def format_channel(channel, matched_name):
     """格式化channel节点，仅保留ID和匹配后的频道名，精简节点"""
     new_channel = ET.Element('channel')
     new_channel.set('id', channel.get('id', ''))
-    # 写入匹配后的自定义频道名
+    # 写入匹配后的自定义频道名，空值兜底
     new_display_name = ET.SubElement(new_channel, 'display-name')
     new_display_name_text = matched_name.strip() if matched_name else '未知频道'
     new_display_name.text = new_display_name_text
@@ -124,7 +117,6 @@ def check_display_name(display_name_text, channels):
         display_name_text + '台',
         display_name_text + '台HD'
     ]
-    # 遍历规则，返回第一个匹配的频道名
     for name in match_rules:
         if name in channels:
             return name
@@ -152,7 +144,7 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
         print("❌ 没有输入XMLTV源地址，程序退出")
         return
 
-    # 1. 提取并校验自定义频道列表
+    # 提取并校验自定义频道列表
     custom_channels = extract_channels_from_url(channel_url)
     if not custom_channels:
         print("❌ 未获取到有效自定义频道列表，程序退出")
@@ -168,11 +160,11 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
     programme_keys = set()     # 节目去重键 (start, 原始channel_id)
     matched_channels = set()   # 匹配成功的频道名
     unmatched_channels = set() # 匹配失败的原始频道名
-    channel_display_name_map = {}  # 匹配名→新频道ID
+    channel_display_name_map = {}  # 匹配名→新频道ID（全局去重核心）
     channel_original_id_map = {}   # 原始频道ID→匹配名
     failed_urls = 0               # 源地址处理失败计数
 
-    # 2. 遍历所有XMLTV源，处理频道和节目
+    # 遍历所有XMLTV源，处理频道和节目
     for url in input_urls:
         print(f"\n正在处理源地址: {url}")
         xml_elem = download_xmltv(url)
@@ -180,13 +172,12 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
             failed_urls += 1
             continue
 
-        # 处理频道节点（核心修复：过滤无ID、无频道名的节点）
+        # 处理频道节点：过滤无ID、无频道名，全局去重匹配
         for channel in xml_elem.findall('channel'):
             original_channel_id = channel.get('id', '').strip()
-            # 过滤无ID的频道节点
             if not original_channel_id:
                 continue
-            # 取第一个display-name节点，严格判断非空
+            # 提取原始频道名
             original_dn_text = get_node_text(channel, 'display-name')
             if not original_dn_text:
                 continue
@@ -196,7 +187,7 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
             matched_name = check_display_name(original_dn_text, custom_channels)
             channel_original_id_map[original_channel_id] = matched_name
 
-            # 匹配成功：生成新频道节点（去重）
+            # 匹配成功：仅首次出现时生成频道节点（全局去重）
             if matched_name:
                 if matched_name not in channel_display_name_map:
                     new_channel = format_channel(channel, matched_name)
@@ -207,10 +198,10 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
             else:
                 unmatched_channels.add(original_dn_text)
 
-        # 处理节目节点（仅保留匹配成功频道的节目，去重）
+        # 处理节目节点：仅保留匹配成功频道的节目，去重聚合
         for programme in xml_elem.findall('programme'):
             original_channel_id = programme.get('channel', '').strip()
-            # 过滤无原始频道ID、未匹配成功的节目
+            # 过滤无原始ID、未匹配成功的节目
             if original_channel_id not in channel_original_id_map:
                 continue
             matched_name = channel_original_id_map[original_channel_id]
@@ -226,12 +217,12 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
                 continue
             programme_keys.add(programme_key)
 
-            # 生成格式化节目节点，替换为匹配后的频道ID
+            # 生成格式化节目节点，关联到全局唯一频道ID
             new_programme = format_programme(programme)
             new_programme.set('channel', channel_display_name_map[matched_name])
             root.append(new_programme)
 
-    # 3. 重置频道ID为连续数字（1,2,3...），简化ID规则
+    # 重置频道ID为连续数字（1,2,3...），简化ID规则
     channel_id_counter = 1
     channel_old2new_id = {}
     for channel in root.findall('channel'):
@@ -246,38 +237,35 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
         if old_id in channel_old2new_id:
             programme.set('channel', channel_old2new_id[old_id])
 
-    # 4. 重排节点：channel在前，programme在后（符合XMLTV官方规范）
+    # 重排节点：channel在前，programme在后（符合XMLTV官方规范）
     root[:] = sorted(root, key=lambda child: 0 if child.tag == 'channel' else 1)
     # 格式化XML缩进，提升可读性
     indent(root)
 
-    # 5. 确保输出目录存在（不存在则创建）
+    # 确保输出目录存在
     output_dir = os.path.dirname(output_file)
     if output_dir and not os.path.exists(output_dir):
         os.makedirs(output_dir, exist_ok=True)
 
-    # 6. 生成最终文件：XML原文件 + gzip压缩版（体积小，适合网络传输）
+    # 生成最终文件：XML原文件 + gzip压缩版
     tree = ET.ElementTree(root)
     tree.write(output_file, encoding='utf-8', xml_declaration=True)
     print(f"\n✅ 标准化XMLTV文件已保存: {output_file}")
 
-    # 生成gzip压缩版
+    # 生成gzip压缩版（体积小，适合IPTV播放器网络加载）
     with open(output_file, 'rb') as f_in, gzip.open(f"{output_file}.gz", 'wb') as f_out:
         f_out.write(f_in.read())
     print(f"✅ Gzip压缩版已保存: {output_file}.gz")
 
-    # 7. 生成3个统计文件，便于排查和优化
-    # 所有原始频道名
+    # 生成3个统计文件
     with open(display_name_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(sorted(all_display_names)))
-    # 匹配成功的频道名
     with open(matched_channel_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(sorted(matched_channels)))
-    # 匹配失败的原始频道名
     with open(unmatched_channel_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(sorted(unmatched_channels)))
 
-    # 打印最终统计信息，直观查看处理结果
+    # 打印最终统计信息
     print(f"\n📊 处理结果统计：")
     print(f"  源地址：共{len(input_urls)}个 | 成功{len(input_urls)-failed_urls}个 | 失败{failed_urls}个")
     print(f"  频道：原始{len(all_display_names)}个 | 匹配成功{len(matched_channels)}个 | 未匹配{len(unmatched_channels)}个")
@@ -285,9 +273,9 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
     print(f"  统计文件：3个（display_names/matched_channels/unmatched_channels）")
 
 if __name__ == "__main__":
-    # 配置参数（可根据自己的需求修改）
+    # 配置参数（可根据需求修改）
     CHANNEL_URL = 'https://7259.cloudns.ch/iptv/source/list_yd.txt'  # 自定义频道列表URL
-    # XMLTV源地址列表（已替换失效源，保留稳定源）
+    # XMLTV源地址列表（稳定有效，已剔除失效源）
     INPUT_URLS = [
         "https://raw.bgithub.xyz/tqx5201/iptv/main/jiaoben/epg_cache/epg_1905.xml",
         "https://raw.bgithub.xyz/tqx5201/iptv/main/jiaoben/epg_cache/epg_migu.xml",
@@ -299,7 +287,7 @@ if __name__ == "__main__":
         "https://epg.pw/xmltv/epg_HK.xml.gz",
         "https://epg.pw/xmltv/epg_CN.xml.gz"
     ]
-    # 输出文件路径（会自动创建epg目录）
+    # 输出文件路径（自动创建epg目录）
     OUTPUT_FILE = "epg/e.xml"
     DISPLAY_NAME_FILE = "epg/display_names.txt"
     MATCHED_CHANNEL_FILE = "epg/matched_channels.txt"
