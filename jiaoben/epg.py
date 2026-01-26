@@ -20,6 +20,22 @@ def ignore_xml_namespace(elem):
         ignore_xml_namespace(child)
     return elem
 
+def get_node_text(elem, node_name):
+    """
+    通用节点文本提取工具：兼容命名空间/多层嵌套/多节点，返回第一个有效文本
+    :param elem: 父节点
+    :param node_name: 要查找的子节点名（如title/desc）
+    :return: 清洗后的文本，无则返回空字符串
+    """
+    if elem is None:
+        return ""
+    # 查找所有同名节点（兼容多层嵌套）
+    nodes = elem.findall(f'.//{node_name}')
+    for node in nodes:
+        if node.text and node.text.strip():
+            return node.text.strip()
+    return ""
+
 def download_xmltv(url):
     """从网址下载XMLTV文件并解析，支持gzip解压，自动处理命名空间"""
     url = url.replace('bgithub.xyz', 'githubusercontent.com')
@@ -67,7 +83,7 @@ def extract_channels_from_url(url):
         return []
 
 def format_programme(programme):
-    """格式化programme节点，补全东八区时区，清洗标题，空值容错"""
+    """格式化programme节点，补全东八区时区，修复title解析（核心修改）"""
     new_programme = ET.Element('programme')
     # 处理时间，裁剪多余后缀并补全+0800
     start = programme.get('start', '').split()[0] if programme.get('start') else ''
@@ -76,10 +92,10 @@ def format_programme(programme):
     new_programme.set('stop', f"{stop} +0800" if stop else '')
     new_programme.set('channel', programme.get('channel', ''))
 
-    # 处理标题，空值替换为「未知标题」
-    title = programme.find('title')
+    # 核心修复：用通用工具函数提取title，兼容命名空间/多层嵌套/多节点
+    title_text = get_node_text(programme, 'title')
     new_title = ET.SubElement(new_programme, 'title')
-    new_title.text = title.text.strip() if (title and title.text) else '未知标题'
+    new_title.text = title_text if title_text else '未知标题'
     return new_programme
 
 def format_channel(channel, matched_name):
@@ -88,7 +104,8 @@ def format_channel(channel, matched_name):
     new_channel.set('id', channel.get('id', ''))
     # 写入匹配后的自定义频道名
     new_display_name = ET.SubElement(new_channel, 'display-name')
-    new_display_name.text = matched_name
+    new_display_name_text = matched_name.strip() if matched_name else '未知频道'
+    new_display_name.text = new_display_name_text
     return new_channel
 
 def check_display_name(display_name_text, channels):
@@ -170,10 +187,7 @@ def merge_xmltv_files(input_urls, output_file, display_name_file, matched_channe
             if not original_channel_id:
                 continue
             # 取第一个display-name节点，严格判断非空
-            original_dn = channel.find('display-name')
-            if original_dn is None or original_dn.text is None:
-                continue
-            original_dn_text = original_dn.text.strip()
+            original_dn_text = get_node_text(channel, 'display-name')
             if not original_dn_text:
                 continue
 
