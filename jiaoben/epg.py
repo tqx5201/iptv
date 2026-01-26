@@ -280,9 +280,9 @@ if __name__ == "__main__":
         "https://raw.bgithub.xyz/tqx5201/iptv/main/jiaoben/epg_cache/epg_1905.xml",
         "https://raw.bgithub.xyz/tqx5201/iptv/main/jiaoben/epg_cache/epg_migu.xml",
         "https://raw.bgithub.xyz/kuke31/xmlgz/main/e.xml.gz",
-        "http://epg.51zmt.top:8000/e.xml",
+        "http://epg.51zmt.top:8000/e.xml.gz",
         "https://epg.hoholove.com/epg.xml",
-        "https://raw.githubusercontent.com/imDazui/Telegram-EPG/master/epg.xml",
+        "https://raw.bgithub.xyz/imDazui/Telegram-EPG/master/epg.xml",
         "https://epg.pw/xmltv/epg_TW.xml.gz",
         "https://epg.pw/xmltv/epg_HK.xml.gz",
         "https://epg.pw/xmltv/epg_CN.xml.gz"
