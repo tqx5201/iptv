@@ -11,7 +11,7 @@ async def check(session, url, timeout):
     except Exception as e:
         ok  = False
         err = str(e)
-    print(url,ok)
+    print(ok,url)
     return url, ok, err
 
 async def main(template, m3u8, timeout, conn):
