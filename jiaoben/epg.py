@@ -277,10 +277,10 @@ if __name__ == "__main__":
     CHANNEL_URL = 'https://7259.cloudns.ch/iptv/source/list_yd.txt'  # 自定义频道列表URL
     # XMLTV源地址列表（稳定有效，已剔除失效源）
     INPUT_URLS = [
-        "https://raw.bgithub.xyz/tqx5201/iptv/main/jiaoben/epg_cache/epg_tv189.xml",
-        "https://raw.bgithub.xyz/tqx5201/iptv/main/jiaoben/epg_cache/epg_1905.xml",
-        "https://raw.bgithub.xyz/tqx5201/iptv/main/jiaoben/epg_cache/epg_migu.xml",
-        "https://raw.bgithub.xyz/kuke31/xmlgz/main/e.xml.gz",
+        "https://raw.githubuserconten.com/tqx5201/iptv/main/jiaoben/epg_cache/epg_tv189.xml",
+        "https://raw.githubuserconten.com/tqx5201/iptv/main/jiaoben/epg_cache/epg_1905.xml",
+        "https://raw.githubuserconten.com/tqx5201/iptv/main/jiaoben/epg_cache/epg_migu.xml",
+        "https://raw.githubuserconten.com/kuke31/xmlgz/main/e.xml.gz",
         "http://epg.51zmt.top:8000/e.xml.gz",
         "https://epg.hoholove.com/epg.xml",
         "https://raw.bgithub.xyz/imDazui/Telegram-EPG/master/epg.xml",
