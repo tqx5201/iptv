@@ -38,7 +38,7 @@ $mgChannels = [
 
 // 初始化EPG内容
 $epgContent = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
-$epgContent .= '<tv>' . PHP_EOL;
+$epgContent .= '<tv generator-info-name="Tqx5201" generator-info-url="https://github.com/tqx5201/iptv">' . PHP_EOL;
 // 添加所有频道信息
 foreach (array_keys($mgChannels) as $channelName) {
     $epgContent .= "\t<channel id=\"{$channelName}\">" . PHP_EOL;
