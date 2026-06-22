@@ -281,7 +281,7 @@ if __name__ == "__main__":
         "https://raw.githubusercontent.com/tqx5201/iptv/main/jiaoben/epg_cache/epg_1905.xml",
         "https://raw.githubusercontent.com/tqx5201/iptv/main/jiaoben/epg_cache/epg_migu.xml",
         "https://raw.githubusercontent.com/kuke31/xmlgz/main/e.xml.gz",
-        "http://epg.51zmt.top:8000/e.xml.gz",
+        #"http://epg.51zmt.top:8000/e.xml.gz",
         "https://epg.hoholove.com/epg.xml",
         "https://raw.bgithub.xyz/imDazui/Telegram-EPG/master/epg.xml",
         "https://epg.pw/xmltv/epg_TW.xml.gz",
