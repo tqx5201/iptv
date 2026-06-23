@@ -26,9 +26,19 @@ jobs:
           #ls 
           python jiaoben/epg_dxxw.py
 
-    - name: Commit changes
+    #- name: Commit changes
+      #run: |
+        #git add jiaoben/epg_cache/dxxw.xml
+        #git add jiaoben/epg_cache/dxxw.txt
+        #git -c user.name="GitHub Actions" -c user.email="actions@github.com" commit -m "Auto-update EPG $(date +'%Y-%m-%d %H:%M')" || echo "No changes"
+        #git push https://${{ github.actor}}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
+    
+    
+    - name: 提交更新
       run: |
-        git add jiaoben/epg_cache/dxxw.xml
-        git add jiaoben/epg_cache/dxxw.txt
-        git -c user.name="GitHub Actions" -c user.email="actions@github.com" commit -m "Auto-update EPG $(date +'%Y-%m-%d %H:%M')" || echo "No changes"
-        git push https://${{ github.actor}}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
+          cd $GITHUB_WORKSPACE/jiaoben/epg_cache
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update dxxw epg"
+          git push
