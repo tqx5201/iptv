@@ -33,7 +33,7 @@ def fetch_channel_list():
 
 def generate_txt(channels):
     """生成直播源文件"""
-    with open("dxxw.txt", "w", encoding="utf-8") as f:
+    with open("./epg_cache/dxxw.txt", "w", encoding="utf-8") as f:
         for chan in channels:
             f.write(f"{chan['name']},{PLAY_URL_TEMPLATE.format(cid=chan['cid'])}\n")
 
@@ -93,7 +93,7 @@ def generate_epg(channel_ids):
             title = ET.SubElement(programme, "title", lang="zh")
             title.text = program["title"]
     
-    with open("epg_dxxw.xml", "w", encoding="utf-8") as f:
+    with open("./epg_cache/epg_dxxw.xml", "w", encoding="utf-8") as f:
         f.write(minidom.parseString(ET.tostring(tv)).toprettyxml(indent="  "))
 
 
@@ -109,5 +109,5 @@ if __name__ == "__main__":
     generate_epg(CHANNEL_IDS)
     
     print("文件生成成功")
-    print("EPG 文件: epg.xml")
-    print("直播源文件: tv.txt")
+    print("EPG 文件: dxxw.xml")
+    print("直播源文件: dxxw.txt")
