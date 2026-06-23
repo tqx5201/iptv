@@ -142,7 +142,7 @@
     <title lang="zh">万象剧场潜行者</title>
   </programme>
   <channel id="149">
-    <display-name lang="zh">新闻频道</display-name>
+    <display-name lang="zh">河南新闻</display-name>
   </channel>
   <programme channel="149" start="20260623001000 +0800" stop="20260623005500 +0800">
     <title lang="zh">梦里老家大美中国</title>
@@ -268,7 +268,7 @@
     <title lang="zh">大象云阙剧场南燕锁宫深</title>
   </programme>
   <channel id="141">
-    <display-name lang="zh">都市频道</display-name>
+    <display-name lang="zh">河南都市</display-name>
   </channel>
   <programme channel="141" start="20260623000000 +0800" stop="20260623011000 +0800">
     <title lang="zh">精彩剧场密查</title>
@@ -364,7 +364,7 @@
     <title lang="zh">午夜剧场知青家庭</title>
   </programme>
   <channel id="146">
-    <display-name lang="zh">民生频道</display-name>
+    <display-name lang="zh">河南民生</display-name>
   </channel>
   <programme channel="146" start="20260623001000 +0800" stop="20260623005300 +0800">
     <title lang="zh">睡不着剧场一独狼</title>
@@ -475,7 +475,7 @@
     <title lang="zh">棋牌汇扩大版</title>
   </programme>
   <channel id="147">
-    <display-name lang="zh">法治频道</display-name>
+    <display-name lang="zh">河南法治</display-name>
   </channel>
   <programme channel="147" start="20260623000500 +0800" stop="20260623010000 +0800">
     <title lang="zh">好剧连连看秋蝉</title>
@@ -583,7 +583,7 @@
     <title lang="zh">拜托啦律师集锦版</title>
   </programme>
   <channel id="151">
-    <display-name lang="zh">公共频道</display-name>
+    <display-name lang="zh">河南公共</display-name>
   </channel>
   <programme channel="151" start="20260623000000 +0800" stop="20260623010500 +0800">
     <title lang="zh">幸福密码凌晨版</title>
@@ -712,7 +712,7 @@
     <title lang="zh">幸福密码晚间版</title>
   </programme>
   <channel id="152">
-    <display-name lang="zh">河南乡村频道</display-name>
+    <display-name lang="zh">河南乡村</display-name>
   </channel>
   <programme channel="152" start="20260623000000 +0800" stop="20260623002000 +0800">
     <title lang="zh">星空影院</title>
@@ -838,7 +838,7 @@
     <title lang="zh">星空影院</title>
   </programme>
   <channel id="148">
-    <display-name lang="zh">电视剧频道</display-name>
+    <display-name lang="zh">河南电视剧</display-name>
   </channel>
   <programme channel="148" start="20260623000000 +0800" stop="20260623010000 +0800">
     <title lang="zh">惊险剧场战火连天</title>
