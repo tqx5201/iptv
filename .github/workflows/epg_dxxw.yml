@@ -1,0 +1,32 @@
+name: EPG Daily Update
+
+on:
+  schedule:
+    - cron: '0 */8 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Generate EPG
+      run: python jiaoben/epg_dxxw.py
+
+    - name: Commit changes
+      run: |
+        git add dxxw.xml
+        git add dxxw.txt
+        git -c user.name="GitHub Actions" -c user.email="actions@github.com" commit -m "Auto-update EPG $(date +'%Y-%m-%d %H:%M')" || echo "No changes"
+        git push https://${{ github.actor}}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
