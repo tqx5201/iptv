@@ -13,6 +13,20 @@ VOD_API_BASE = "https://pubmod.hntv.tv/program/getAuth/vod/originStream/program/
 PLAY_URL_TEMPLATE = "http://A/PLTV/ku9/js/dxxw.js?id={cid}"
 TIMEZONE = pytz.timezone("Asia/Shanghai")
 
+# 多组名称替换映射
+name_map = {
+    "新闻频道": "河南新闻",
+    "都市频道": "河南都市",
+    "民生频道": "河南民生",
+    "法治频道": "河南法治",
+    "公共频道": "河南公共",
+    "河南乡村频道": "河南乡村",
+    "电视剧频道": "河南电视剧"
+}
+
+
+
+
 # 动态获取频道列表
 def fetch_channel_list():
     """获取频道基础信息列表"""
@@ -52,7 +66,7 @@ def fetch_channel_data(channel_id):
         response.raise_for_status()
         data = response.json()
         return {
-            "name": data["name"],
+            "name": name_map.get(data["name"], data["name"]),
             "programs": [{
                 "beginTime": int(p["beginTime"]),
                 "endTime": int(p["endTime"]),
