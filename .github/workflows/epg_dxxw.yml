@@ -1,4 +1,4 @@
-name: EPG Daily Update
+name: EPG 大象新闻
 
 on:
   schedule:
@@ -19,7 +19,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install requests==2.31.0,pytz==2024.1
+        pip install requests==2.31.0 pytz==2024.1
 
     - name: Generate EPG
       run: python jiaoben/epg_dxxw.py
