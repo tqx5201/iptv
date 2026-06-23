@@ -100,6 +100,21 @@ def generate_epg(channel_ids):
 if __name__ == "__main__":
     # 第一步：获取频道列表并生成 tv.txt
     channels = fetch_channel_list()
+    
+    # 多组名称替换映射
+    name_map = {
+        "新闻频道": "河南新闻",
+        "都市频道": "河南都市",
+        "民生频道": "河南民生"
+    }
+    # 就地修改data里每个字典的name值
+    for d in channels:
+        d["name"] = name_map.get(d["name"], d["name"])
+
+    # 替换完成后，data本身就是更新好的新data，直接使用即可
+    print(channels)
+
+
     generate_txt(channels)
     
     # 第二步：提取 CID 列表用于 EPG 生成
