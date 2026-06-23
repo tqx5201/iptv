@@ -115,18 +115,7 @@ if __name__ == "__main__":
     # 第一步：获取频道列表并生成 tv.txt
     channels = fetch_channel_list()
     
-    # 多组名称替换映射
-    name_map = {
-         "新闻频道": "河南新闻",
-         "都市频道": "河南都市",
-         "民生频道": "河南民生",
-         "法治频道": "河南法治",
-         "公共频道": "河南公共",
-         "河南乡村频道": "河南乡村",
-         "电视剧频道": "河南电视剧"
-     }
-    
-    # 就地修改data里每个字典的name值
+    # 就地修改channels里每个字典的name值
     for d in channels:
         d["name"] = name_map.get(d["name"], d["name"])
 
