@@ -22,7 +22,9 @@ jobs:
         pip install requests==2.31.0 pytz==2024.1
 
     - name: Generate EPG
-      run: python jiaoben/epg_dxxw.py
+      run: |
+          ls 
+          python jiaoben/epg_dxxw.py
 
     - name: Commit changes
       run: |
