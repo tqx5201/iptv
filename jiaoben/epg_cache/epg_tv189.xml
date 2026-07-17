@@ -42,910 +42,928 @@
 	<channel id="TV189|周润发系列">
 		<display-name lang="zh">TV189|周润发系列</display-name>
 	</channel>
-	<programme channel="TV189|24h轮播" start="20260717001649 +0800" stop="20260717015552 +0800">
+	<programme channel="TV189|24h轮播" start="20260718011350 +0800" stop="20260718023828 +0800">
+		<title lang="zh">农历十七</title>
+	</programme>
+	<programme channel="TV189|24h轮播" start="20260718023828 +0800" stop="20260718040720 +0800">
+		<title lang="zh">直播惊魂夜</title>
+	</programme>
+	<programme channel="TV189|24h轮播" start="20260718040720 +0800" stop="20260718052912 +0800">
+		<title lang="zh">情断悔龙寺</title>
+	</programme>
+	<programme channel="TV189|24h轮播" start="20260718052912 +0800" stop="20260718070610 +0800">
+		<title lang="zh">毛丰美</title>
+	</programme>
+	<programme channel="TV189|24h轮播" start="20260718070610 +0800" stop="20260718083928 +0800">
+		<title lang="zh">铁扇公主</title>
+	</programme>
+	<programme channel="TV189|24h轮播" start="20260718083928 +0800" stop="20260718094607 +0800">
+		<title lang="zh">大冒险王之西域寻龙</title>
+	</programme>
+	<programme channel="TV189|24h轮播" start="20260718094607 +0800" stop="20260718112510 +0800">
 		<title lang="zh">不想和你有遗憾</title>
 	</programme>
-	<programme channel="TV189|24h轮播" start="20260717015552 +0800" stop="20260717033701 +0800">
+	<programme channel="TV189|24h轮播" start="20260718112510 +0800" stop="20260718130619 +0800">
 		<title lang="zh">邓小平小道</title>
 	</programme>
-	<programme channel="TV189|24h轮播" start="20260717033701 +0800" stop="20260717053157 +0800">
+	<programme channel="TV189|24h轮播" start="20260718130619 +0800" stop="20260718150115 +0800">
 		<title lang="zh"> “骗骗”喜欢你</title>
 	</programme>
-	<programme channel="TV189|24h轮播" start="20260717053157 +0800" stop="20260717065859 +0800">
+	<programme channel="TV189|24h轮播" start="20260718150115 +0800" stop="20260718162817 +0800">
 		<title lang="zh">颛臾王</title>
 	</programme>
-	<programme channel="TV189|24h轮播" start="20260717065859 +0800" stop="20260717082751 +0800">
+	<programme channel="TV189|24h轮播" start="20260718162817 +0800" stop="20260718175709 +0800">
 		<title lang="zh">绝地危机</title>
 	</programme>
-	<programme channel="TV189|24h轮播" start="20260717082751 +0800" stop="20260717100405 +0800">
+	<programme channel="TV189|24h轮播" start="20260718175709 +0800" stop="20260718193323 +0800">
 		<title lang="zh">李保国</title>
 	</programme>
-	<programme channel="TV189|24h轮播" start="20260717100405 +0800" stop="20260717120150 +0800">
+	<programme channel="TV189|24h轮播" start="20260718193323 +0800" stop="20260718213108 +0800">
 		<title lang="zh">老枪</title>
 	</programme>
-	<programme channel="TV189|24h轮播" start="20260717120150 +0800" stop="20260717133606 +0800">
+	<programme channel="TV189|24h轮播" start="20260718213108 +0800" stop="20260718230524 +0800">
 		<title lang="zh">画皮</title>
 	</programme>
-	<programme channel="TV189|24h轮播" start="20260717133606 +0800" stop="20260717150546 +0800">
+	<programme channel="TV189|24h轮播" start="20260718230524 +0800" stop="20260719003504 +0800">
 		<title lang="zh">银杏之梦</title>
 	</programme>
-	<programme channel="TV189|24h轮播" start="20260717150546 +0800" stop="20260717163845 +0800">
-		<title lang="zh">山丹丹花儿开</title>
+	<programme channel="TV189|传奇剧场" start="20260718000616 +0800" stop="20260718005156 +0800">
+		<title lang="zh">《民兵康宝》第8集</title>
 	</programme>
-	<programme channel="TV189|24h轮播" start="20260717163845 +0800" stop="20260717190450 +0800">
-		<title lang="zh">朝花夕拾</title>
-	</programme>
-	<programme channel="TV189|24h轮播" start="20260717190450 +0800" stop="20260717204505 +0800">
-		<title lang="zh">立地</title>
-	</programme>
-	<programme channel="TV189|24h轮播" start="20260717204505 +0800" stop="20260717220913 +0800">
-		<title lang="zh">神机图</title>
-	</programme>
-	<programme channel="TV189|24h轮播" start="20260717220913 +0800" stop="20260717233917 +0800">
-		<title lang="zh">我的处女地</title>
-	</programme>
-	<programme channel="TV189|24h轮播" start="20260717233917 +0800" stop="20260718011350 +0800">
-		<title lang="zh">忽然少年</title>
-	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717003121 +0800" stop="20260717011641 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718005156 +0800" stop="20260718013716 +0800">
 		<title lang="zh">《民兵康宝》第9集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717011641 +0800" stop="20260717020207 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718013716 +0800" stop="20260718022242 +0800">
 		<title lang="zh">《民兵康宝》第10集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717020207 +0800" stop="20260717024521 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718022242 +0800" stop="20260718030556 +0800">
 		<title lang="zh">《民兵康宝》第11集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717024521 +0800" stop="20260717033047 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718030556 +0800" stop="20260718035122 +0800">
 		<title lang="zh">《民兵康宝》第12集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717033047 +0800" stop="20260717041613 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718035122 +0800" stop="20260718043648 +0800">
 		<title lang="zh">《民兵康宝》第13集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717041613 +0800" stop="20260717050140 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718043648 +0800" stop="20260718052215 +0800">
 		<title lang="zh">《民兵康宝》第14集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717050140 +0800" stop="20260717054445 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718052215 +0800" stop="20260718060520 +0800">
 		<title lang="zh">《民兵康宝》第15集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717054445 +0800" stop="20260717063008 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718060520 +0800" stop="20260718065043 +0800">
 		<title lang="zh">《民兵康宝》第16集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717063008 +0800" stop="20260717071530 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718065043 +0800" stop="20260718073605 +0800">
 		<title lang="zh">《民兵康宝》第17集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717071530 +0800" stop="20260717080107 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718073605 +0800" stop="20260718082142 +0800">
 		<title lang="zh">《民兵康宝》第18集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717080107 +0800" stop="20260717084641 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718082142 +0800" stop="20260718090716 +0800">
 		<title lang="zh">《民兵康宝》第19集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717084641 +0800" stop="20260717093249 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718090716 +0800" stop="20260718095324 +0800">
 		<title lang="zh">《神勇武工队传奇》第1集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717093249 +0800" stop="20260717101922 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718095324 +0800" stop="20260718103957 +0800">
 		<title lang="zh">《神勇武工队传奇》第2集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717101922 +0800" stop="20260717110539 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718103957 +0800" stop="20260718112614 +0800">
 		<title lang="zh">《神勇武工队传奇》第3集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717110539 +0800" stop="20260717115209 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718112614 +0800" stop="20260718121244 +0800">
 		<title lang="zh">《神勇武工队传奇》第4集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717115209 +0800" stop="20260717123845 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718121244 +0800" stop="20260718125920 +0800">
 		<title lang="zh">《神勇武工队传奇》第5集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717123845 +0800" stop="20260717132525 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718125920 +0800" stop="20260718134600 +0800">
 		<title lang="zh">《神勇武工队传奇》第6集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717132525 +0800" stop="20260717141153 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718134600 +0800" stop="20260718143228 +0800">
 		<title lang="zh">《神勇武工队传奇》第7集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717141153 +0800" stop="20260717145837 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718143228 +0800" stop="20260718151912 +0800">
 		<title lang="zh">《神勇武工队传奇》第8集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717145837 +0800" stop="20260717154527 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718151912 +0800" stop="20260718160602 +0800">
 		<title lang="zh">《神勇武工队传奇》第9集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717154527 +0800" stop="20260717163159 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718160602 +0800" stop="20260718165234 +0800">
 		<title lang="zh">《神勇武工队传奇》第10集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717163159 +0800" stop="20260717171829 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718165234 +0800" stop="20260718173904 +0800">
 		<title lang="zh">《神勇武工队传奇》第11集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717171829 +0800" stop="20260717172451 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718173904 +0800" stop="20260718174526 +0800">
 		<title lang="zh">《孤军十二时》第1集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717172451 +0800" stop="20260717173106 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718174526 +0800" stop="20260718175141 +0800">
 		<title lang="zh">《孤军十二时》第2集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717173106 +0800" stop="20260717173737 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718175141 +0800" stop="20260718175812 +0800">
 		<title lang="zh">《孤军十二时》第3集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717173737 +0800" stop="20260717174524 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718175812 +0800" stop="20260718180559 +0800">
 		<title lang="zh">《孤军十二时》第4集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717174524 +0800" stop="20260717175534 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718180559 +0800" stop="20260718181609 +0800">
 		<title lang="zh">《孤军十二时》第5集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717175534 +0800" stop="20260717180115 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718181609 +0800" stop="20260718182150 +0800">
 		<title lang="zh">《孤军十二时》第6集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717180115 +0800" stop="20260717180835 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718182150 +0800" stop="20260718182910 +0800">
 		<title lang="zh">《孤军十二时》第7集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717180835 +0800" stop="20260717181525 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718182910 +0800" stop="20260718183600 +0800">
 		<title lang="zh">《孤军十二时》第8集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717181525 +0800" stop="20260717182339 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718183600 +0800" stop="20260718184414 +0800">
 		<title lang="zh">《孤军十二时》第9集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717182339 +0800" stop="20260717183152 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718184414 +0800" stop="20260718185227 +0800">
 		<title lang="zh">《孤军十二时》第10集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717183152 +0800" stop="20260717183913 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718185227 +0800" stop="20260718185948 +0800">
 		<title lang="zh">《孤军十二时》第11集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717183913 +0800" stop="20260717184817 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718185948 +0800" stop="20260718190852 +0800">
 		<title lang="zh">《孤军十二时》第12集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717184817 +0800" stop="20260717193344 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718190852 +0800" stop="20260718195419 +0800">
 		<title lang="zh">《民兵康宝》第1集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717193344 +0800" stop="20260717201905 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718195419 +0800" stop="20260718203940 +0800">
 		<title lang="zh">《民兵康宝》第2集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717201905 +0800" stop="20260717210432 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718203940 +0800" stop="20260718212507 +0800">
 		<title lang="zh">《民兵康宝》第3集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717210432 +0800" stop="20260717214956 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718212507 +0800" stop="20260718221031 +0800">
 		<title lang="zh">《民兵康宝》第4集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717214956 +0800" stop="20260717223522 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718221031 +0800" stop="20260718225557 +0800">
 		<title lang="zh">《民兵康宝》第5集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717223522 +0800" stop="20260717232048 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718225557 +0800" stop="20260718234123 +0800">
 		<title lang="zh">《民兵康宝》第6集</title>
 	</programme>
-	<programme channel="TV189|传奇剧场" start="20260717232048 +0800" stop="20260718000616 +0800">
+	<programme channel="TV189|传奇剧场" start="20260718234123 +0800" stop="20260719002651 +0800">
 		<title lang="zh">《民兵康宝》第7集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717004405 +0800" stop="20260717012930 +0800">
+	<programme channel="TV189|热血剧场" start="20260718000725 +0800" stop="20260718005250 +0800">
+		<title lang="zh">老虎队 09</title>
+	</programme>
+	<programme channel="TV189|热血剧场" start="20260718005250 +0800" stop="20260718013815 +0800">
 		<title lang="zh">老虎队 10</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717012930 +0800" stop="20260717021435 +0800">
+	<programme channel="TV189|热血剧场" start="20260718013815 +0800" stop="20260718022320 +0800">
 		<title lang="zh">边城破晓 第01集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717021435 +0800" stop="20260717025949 +0800">
+	<programme channel="TV189|热血剧场" start="20260718022320 +0800" stop="20260718030834 +0800">
 		<title lang="zh">边城破晓 第02集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717025949 +0800" stop="20260717034442 +0800">
+	<programme channel="TV189|热血剧场" start="20260718030834 +0800" stop="20260718035327 +0800">
 		<title lang="zh">边城破晓 第03集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717034442 +0800" stop="20260717042945 +0800">
+	<programme channel="TV189|热血剧场" start="20260718035327 +0800" stop="20260718043830 +0800">
 		<title lang="zh">边城破晓 第04集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717042945 +0800" stop="20260717051450 +0800">
+	<programme channel="TV189|热血剧场" start="20260718043830 +0800" stop="20260718052335 +0800">
 		<title lang="zh">边城破晓 第05集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717051450 +0800" stop="20260717055944 +0800">
+	<programme channel="TV189|热血剧场" start="20260718052335 +0800" stop="20260718060829 +0800">
 		<title lang="zh">边城破晓 第06集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717055944 +0800" stop="20260717064450 +0800">
+	<programme channel="TV189|热血剧场" start="20260718060829 +0800" stop="20260718065335 +0800">
 		<title lang="zh">边城破晓 第07集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717064450 +0800" stop="20260717072954 +0800">
+	<programme channel="TV189|热血剧场" start="20260718065335 +0800" stop="20260718073839 +0800">
 		<title lang="zh">边城破晓 第08集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717072954 +0800" stop="20260717081449 +0800">
+	<programme channel="TV189|热血剧场" start="20260718073839 +0800" stop="20260718082334 +0800">
 		<title lang="zh">边城破晓 第09集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717081449 +0800" stop="20260717085944 +0800">
+	<programme channel="TV189|热血剧场" start="20260718082334 +0800" stop="20260718090829 +0800">
 		<title lang="zh">边城破晓 第10集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717085944 +0800" stop="20260717094441 +0800">
+	<programme channel="TV189|热血剧场" start="20260718090829 +0800" stop="20260718095326 +0800">
 		<title lang="zh">边城破晓 第11集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717094441 +0800" stop="20260717102942 +0800">
+	<programme channel="TV189|热血剧场" start="20260718095326 +0800" stop="20260718103827 +0800">
 		<title lang="zh">边城破晓 第12集</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717102942 +0800" stop="20260717111454 +0800">
+	<programme channel="TV189|热血剧场" start="20260718103827 +0800" stop="20260718112339 +0800">
 		<title lang="zh">红樱剑 01</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717111454 +0800" stop="20260717115958 +0800">
+	<programme channel="TV189|热血剧场" start="20260718112339 +0800" stop="20260718120843 +0800">
 		<title lang="zh">红樱剑 02</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717115958 +0800" stop="20260717124533 +0800">
+	<programme channel="TV189|热血剧场" start="20260718120843 +0800" stop="20260718125418 +0800">
 		<title lang="zh">红樱剑 03</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717124533 +0800" stop="20260717133044 +0800">
+	<programme channel="TV189|热血剧场" start="20260718125418 +0800" stop="20260718133929 +0800">
 		<title lang="zh">红樱剑 04</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717133044 +0800" stop="20260717141617 +0800">
+	<programme channel="TV189|热血剧场" start="20260718133929 +0800" stop="20260718142502 +0800">
 		<title lang="zh">红樱剑 05</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717141617 +0800" stop="20260717150150 +0800">
+	<programme channel="TV189|热血剧场" start="20260718142502 +0800" stop="20260718151035 +0800">
 		<title lang="zh">红樱剑 06</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717150150 +0800" stop="20260717154728 +0800">
+	<programme channel="TV189|热血剧场" start="20260718151035 +0800" stop="20260718155613 +0800">
 		<title lang="zh">红樱剑 07</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717154728 +0800" stop="20260717163243 +0800">
+	<programme channel="TV189|热血剧场" start="20260718155613 +0800" stop="20260718164128 +0800">
 		<title lang="zh">红樱剑 08</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717163243 +0800" stop="20260717171805 +0800">
+	<programme channel="TV189|热血剧场" start="20260718164128 +0800" stop="20260718172650 +0800">
 		<title lang="zh">红樱剑 09</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717171805 +0800" stop="20260717180335 +0800">
+	<programme channel="TV189|热血剧场" start="20260718172650 +0800" stop="20260718181220 +0800">
 		<title lang="zh">红樱剑 10</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717180335 +0800" stop="20260717184900 +0800">
+	<programme channel="TV189|热血剧场" start="20260718181220 +0800" stop="20260718185745 +0800">
 		<title lang="zh">老虎队 01</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717184900 +0800" stop="20260717193425 +0800">
+	<programme channel="TV189|热血剧场" start="20260718185745 +0800" stop="20260718194310 +0800">
 		<title lang="zh">老虎队 02</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717193425 +0800" stop="20260717201950 +0800">
+	<programme channel="TV189|热血剧场" start="20260718194310 +0800" stop="20260718202835 +0800">
 		<title lang="zh">老虎队 03</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717201950 +0800" stop="20260717210515 +0800">
+	<programme channel="TV189|热血剧场" start="20260718202835 +0800" stop="20260718211400 +0800">
 		<title lang="zh">老虎队 04</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717210515 +0800" stop="20260717215040 +0800">
+	<programme channel="TV189|热血剧场" start="20260718211400 +0800" stop="20260718215925 +0800">
 		<title lang="zh">老虎队 05</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717215040 +0800" stop="20260717223635 +0800">
+	<programme channel="TV189|热血剧场" start="20260718215925 +0800" stop="20260718224520 +0800">
 		<title lang="zh">老虎队 06</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717223635 +0800" stop="20260717232200 +0800">
+	<programme channel="TV189|热血剧场" start="20260718224520 +0800" stop="20260718233045 +0800">
 		<title lang="zh">老虎队 07</title>
 	</programme>
-	<programme channel="TV189|热血剧场" start="20260717232200 +0800" stop="20260718000725 +0800">
+	<programme channel="TV189|热血剧场" start="20260718233045 +0800" stop="20260719001610 +0800">
 		<title lang="zh">老虎队 08</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717000936 +0800" stop="20260717014428 +0800">
+	<programme channel="TV189|往昔影院" start="20260718000906 +0800" stop="20260718014515 +0800">
+		<title lang="zh">春满人间</title>
+	</programme>
+	<programme channel="TV189|往昔影院" start="20260718014515 +0800" stop="20260718032007 +0800">
 		<title lang="zh">山村姐妹</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717014428 +0800" stop="20260717033201 +0800">
+	<programme channel="TV189|往昔影院" start="20260718032007 +0800" stop="20260718050740 +0800">
 		<title lang="zh">青松岭</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717033201 +0800" stop="20260717045807 +0800">
+	<programme channel="TV189|往昔影院" start="20260718050740 +0800" stop="20260718063346 +0800">
 		<title lang="zh">青年鲁班</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717045807 +0800" stop="20260717062516 +0800">
+	<programme channel="TV189|往昔影院" start="20260718063346 +0800" stop="20260718080055 +0800">
 		<title lang="zh">草原雄鹰</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717062516 +0800" stop="20260717075140 +0800">
+	<programme channel="TV189|往昔影院" start="20260718080055 +0800" stop="20260718092719 +0800">
 		<title lang="zh">分水岭</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717075140 +0800" stop="20260717092934 +0800">
+	<programme channel="TV189|往昔影院" start="20260718092719 +0800" stop="20260718110513 +0800">
 		<title lang="zh">蚕花姑娘</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717092934 +0800" stop="20260717111200 +0800">
+	<programme channel="TV189|往昔影院" start="20260718110513 +0800" stop="20260718124739 +0800">
 		<title lang="zh">北大荒人</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717111200 +0800" stop="20260717122257 +0800">
+	<programme channel="TV189|往昔影院" start="20260718124739 +0800" stop="20260718135836 +0800">
 		<title lang="zh">万木春</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717122257 +0800" stop="20260717132955 +0800">
+	<programme channel="TV189|往昔影院" start="20260718135836 +0800" stop="20260718150534 +0800">
 		<title lang="zh">暑假的礼物</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717132955 +0800" stop="20260717150929 +0800">
+	<programme channel="TV189|往昔影院" start="20260718150534 +0800" stop="20260718164508 +0800">
 		<title lang="zh">达吉和她的父亲</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717150929 +0800" stop="20260717162747 +0800">
+	<programme channel="TV189|往昔影院" start="20260718164508 +0800" stop="20260718180326 +0800">
 		<title lang="zh">英雄诗篇</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717162747 +0800" stop="20260717174737 +0800">
+	<programme channel="TV189|往昔影院" start="20260718180326 +0800" stop="20260718192316 +0800">
 		<title lang="zh">大家庭的主妇</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717174737 +0800" stop="20260717194209 +0800">
+	<programme channel="TV189|往昔影院" start="20260718192316 +0800" stop="20260718211748 +0800">
 		<title lang="zh">万紫千红总是春</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717194209 +0800" stop="20260717212352 +0800">
+	<programme channel="TV189|往昔影院" start="20260718211748 +0800" stop="20260718225931 +0800">
 		<title lang="zh">我们村里的年轻人</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717212352 +0800" stop="20260717225223 +0800">
+	<programme channel="TV189|往昔影院" start="20260718225931 +0800" stop="20260719002802 +0800">
 		<title lang="zh">飞越天险</title>
 	</programme>
-	<programme channel="TV189|往昔影院" start="20260717225223 +0800" stop="20260718000906 +0800">
-		<title lang="zh">朝霞</title>
+	<programme channel="TV189|生活剧场" start="20260718000445 +0800" stop="20260718004926 +0800">
+		<title lang="zh">鼓楼外15</title>
 	</programme>
-	<programme channel="TV189|生活剧场" start="20260717000746 +0800" stop="20260717005245 +0800">
+	<programme channel="TV189|生活剧场" start="20260718004926 +0800" stop="20260718013443 +0800">
+		<title lang="zh">鼓楼外16</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718013443 +0800" stop="20260718021952 +0800">
+		<title lang="zh">鼓楼外17</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718021952 +0800" stop="20260718030512 +0800">
+		<title lang="zh">鼓楼外18</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718030512 +0800" stop="20260718035009 +0800">
+		<title lang="zh">鼓楼外19</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718035009 +0800" stop="20260718043455 +0800">
+		<title lang="zh">鼓楼外20</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718043455 +0800" stop="20260718052006 +0800">
+		<title lang="zh">鼓楼外21</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718052006 +0800" stop="20260718060525 +0800">
+		<title lang="zh">鼓楼外22</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718060525 +0800" stop="20260718065038 +0800">
+		<title lang="zh">鼓楼外23</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718065038 +0800" stop="20260718073545 +0800">
+		<title lang="zh">鼓楼外24</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718073545 +0800" stop="20260718082105 +0800">
+		<title lang="zh">鼓楼外25</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718082105 +0800" stop="20260718090603 +0800">
+		<title lang="zh">鼓楼外26</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718090603 +0800" stop="20260718094850 +0800">
+		<title lang="zh">鼓楼外27</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718094850 +0800" stop="20260718103144 +0800">
+		<title lang="zh">鼓楼外28</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718103144 +0800" stop="20260718111704 +0800">
+		<title lang="zh">鼓楼外29</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718111704 +0800" stop="20260718120222 +0800">
+		<title lang="zh">鼓楼外30</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718120222 +0800" stop="20260718124723 +0800">
+		<title lang="zh">棒棒的幸福生活 01</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718124723 +0800" stop="20260718133223 +0800">
+		<title lang="zh">棒棒的幸福生活 02</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718133223 +0800" stop="20260718141705 +0800">
+		<title lang="zh">棒棒的幸福生活 03</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718141705 +0800" stop="20260718150201 +0800">
+		<title lang="zh">棒棒的幸福生活 04</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718150201 +0800" stop="20260718154657 +0800">
+		<title lang="zh">棒棒的幸福生活 05</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718154657 +0800" stop="20260718163155 +0800">
+		<title lang="zh">棒棒的幸福生活 06</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718163155 +0800" stop="20260718171645 +0800">
+		<title lang="zh">棒棒的幸福生活 07</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718171645 +0800" stop="20260718180118 +0800">
+		<title lang="zh">棒棒的幸福生活 08</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718180118 +0800" stop="20260718184552 +0800">
+		<title lang="zh">棒棒的幸福生活 09</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718184552 +0800" stop="20260718193047 +0800">
+		<title lang="zh">棒棒的幸福生活 10</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718193047 +0800" stop="20260718201550 +0800">
+		<title lang="zh">棒棒的幸福生活 11</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718201550 +0800" stop="20260718210047 +0800">
+		<title lang="zh">棒棒的幸福生活 12</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718210047 +0800" stop="20260718214537 +0800">
+		<title lang="zh">棒棒的幸福生活 13</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718214537 +0800" stop="20260718223017 +0800">
+		<title lang="zh">棒棒的幸福生活 14</title>
+	</programme>
+	<programme channel="TV189|生活剧场" start="20260718223017 +0800" stop="20260718231516 +0800">
 		<title lang="zh">棒棒的幸福生活 15</title>
 	</programme>
-	<programme channel="TV189|生活剧场" start="20260717005245 +0800" stop="20260717013721 +0800">
+	<programme channel="TV189|生活剧场" start="20260718231516 +0800" stop="20260718235952 +0800">
 		<title lang="zh">棒棒的幸福生活 16</title>
 	</programme>
-	<programme channel="TV189|生活剧场" start="20260717013721 +0800" stop="20260717022216 +0800">
+	<programme channel="TV189|生活剧场" start="20260718235952 +0800" stop="20260719004447 +0800">
 		<title lang="zh">棒棒的幸福生活 17</title>
 	</programme>
-	<programme channel="TV189|生活剧场" start="20260717022216 +0800" stop="20260717030713 +0800">
-		<title lang="zh">棒棒的幸福生活 18</title>
+	<programme channel="TV189|国产佳作" start="20260718001923 +0800" stop="20260718015204 +0800">
+		<title lang="zh">醒来2</title>
 	</programme>
-	<programme channel="TV189|生活剧场" start="20260717030713 +0800" stop="20260717035147 +0800">
-		<title lang="zh">棒棒的幸福生活 19</title>
+	<programme channel="TV189|国产佳作" start="20260718015204 +0800" stop="20260718025718 +0800">
+		<title lang="zh">那年青春正年少</title>
 	</programme>
-	<programme channel="TV189|生活剧场" start="20260717035147 +0800" stop="20260717043559 +0800">
-		<title lang="zh">棒棒的幸福生活 20</title>
+	<programme channel="TV189|国产佳作" start="20260718025718 +0800" stop="20260718055029 +0800">
+		<title lang="zh">《流浪地球2》</title>
 	</programme>
-	<programme channel="TV189|生活剧场" start="20260717043559 +0800" stop="20260717052040 +0800">
-		<title lang="zh">棒棒的幸福生活 21</title>
+	<programme channel="TV189|国产佳作" start="20260718055029 +0800" stop="20260718074051 +0800">
+		<title lang="zh">断网</title>
 	</programme>
-	<programme channel="TV189|生活剧场" start="20260717052040 +0800" stop="20260717060539 +0800">
-		<title lang="zh">棒棒的幸福生活 22</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717060539 +0800" stop="20260717065021 +0800">
-		<title lang="zh">棒棒的幸福生活 23</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717065021 +0800" stop="20260717073519 +0800">
-		<title lang="zh">棒棒的幸福生活 24</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717073519 +0800" stop="20260717081958 +0800">
-		<title lang="zh">棒棒的幸福生活 25</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717081958 +0800" stop="20260717090433 +0800">
-		<title lang="zh">棒棒的幸福生活 26</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717090433 +0800" stop="20260717094915 +0800">
-		<title lang="zh">棒棒的幸福生活 27</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717094915 +0800" stop="20260717103419 +0800">
-		<title lang="zh">棒棒的幸福生活 28</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717103419 +0800" stop="20260717111901 +0800">
-		<title lang="zh">棒棒的幸福生活 29</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717111901 +0800" stop="20260717120355 +0800">
-		<title lang="zh">棒棒的幸福生活 30</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717120355 +0800" stop="20260717124846 +0800">
-		<title lang="zh">棒棒的幸福生活 31</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717124846 +0800" stop="20260717133348 +0800">
-		<title lang="zh">棒棒的幸福生活 32</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717133348 +0800" stop="20260717141829 +0800">
-		<title lang="zh">鼓楼外01</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717141829 +0800" stop="20260717150348 +0800">
-		<title lang="zh">鼓楼外02</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717150348 +0800" stop="20260717154906 +0800">
-		<title lang="zh">鼓楼外03</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717154906 +0800" stop="20260717163403 +0800">
-		<title lang="zh">鼓楼外04</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717163403 +0800" stop="20260717171906 +0800">
-		<title lang="zh">鼓楼外05</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717171906 +0800" stop="20260717180424 +0800">
-		<title lang="zh">鼓楼外06</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717180424 +0800" stop="20260717184940 +0800">
-		<title lang="zh">鼓楼外07</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717184940 +0800" stop="20260717193455 +0800">
-		<title lang="zh">鼓楼外08</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717193455 +0800" stop="20260717202008 +0800">
-		<title lang="zh">鼓楼外09</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717202008 +0800" stop="20260717210451 +0800">
-		<title lang="zh">鼓楼外10</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717210451 +0800" stop="20260717214940 +0800">
-		<title lang="zh">鼓楼外11</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717214940 +0800" stop="20260717223449 +0800">
-		<title lang="zh">鼓楼外12</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717223449 +0800" stop="20260717231925 +0800">
-		<title lang="zh">鼓楼外13</title>
-	</programme>
-	<programme channel="TV189|生活剧场" start="20260717231925 +0800" stop="20260718000445 +0800">
-		<title lang="zh">鼓楼外14</title>
-	</programme>
-	<programme channel="TV189|国产佳作" start="20260717001110 +0800" stop="20260717021253 +0800">
+	<programme channel="TV189|国产佳作" start="20260718074051 +0800" stop="20260718094234 +0800">
 		<title lang="zh">消失的她</title>
 	</programme>
-	<programme channel="TV189|国产佳作" start="20260717021253 +0800" stop="20260717035004 +0800">
+	<programme channel="TV189|国产佳作" start="20260718094234 +0800" stop="20260718111945 +0800">
 		<title lang="zh">丢人</title>
 	</programme>
-	<programme channel="TV189|国产佳作" start="20260717035004 +0800" stop="20260717052500 +0800">
+	<programme channel="TV189|国产佳作" start="20260718111945 +0800" stop="20260718125441 +0800">
 		<title lang="zh">龙的传人</title>
 	</programme>
-	<programme channel="TV189|国产佳作" start="20260717052500 +0800" stop="20260717065217 +0800">
+	<programme channel="TV189|国产佳作" start="20260718125441 +0800" stop="20260718142158 +0800">
 		<title lang="zh">喋血津门</title>
 	</programme>
-	<programme channel="TV189|国产佳作" start="20260717065217 +0800" stop="20260717082858 +0800">
+	<programme channel="TV189|国产佳作" start="20260718142158 +0800" stop="20260718155839 +0800">
 		<title lang="zh">农谷之恋</title>
 	</programme>
-	<programme channel="TV189|国产佳作" start="20260717082858 +0800" stop="20260717102719 +0800">
+	<programme channel="TV189|国产佳作" start="20260718155839 +0800" stop="20260718175700 +0800">
 		<title lang="zh">落凡尘</title>
 	</programme>
-	<programme channel="TV189|国产佳作" start="20260717102719 +0800" stop="20260717115346 +0800">
+	<programme channel="TV189|国产佳作" start="20260718175700 +0800" stop="20260718192327 +0800">
 		<title lang="zh">回乡种田</title>
 	</programme>
-	<programme channel="TV189|国产佳作" start="20260717115346 +0800" stop="20260717133320 +0800">
+	<programme channel="TV189|国产佳作" start="20260718192327 +0800" stop="20260718210301 +0800">
 		<title lang="zh">老狗</title>
 	</programme>
-	<programme channel="TV189|国产佳作" start="20260717133320 +0800" stop="20260717145949 +0800">
+	<programme channel="TV189|国产佳作" start="20260718210301 +0800" stop="20260718222930 +0800">
 		<title lang="zh">甘南曼巴</title>
 	</programme>
-	<programme channel="TV189|国产佳作" start="20260717145949 +0800" stop="20260717164232 +0800">
+	<programme channel="TV189|国产佳作" start="20260718222930 +0800" stop="20260719001213 +0800">
 		<title lang="zh">龙争虎斗</title>
 	</programme>
-	<programme channel="TV189|国产佳作" start="20260717164232 +0800" stop="20260717180806 +0800">
-		<title lang="zh">鸾凤劫</title>
+	<programme channel="TV189|岁月男神" start="20260718005201 +0800" stop="20260718022837 +0800">
+		<title lang="zh">无限风暴</title>
 	</programme>
-	<programme channel="TV189|国产佳作" start="20260717180806 +0800" stop="20260717194000 +0800">
-		<title lang="zh">仙女鸟飞过的夏天</title>
+	<programme channel="TV189|岁月男神" start="20260718022837 +0800" stop="20260718042242 +0800">
+		<title lang="zh">二手杰作</title>
 	</programme>
-	<programme channel="TV189|国产佳作" start="20260717194000 +0800" stop="20260717210146 +0800">
-		<title lang="zh">密语者</title>
-	</programme>
-	<programme channel="TV189|国产佳作" start="20260717210146 +0800" stop="20260717223932 +0800">
-		<title lang="zh">超级望望</title>
-	</programme>
-	<programme channel="TV189|国产佳作" start="20260717223932 +0800" stop="20260718001923 +0800">
-		<title lang="zh">大山之恋</title>
-	</programme>
-	<programme channel="TV189|岁月男神" start="20260717014136 +0800" stop="20260717031409 +0800">
+	<programme channel="TV189|岁月男神" start="20260718042242 +0800" stop="20260718055515 +0800">
 		<title lang="zh">深宵闪避球粤语版</title>
 	</programme>
-	<programme channel="TV189|岁月男神" start="20260717031409 +0800" stop="20260717051335 +0800">
+	<programme channel="TV189|岁月男神" start="20260718055515 +0800" stop="20260718075441 +0800">
 		<title lang="zh">拯救嫌疑人</title>
 	</programme>
-	<programme channel="TV189|岁月男神" start="20260717051335 +0800" stop="20260717071640 +0800">
+	<programme channel="TV189|岁月男神" start="20260718075441 +0800" stop="20260718095746 +0800">
 		<title lang="zh">逆战</title>
 	</programme>
-	<programme channel="TV189|岁月男神" start="20260717071640 +0800" stop="20260717092425 +0800">
+	<programme channel="TV189|岁月男神" start="20260718095746 +0800" stop="20260718120531 +0800">
 		<title lang="zh">坚如磐石</title>
 	</programme>
-	<programme channel="TV189|岁月男神" start="20260717092425 +0800" stop="20260717110615 +0800">
+	<programme channel="TV189|岁月男神" start="20260718120531 +0800" stop="20260718134721 +0800">
 		<title lang="zh">河边的错误</title>
 	</programme>
-	<programme channel="TV189|岁月男神" start="20260717110615 +0800" stop="20260717130722 +0800">
+	<programme channel="TV189|岁月男神" start="20260718134721 +0800" stop="20260718154828 +0800">
 		<title lang="zh">热搜</title>
 	</programme>
-	<programme channel="TV189|岁月男神" start="20260717130722 +0800" stop="20260717143746 +0800">
+	<programme channel="TV189|岁月男神" start="20260718154828 +0800" stop="20260718171852 +0800">
 		<title lang="zh">真的爱你</title>
 	</programme>
-	<programme channel="TV189|岁月男神" start="20260717143746 +0800" stop="20260717164943 +0800">
+	<programme channel="TV189|岁月男神" start="20260718171852 +0800" stop="20260718193049 +0800">
 		<title lang="zh">无价之宝</title>
 	</programme>
-	<programme channel="TV189|岁月男神" start="20260717164943 +0800" stop="20260717195018 +0800">
+	<programme channel="TV189|岁月男神" start="20260718193049 +0800" stop="20260718223124 +0800">
 		<title lang="zh">奥本海默</title>
 	</programme>
-	<programme channel="TV189|岁月男神" start="20260717195018 +0800" stop="20260717212845 +0800">
+	<programme channel="TV189|岁月男神" start="20260718223124 +0800" stop="20260719000951 +0800">
 		<title lang="zh">猛龙过江</title>
 	</programme>
-	<programme channel="TV189|岁月男神" start="20260717212845 +0800" stop="20260717231149 +0800">
-		<title lang="zh">龙少爷</title>
-	</programme>
-	<programme channel="TV189|岁月男神" start="20260717231149 +0800" stop="20260718005201 +0800">
-		<title lang="zh">敢死队4：最终章</title>
-	</programme>
-	<programme channel="TV189|心动投送" start="20260717010923 +0800" stop="20260717024426 +0800">
-		<title lang="zh">契诃夫的1890</title>
-	</programme>
-	<programme channel="TV189|心动投送" start="20260717024426 +0800" stop="20260717043408 +0800">
-		<title lang="zh">狂人皮埃罗</title>
-	</programme>
-	<programme channel="TV189|心动投送" start="20260717043408 +0800" stop="20260717063551 +0800">
-		<title lang="zh">消失的她</title>
-	</programme>
-	<programme channel="TV189|心动投送" start="20260717063551 +0800" stop="20260717080954 +0800">
-		<title lang="zh">史密斯夫妇</title>
-	</programme>
-	<programme channel="TV189|心动投送" start="20260717080954 +0800" stop="20260717093034 +0800">
-		<title lang="zh">夺魂索</title>
-	</programme>
-	<programme channel="TV189|心动投送" start="20260717093034 +0800" stop="20260717114056 +0800">
-		<title lang="zh">007之霹雳弹</title>
-	</programme>
-	<programme channel="TV189|心动投送" start="20260717114056 +0800" stop="20260717131539 +0800">
-		<title lang="zh">勇者无惧</title>
-	</programme>
-	<programme channel="TV189|心动投送" start="20260717131539 +0800" stop="20260717143750 +0800">
+	<programme channel="TV189|心动投送" start="20260718002908 +0800" stop="20260718015119 +0800">
 		<title lang="zh">狙击手：特别行动</title>
 	</programme>
-	<programme channel="TV189|心动投送" start="20260717143750 +0800" stop="20260717161617 +0800">
+	<programme channel="TV189|心动投送" start="20260718015119 +0800" stop="20260718035103 +0800">
+		<title lang="zh">盟军敢死队</title>
+	</programme>
+	<programme channel="TV189|心动投送" start="20260718035103 +0800" stop="20260718055210 +0800">
+		<title lang="zh">热搜</title>
+	</programme>
+	<programme channel="TV189|心动投送" start="20260718055210 +0800" stop="20260718072713 +0800">
+		<title lang="zh">契诃夫的1890</title>
+	</programme>
+	<programme channel="TV189|心动投送" start="20260718072713 +0800" stop="20260718091655 +0800">
+		<title lang="zh">狂人皮埃罗</title>
+	</programme>
+	<programme channel="TV189|心动投送" start="20260718091655 +0800" stop="20260718111838 +0800">
+		<title lang="zh">消失的她</title>
+	</programme>
+	<programme channel="TV189|心动投送" start="20260718111838 +0800" stop="20260718125241 +0800">
+		<title lang="zh">史密斯夫妇</title>
+	</programme>
+	<programme channel="TV189|心动投送" start="20260718125241 +0800" stop="20260718141321 +0800">
+		<title lang="zh">夺魂索</title>
+	</programme>
+	<programme channel="TV189|心动投送" start="20260718141321 +0800" stop="20260718162343 +0800">
+		<title lang="zh">007之霹雳弹</title>
+	</programme>
+	<programme channel="TV189|心动投送" start="20260718162343 +0800" stop="20260718175826 +0800">
+		<title lang="zh">勇者无惧</title>
+	</programme>
+	<programme channel="TV189|心动投送" start="20260718175826 +0800" stop="20260718192037 +0800">
+		<title lang="zh">狙击手：特别行动</title>
+	</programme>
+	<programme channel="TV189|心动投送" start="20260718192037 +0800" stop="20260718205904 +0800">
 		<title lang="zh">猛龙过江</title>
 	</programme>
-	<programme channel="TV189|心动投送" start="20260717161617 +0800" stop="20260717182117 +0800">
+	<programme channel="TV189|心动投送" start="20260718205904 +0800" stop="20260718230404 +0800">
 		<title lang="zh">雪国列车</title>
 	</programme>
-	<programme channel="TV189|心动投送" start="20260717182117 +0800" stop="20260717203017 +0800">
+	<programme channel="TV189|心动投送" start="20260718230404 +0800" stop="20260719011304 +0800">
 		<title lang="zh">蛟龙行动（特别版）</title>
 	</programme>
-	<programme channel="TV189|心动投送" start="20260717203017 +0800" stop="20260717215908 +0800">
-		<title lang="zh">完美的假期</title>
-	</programme>
-	<programme channel="TV189|心动投送" start="20260717215908 +0800" stop="20260717231008 +0800">
-		<title lang="zh">沙漠追匪记</title>
-	</programme>
-	<programme channel="TV189|心动投送" start="20260717231008 +0800" stop="20260718002908 +0800">
-		<title lang="zh">长相思</title>
-	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717001950 +0800" stop="20260717014303 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718003351 +0800" stop="20260718015704 +0800">
 		<title lang="zh">超逗特工队</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717014303 +0800" stop="20260717031746 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718015704 +0800" stop="20260718033147 +0800">
 		<title lang="zh">功夫佐拉</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717031746 +0800" stop="20260717044450 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718033147 +0800" stop="20260718045851 +0800">
 		<title lang="zh">反常</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717044450 +0800" stop="20260717061037 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718045851 +0800" stop="20260718062438 +0800">
 		<title lang="zh">江湖五怪</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717061037 +0800" stop="20260717074855 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718062438 +0800" stop="20260718080256 +0800">
 		<title lang="zh">燃情追踪</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717074855 +0800" stop="20260717091236 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718080256 +0800" stop="20260718092637 +0800">
 		<title lang="zh">三叠纪狩猎</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717091236 +0800" stop="20260717103950 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718092637 +0800" stop="20260718105351 +0800">
 		<title lang="zh">血鲨惊魂季</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717103950 +0800" stop="20260717120359 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718105351 +0800" stop="20260718121800 +0800">
 		<title lang="zh">喋血外星人</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717120359 +0800" stop="20260717135922 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718121800 +0800" stop="20260718141323 +0800">
 		<title lang="zh">怒战狂心</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717135922 +0800" stop="20260717154202 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718141323 +0800" stop="20260718155603 +0800">
 		<title lang="zh">塞西亚-复仇之剑</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717154202 +0800" stop="20260717170253 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718155603 +0800" stop="20260718171654 +0800">
 		<title lang="zh">勇敢风暴</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717170253 +0800" stop="20260717182851 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718171654 +0800" stop="20260718184252 +0800">
 		<title lang="zh">猿猴大战怪物</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717182851 +0800" stop="20260717200651 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718184252 +0800" stop="20260718202052 +0800">
 		<title lang="zh">特工过家家</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717200651 +0800" stop="20260717213240 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718202052 +0800" stop="20260718214641 +0800">
 		<title lang="zh">鲨卷风6：最后的鲨卷风</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717213240 +0800" stop="20260717225734 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718214641 +0800" stop="20260718231135 +0800">
 		<title lang="zh">巨蟒</title>
 	</programme>
-	<programme channel="TV189|宅家剧场" start="20260717225734 +0800" stop="20260718003351 +0800">
+	<programme channel="TV189|宅家剧场" start="20260718231135 +0800" stop="20260719004752 +0800">
 		<title lang="zh">虎胆杀机</title>
 	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717001429 +0800" stop="20260717015158 +0800">
-		<title lang="zh">天明</title>
-	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717015158 +0800" stop="20260717031949 +0800">
-		<title lang="zh">大团圆</title>
-	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717031949 +0800" stop="20260717044932 +0800">
-		<title lang="zh">夺印</title>
-	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717044932 +0800" stop="20260717065358 +0800">
-		<title lang="zh">红楼梦</title>
-	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717065358 +0800" stop="20260717083323 +0800">
-		<title lang="zh">关不住的春光</title>
-	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717083323 +0800" stop="20260717095310 +0800">
-		<title lang="zh">宝莲灯</title>
-	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717095310 +0800" stop="20260717115736 +0800">
-		<title lang="zh">红楼梦</title>
-	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717115736 +0800" stop="20260717133701 +0800">
-		<title lang="zh">关不住的春光</title>
-	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717133701 +0800" stop="20260717152257 +0800">
-		<title lang="zh">梁山伯与祝英台</title>
-	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717152257 +0800" stop="20260717164244 +0800">
-		<title lang="zh">宝莲灯</title>
-	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717164244 +0800" stop="20260717181227 +0800">
-		<title lang="zh">夺印</title>
-	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717181227 +0800" stop="20260717193510 +0800">
+	<programme channel="TV189|怀旧经典" start="20260718011350 +0800" stop="20260718023633 +0800">
 		<title lang="zh">秋翁遇仙记</title>
 	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717193510 +0800" stop="20260717205616 +0800">
-		<title lang="zh">乘龙快婿</title>
+	<programme channel="TV189|怀旧经典" start="20260718023633 +0800" stop="20260718041402 +0800">
+		<title lang="zh">天明</title>
 	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717205616 +0800" stop="20260717222407 +0800">
+	<programme channel="TV189|怀旧经典" start="20260718041402 +0800" stop="20260718054153 +0800">
 		<title lang="zh">大团圆</title>
 	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717222407 +0800" stop="20260717232008 +0800">
-		<title lang="zh">渔光曲</title>
+	<programme channel="TV189|怀旧经典" start="20260718054153 +0800" stop="20260718071136 +0800">
+		<title lang="zh">夺印</title>
 	</programme>
-	<programme channel="TV189|怀旧经典" start="20260717232008 +0800" stop="20260718011350 +0800">
-		<title lang="zh">万家灯火</title>
+	<programme channel="TV189|怀旧经典" start="20260718071136 +0800" stop="20260718091602 +0800">
+		<title lang="zh">红楼梦</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717010802 +0800" stop="20260717025306 +0800">
+	<programme channel="TV189|怀旧经典" start="20260718091602 +0800" stop="20260718105527 +0800">
+		<title lang="zh">关不住的春光</title>
+	</programme>
+	<programme channel="TV189|怀旧经典" start="20260718105527 +0800" stop="20260718121514 +0800">
+		<title lang="zh">宝莲灯</title>
+	</programme>
+	<programme channel="TV189|怀旧经典" start="20260718121514 +0800" stop="20260718141940 +0800">
+		<title lang="zh">红楼梦</title>
+	</programme>
+	<programme channel="TV189|怀旧经典" start="20260718141940 +0800" stop="20260718155905 +0800">
+		<title lang="zh">关不住的春光</title>
+	</programme>
+	<programme channel="TV189|怀旧经典" start="20260718155905 +0800" stop="20260718174501 +0800">
+		<title lang="zh">梁山伯与祝英台</title>
+	</programme>
+	<programme channel="TV189|怀旧经典" start="20260718174501 +0800" stop="20260718190448 +0800">
+		<title lang="zh">宝莲灯</title>
+	</programme>
+	<programme channel="TV189|怀旧经典" start="20260718190448 +0800" stop="20260718203431 +0800">
+		<title lang="zh">夺印</title>
+	</programme>
+	<programme channel="TV189|怀旧经典" start="20260718203431 +0800" stop="20260718215714 +0800">
+		<title lang="zh">秋翁遇仙记</title>
+	</programme>
+	<programme channel="TV189|怀旧经典" start="20260718215714 +0800" stop="20260718231820 +0800">
+		<title lang="zh">乘龙快婿</title>
+	</programme>
+	<programme channel="TV189|怀旧经典" start="20260718231820 +0800" stop="20260719004611 +0800">
+		<title lang="zh">大团圆</title>
+	</programme>
+	<programme channel="TV189|放映厅" start="20260718011407 +0800" stop="20260718025440 +0800">
+		<title lang="zh">武状元苏乞儿</title>
+	</programme>
+	<programme channel="TV189|放映厅" start="20260718025440 +0800" stop="20260718030023 +0800">
+		<title lang="zh">传闻中的陆神医 第1集</title>
+	</programme>
+	<programme channel="TV189|放映厅" start="20260718030023 +0800" stop="20260718030542 +0800">
+		<title lang="zh">传闻中的陆神医 第2集</title>
+	</programme>
+	<programme channel="TV189|放映厅" start="20260718030542 +0800" stop="20260718031057 +0800">
+		<title lang="zh">传闻中的陆神医 第3集</title>
+	</programme>
+	<programme channel="TV189|放映厅" start="20260718031057 +0800" stop="20260718031621 +0800">
+		<title lang="zh">传闻中的陆神医 第4集</title>
+	</programme>
+	<programme channel="TV189|放映厅" start="20260718031621 +0800" stop="20260718032140 +0800">
+		<title lang="zh">传闻中的陆神医 第5集</title>
+	</programme>
+	<programme channel="TV189|放映厅" start="20260718032140 +0800" stop="20260718032648 +0800">
+		<title lang="zh">传闻中的陆神医 第6集</title>
+	</programme>
+	<programme channel="TV189|放映厅" start="20260718032648 +0800" stop="20260718033203 +0800">
+		<title lang="zh">传闻中的陆神医 第7集</title>
+	</programme>
+	<programme channel="TV189|放映厅" start="20260718033203 +0800" stop="20260718050656 +0800">
+		<title lang="zh">绑架</title>
+	</programme>
+	<programme channel="TV189|放映厅" start="20260718050656 +0800" stop="20260718065200 +0800">
 		<title lang="zh">丘吉尔</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717025306 +0800" stop="20260717042256 +0800">
+	<programme channel="TV189|放映厅" start="20260718065200 +0800" stop="20260718082150 +0800">
 		<title lang="zh">困兽之斗</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717042256 +0800" stop="20260717054705 +0800">
+	<programme channel="TV189|放映厅" start="20260718082150 +0800" stop="20260718094559 +0800">
 		<title lang="zh">喋血外星人</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717054705 +0800" stop="20260717055209 +0800">
+	<programme channel="TV189|放映厅" start="20260718094559 +0800" stop="20260718095103 +0800">
 		<title lang="zh">传闻中的陆神医 第8集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717055209 +0800" stop="20260717055615 +0800">
+	<programme channel="TV189|放映厅" start="20260718095103 +0800" stop="20260718095509 +0800">
 		<title lang="zh">传闻中的陆神医 第9集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717055615 +0800" stop="20260717060051 +0800">
+	<programme channel="TV189|放映厅" start="20260718095509 +0800" stop="20260718095945 +0800">
 		<title lang="zh">传闻中的陆神医 第10集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717060051 +0800" stop="20260717065521 +0800">
+	<programme channel="TV189|放映厅" start="20260718095945 +0800" stop="20260718105415 +0800">
 		<title lang="zh">权力的游戏第一季-01new</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717065521 +0800" stop="20260717065952 +0800">
+	<programme channel="TV189|放映厅" start="20260718105415 +0800" stop="20260718105846 +0800">
 		<title lang="zh">传闻中的陆神医 第11集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717065952 +0800" stop="20260717070410 +0800">
+	<programme channel="TV189|放映厅" start="20260718105846 +0800" stop="20260718110304 +0800">
 		<title lang="zh">传闻中的陆神医 第12集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717070410 +0800" stop="20260717070802 +0800">
+	<programme channel="TV189|放映厅" start="20260718110304 +0800" stop="20260718110656 +0800">
 		<title lang="zh">传闻中的陆神医 第13集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717070802 +0800" stop="20260717071308 +0800">
+	<programme channel="TV189|放映厅" start="20260718110656 +0800" stop="20260718111202 +0800">
 		<title lang="zh">传闻中的陆神医 第14集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717071308 +0800" stop="20260717071721 +0800">
+	<programme channel="TV189|放映厅" start="20260718111202 +0800" stop="20260718111615 +0800">
 		<title lang="zh">传闻中的陆神医 第15集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717071721 +0800" stop="20260717072142 +0800">
+	<programme channel="TV189|放映厅" start="20260718111615 +0800" stop="20260718112036 +0800">
 		<title lang="zh">传闻中的陆神医 第16集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717072142 +0800" stop="20260717072602 +0800">
+	<programme channel="TV189|放映厅" start="20260718112036 +0800" stop="20260718112456 +0800">
 		<title lang="zh">传闻中的陆神医 第17集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717072602 +0800" stop="20260717073021 +0800">
+	<programme channel="TV189|放映厅" start="20260718112456 +0800" stop="20260718112915 +0800">
 		<title lang="zh">传闻中的陆神医 第18集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717073021 +0800" stop="20260717073445 +0800">
+	<programme channel="TV189|放映厅" start="20260718112915 +0800" stop="20260718113339 +0800">
 		<title lang="zh">传闻中的陆神医 第19集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717073445 +0800" stop="20260717074013 +0800">
+	<programme channel="TV189|放映厅" start="20260718113339 +0800" stop="20260718113907 +0800">
 		<title lang="zh">传闻中的陆神医 第20集</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717074013 +0800" stop="20260717082852 +0800">
+	<programme channel="TV189|放映厅" start="20260718113907 +0800" stop="20260718122746 +0800">
 		<title lang="zh">权力的游戏第一季-02</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717082852 +0800" stop="20260717092234 +0800">
+	<programme channel="TV189|放映厅" start="20260718122746 +0800" stop="20260718132128 +0800">
 		<title lang="zh">权力的游戏第一季-03</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717092234 +0800" stop="20260717101034 +0800">
+	<programme channel="TV189|放映厅" start="20260718132128 +0800" stop="20260718140928 +0800">
 		<title lang="zh">权力的游戏第一季-04</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717101034 +0800" stop="20260717110034 +0800">
+	<programme channel="TV189|放映厅" start="20260718140928 +0800" stop="20260718145928 +0800">
 		<title lang="zh">权力的游戏第一季-05</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717110034 +0800" stop="20260717114910 +0800">
+	<programme channel="TV189|放映厅" start="20260718145928 +0800" stop="20260718154804 +0800">
 		<title lang="zh">权力的游戏第一季-06</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717114910 +0800" stop="20260717123933 +0800">
+	<programme channel="TV189|放映厅" start="20260718154804 +0800" stop="20260718163827 +0800">
 		<title lang="zh">权力的游戏第一季-07</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717123933 +0800" stop="20260717133441 +0800">
+	<programme channel="TV189|放映厅" start="20260718163827 +0800" stop="20260718173335 +0800">
 		<title lang="zh">权力的游戏第一季-08</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717133441 +0800" stop="20260717142757 +0800">
+	<programme channel="TV189|放映厅" start="20260718173335 +0800" stop="20260718182651 +0800">
 		<title lang="zh">权力的游戏第一季-09</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717142757 +0800" stop="20260717151701 +0800">
+	<programme channel="TV189|放映厅" start="20260718182651 +0800" stop="20260718191555 +0800">
 		<title lang="zh">权力的游戏第一季-10</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717151701 +0800" stop="20260717160614 +0800">
+	<programme channel="TV189|放映厅" start="20260718191555 +0800" stop="20260718200508 +0800">
 		<title lang="zh">权力的游戏第二季-01</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717160614 +0800" stop="20260717165509 +0800">
+	<programme channel="TV189|放映厅" start="20260718200508 +0800" stop="20260718205403 +0800">
 		<title lang="zh">权力的游戏第二季-02</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717165509 +0800" stop="20260717174157 +0800">
+	<programme channel="TV189|放映厅" start="20260718205403 +0800" stop="20260718214051 +0800">
 		<title lang="zh">权力的游戏第二季-03</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717174157 +0800" stop="20260717182835 +0800">
+	<programme channel="TV189|放映厅" start="20260718214051 +0800" stop="20260718222729 +0800">
 		<title lang="zh">权力的游戏第二季-04</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717182835 +0800" stop="20260717192020 +0800">
+	<programme channel="TV189|放映厅" start="20260718222729 +0800" stop="20260718231914 +0800">
 		<title lang="zh">权力的游戏第二季-05</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717192020 +0800" stop="20260717201042 +0800">
+	<programme channel="TV189|放映厅" start="20260718231914 +0800" stop="20260719000936 +0800">
 		<title lang="zh">权力的游戏第二季-06</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717201042 +0800" stop="20260717210318 +0800">
-		<title lang="zh">权力的游戏第二季-07</title>
+	<programme channel="TV189|红色经典" start="20260718003326 +0800" stop="20260718015810 +0800">
+		<title lang="zh">鄂尔多斯风暴</title>
 	</programme>
-	<programme channel="TV189|放映厅" start="20260717210318 +0800" stop="20260717215309 +0800">
-		<title lang="zh">权力的游戏第二季-08</title>
-	</programme>
-	<programme channel="TV189|放映厅" start="20260717215309 +0800" stop="20260717224355 +0800">
-		<title lang="zh">权力的游戏第二季-09</title>
-	</programme>
-	<programme channel="TV189|放映厅" start="20260717224355 +0800" stop="20260717234359 +0800">
-		<title lang="zh">权力的游戏第二季-10</title>
-	</programme>
-	<programme channel="TV189|放映厅" start="20260717234359 +0800" stop="20260718011407 +0800">
-		<title lang="zh">逆行者</title>
-	</programme>
-	<programme channel="TV189|红色经典" start="20260717003401 +0800" stop="20260717021351 +0800">
+	<programme channel="TV189|红色经典" start="20260718015810 +0800" stop="20260718033800 +0800">
 		<title lang="zh">铁道卫士</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717021351 +0800" stop="20260717034629 +0800">
+	<programme channel="TV189|红色经典" start="20260718033800 +0800" stop="20260718051038 +0800">
 		<title lang="zh">风雪大别山</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717034629 +0800" stop="20260717051511 +0800">
+	<programme channel="TV189|红色经典" start="20260718051038 +0800" stop="20260718063920 +0800">
 		<title lang="zh">冬梅</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717051511 +0800" stop="20260717064554 +0800">
+	<programme channel="TV189|红色经典" start="20260718063920 +0800" stop="20260718081003 +0800">
 		<title lang="zh">永恒的友谊</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717064554 +0800" stop="20260717081436 +0800">
+	<programme channel="TV189|红色经典" start="20260718081003 +0800" stop="20260718093845 +0800">
 		<title lang="zh">冬梅</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717081436 +0800" stop="20260717095113 +0800">
+	<programme channel="TV189|红色经典" start="20260718093845 +0800" stop="20260718111522 +0800">
 		<title lang="zh">地道战</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717095113 +0800" stop="20260717110745 +0800">
+	<programme channel="TV189|红色经典" start="20260718111522 +0800" stop="20260718123154 +0800">
 		<title lang="zh">岸边激浪</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717110745 +0800" stop="20260717125508 +0800">
+	<programme channel="TV189|红色经典" start="20260718123154 +0800" stop="20260718141917 +0800">
 		<title lang="zh">独立大队</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717125508 +0800" stop="20260717142223 +0800">
+	<programme channel="TV189|红色经典" start="20260718141917 +0800" stop="20260718154632 +0800">
 		<title lang="zh">南海的早晨</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717142223 +0800" stop="20260717155626 +0800">
+	<programme channel="TV189|红色经典" start="20260718154632 +0800" stop="20260718172035 +0800">
 		<title lang="zh">冰雪金达莱</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717155626 +0800" stop="20260717171154 +0800">
+	<programme channel="TV189|红色经典" start="20260718172035 +0800" stop="20260718183603 +0800">
 		<title lang="zh">地雷战</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717171154 +0800" stop="20260717183728 +0800">
+	<programme channel="TV189|红色经典" start="20260718183603 +0800" stop="20260718200137 +0800">
 		<title lang="zh">十级浪</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717183728 +0800" stop="20260717201735 +0800">
+	<programme channel="TV189|红色经典" start="20260718200137 +0800" stop="20260718214144 +0800">
 		<title lang="zh">野火春风斗古城</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717201735 +0800" stop="20260717215656 +0800">
+	<programme channel="TV189|红色经典" start="20260718214144 +0800" stop="20260718232105 +0800">
 		<title lang="zh">逆风千里</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717215656 +0800" stop="20260717232230 +0800">
+	<programme channel="TV189|红色经典" start="20260718232105 +0800" stop="20260719004639 +0800">
 		<title lang="zh">十级浪</title>
 	</programme>
-	<programme channel="TV189|红色经典" start="20260717232230 +0800" stop="20260718003326 +0800">
-		<title lang="zh">哥俩好</title>
+	<programme channel="TV189|大咖面对面" start="20260718000229 +0800" stop="20260718005728 +0800">
+		<title lang="zh">周兴才让做客《天翼大来宾》</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717004929 +0800" stop="20260717014353 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718005728 +0800" stop="20260718015158 +0800">
+		<title lang="zh">fir</title>
+	</programme>
+	<programme channel="TV189|大咖面对面" start="20260718015158 +0800" stop="20260718024622 +0800">
 		<title lang="zh">MAX MESS</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717014353 +0800" stop="20260717023737 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718024622 +0800" stop="20260718034006 +0800">
 		<title lang="zh">温升豪</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717023737 +0800" stop="20260717033105 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718034006 +0800" stop="20260718043334 +0800">
 		<title lang="zh">蒋郭豪</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717033105 +0800" stop="20260717042423 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718043334 +0800" stop="20260718052652 +0800">
 		<title lang="zh">动力火车</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717042423 +0800" stop="20260717044217 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718052652 +0800" stop="20260718054446 +0800">
 		<title lang="zh">天翼大来宾AKB48TeamSH宅家VLOG大公开（上）</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717044217 +0800" stop="20260717054845 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718054446 +0800" stop="20260718065114 +0800">
 		<title lang="zh">鼓手JORGE</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717054845 +0800" stop="20260717065439 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718065114 +0800" stop="20260718075708 +0800">
 		<title lang="zh">吕颂贤</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717065439 +0800" stop="20260717075531 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718075708 +0800" stop="20260718085800 +0800">
 		<title lang="zh">辰亦儒</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717075531 +0800" stop="20260717084913 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718085800 +0800" stop="20260718095142 +0800">
 		<title lang="zh">动力火车</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717084913 +0800" stop="20260717094111 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718095142 +0800" stop="20260718104340 +0800">
 		<title lang="zh">KIMOE</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717094111 +0800" stop="20260717103238 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718104340 +0800" stop="20260718113507 +0800">
 		<title lang="zh">曾之乔</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717103238 +0800" stop="20260717111924 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718113507 +0800" stop="20260718122153 +0800">
 		<title lang="zh">郁可唯</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717111924 +0800" stop="20260717120507 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718122153 +0800" stop="20260718130736 +0800">
 		<title lang="zh">郑嘉颖</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717120507 +0800" stop="20260717125050 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718130736 +0800" stop="20260718135319 +0800">
 		<title lang="zh">郑嘉颖</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717125050 +0800" stop="20260717133139 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718135319 +0800" stop="20260718143408 +0800">
 		<title lang="zh">毛不易</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717133139 +0800" stop="20260717140657 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718143408 +0800" stop="20260718150926 +0800">
 		<title lang="zh">孟佳</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717140657 +0800" stop="20260717144128 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718150926 +0800" stop="20260718154357 +0800">
 		<title lang="zh">吴京</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717144128 +0800" stop="20260717155048 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718154357 +0800" stop="20260718165317 +0800">
 		<title lang="zh">蜜蜂少女队上海1队</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717155048 +0800" stop="20260717165940 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718165317 +0800" stop="20260718180209 +0800">
 		<title lang="zh">郑迦文</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717165940 +0800" stop="20260717180808 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718180209 +0800" stop="20260718191037 +0800">
 		<title lang="zh">陈键锋</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717180808 +0800" stop="20260717191406 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718191037 +0800" stop="20260718201635 +0800">
 		<title lang="zh">AKB48TeamSH</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717191406 +0800" stop="20260717201545 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718201635 +0800" stop="20260718211814 +0800">
 		<title lang="zh">宇宙人</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717201545 +0800" stop="20260717211429 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718211814 +0800" stop="20260718221658 +0800">
 		<title lang="zh">鼓鼓</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717211429 +0800" stop="20260717221132 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718221658 +0800" stop="20260718231401 +0800">
 		<title lang="zh">周深</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717221132 +0800" stop="20260717230711 +0800">
+	<programme channel="TV189|大咖面对面" start="20260718231401 +0800" stop="20260719000940 +0800">
 		<title lang="zh">毕夏</title>
 	</programme>
-	<programme channel="TV189|大咖面对面" start="20260717230711 +0800" stop="20260718000229 +0800">
-		<title lang="zh">孔垂楠</title>
-	</programme>
-	<programme channel="TV189|周润发系列" start="20260717000327 +0800" stop="20260717015456 +0800">
-		<title lang="zh">喋血双雄</title>
-	</programme>
-	<programme channel="TV189|周润发系列" start="20260717015456 +0800" stop="20260717033536 +0800">
+	<programme channel="TV189|周润发系列" start="20260718001344 +0800" stop="20260718015424 +0800">
 		<title lang="zh">等待黎明</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717033536 +0800" stop="20260717050548 +0800">
+	<programme channel="TV189|周润发系列" start="20260718015424 +0800" stop="20260718032436 +0800">
 		<title lang="zh">八星报喜</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717050548 +0800" stop="20260717063717 +0800">
+	<programme channel="TV189|周润发系列" start="20260718032436 +0800" stop="20260718045605 +0800">
 		<title lang="zh">秋天的童话</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717063717 +0800" stop="20260717075648 +0800">
+	<programme channel="TV189|周润发系列" start="20260718045605 +0800" stop="20260718061536 +0800">
 		<title lang="zh">大丈夫日记</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717075648 +0800" stop="20260717093524 +0800">
+	<programme channel="TV189|周润发系列" start="20260718061536 +0800" stop="20260718075412 +0800">
 		<title lang="zh">阿郎的故事</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717093524 +0800" stop="20260717111251 +0800">
+	<programme channel="TV189|周润发系列" start="20260718075412 +0800" stop="20260718093139 +0800">
 		<title lang="zh">地下情</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717111251 +0800" stop="20260717130420 +0800">
+	<programme channel="TV189|周润发系列" start="20260718093139 +0800" stop="20260718112308 +0800">
 		<title lang="zh">喋血双雄</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717130420 +0800" stop="20260717144500 +0800">
+	<programme channel="TV189|周润发系列" start="20260718112308 +0800" stop="20260718130348 +0800">
 		<title lang="zh">等待黎明</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717144500 +0800" stop="20260717161512 +0800">
+	<programme channel="TV189|周润发系列" start="20260718130348 +0800" stop="20260718143400 +0800">
 		<title lang="zh">八星报喜</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717161512 +0800" stop="20260717174641 +0800">
+	<programme channel="TV189|周润发系列" start="20260718143400 +0800" stop="20260718160529 +0800">
 		<title lang="zh">秋天的童话</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717174641 +0800" stop="20260717190612 +0800">
+	<programme channel="TV189|周润发系列" start="20260718160529 +0800" stop="20260718172500 +0800">
 		<title lang="zh">大丈夫日记</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717190612 +0800" stop="20260717204448 +0800">
+	<programme channel="TV189|周润发系列" start="20260718172500 +0800" stop="20260718190336 +0800">
 		<title lang="zh">阿郎的故事</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717204448 +0800" stop="20260717222215 +0800">
+	<programme channel="TV189|周润发系列" start="20260718190336 +0800" stop="20260718204103 +0800">
 		<title lang="zh">地下情</title>
 	</programme>
-	<programme channel="TV189|周润发系列" start="20260717222215 +0800" stop="20260718001344 +0800">
+	<programme channel="TV189|周润发系列" start="20260718204103 +0800" stop="20260718223232 +0800">
 		<title lang="zh">喋血双雄</title>
+	</programme>
+	<programme channel="TV189|周润发系列" start="20260718223232 +0800" stop="20260719001312 +0800">
+		<title lang="zh">等待黎明</title>
 	</programme>
 </tv>
